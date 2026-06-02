@@ -642,6 +642,45 @@ h2 {
   font-size: 14px;
 }
 
+.text-link {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 14px;
+  color: var(--cyan);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.text-link:hover {
+  color: var(--text);
+}
+
+.briefing-stack {
+  display: grid;
+  gap: 14px;
+}
+
+.briefing-entry {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 18px;
+  scroll-margin-top: 92px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.062), rgba(255, 255, 255, 0.026));
+  padding: 20px;
+}
+
+.briefing-entry h3 {
+  margin-bottom: 10px;
+  font-size: 21px;
+}
+
+.briefing-entry p {
+  margin-bottom: 14px;
+  color: var(--muted-strong);
+}
+
 .market-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1512,6 +1551,10 @@ h2 {
 
   .leaderboard-list em {
     grid-column: 2;
+  }
+
+  .briefing-entry {
+    grid-template-columns: 1fr;
   }
 
   .page-hero {
