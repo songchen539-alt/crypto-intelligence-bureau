@@ -73,6 +73,10 @@ function initSite() {
       });
 
       walletInput.setAttribute("aria-invalid", String(Boolean(address && !valid)));
+
+      if (valid) {
+        window.location.href = `wallet/?address=${encodeURIComponent(address)}`;
+      }
     });
   }
 }

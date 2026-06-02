@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="加密货币情报局的钱包调查台，用于输入钱包地址并生成链上调查报告框架、风险标签、行为画像和监控建议。">
+    <meta property="og:title" content="钱包调查 / Crypto Intelligence Bureau">
+    <meta property="og:description" content="输入钱包地址，生成可读的钱包调查报告。">
+    <meta property="og:type" content="website">
+    <title>钱包调查 / Crypto Intelligence Bureau</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="../" aria-label="加密货币情报局首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3 4 7v6c0 5 3.4 7.7 8 8 4.6-.3 8-3 8-8V7l-8-4Z"></path>
+              <path d="M9 12h6"></path>
+              <path d="M12 9v6"></path>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span>加密货币情报局</span>
+            <span>Crypto Intelligence Bureau</span>
+          </span>
+        </a>
+
+        <div class="nav-links" data-nav-links>
+          <a href="./" aria-current="page">钱包调查</a>
+          <a href="../#modules">核心模块</a>
+          <a href="../#workflow">情报流程</a>
+          <a href="../#security">安全</a>
+          <a href="../#pricing">会员</a>
+        </div>
+
+        <div class="nav-actions">
+          <a class="button small" href="../">返回首页</a>
+          <a class="button primary small" href="#investigate">开始调查</a>
+        </div>
+
+        <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false" data-menu-button>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero" aria-labelledby="wallet-title">
+        <div>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Wallet Investigation MVP</p>
+          <h1 id="wallet-title">钱包调查台</h1>
+          <p class="hero-lede">
+            输入 EVM 或 Solana 钱包地址，生成一份安全的本地调查报告：地址类型、行为画像、风险标签、关联路径和监控建议。当前版本不连接钱包、不请求签名、不传输私钥。
+          </p>
+        </div>
+        <aside class="briefing-card page-note">
+          <h3>当前数据模式</h3>
+          <p>这是第一版公开 MVP，报告由本地分析器生成，用来验证产品结构和使用体验。接入真实链上 API 时，只需要替换数据适配层。</p>
+        </aside>
+      </section>
+
+      <section class="section compact" id="investigate" aria-labelledby="investigate-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Investigation Console</p>
+            <h2 id="investigate-title">生成一份可读的钱包调查报告。</h2>
+          </div>
+          <p>推荐先用示例地址体验报告结构，再输入你想分析的钱包。</p>
+        </div>
+
+        <div class="investigation-layout">
+          <aside class="console-card">
+            <form class="wallet-search investigation-form" data-investigation-form>
+              <label for="investigation-address">钱包地址</label>
+              <input id="investigation-address" type="text" inputmode="text" autocomplete="off" spellcheck="false" placeholder="0x... 或 Solana 地址" data-investigation-input>
+              <button class="button primary" type="submit">生成报告</button>
+            </form>
+
+            <div class="sample-row" aria-label="示例地址">
+              <button class="tag sample-button" type="button" data-sample-address="0x742d35Cc6634C0532925a3b844Bc454e4438f44e">ETH 巨鲸样例</button>
+              <button class="tag sample-button" type="button" data-sample-address="So11111111111111111111111111111111111111112">Solana 样例</button>
+            </div>
+
+            <div class="empty-state" data-empty-state>
+              <strong>等待输入地址</strong>
+              <span>报告会在本页生成，不需要安装插件或连接钱包。</span>
+            </div>
+
+            <div class="address-line" data-address-line hidden>
+              <span>调查对象</span>
+              <code data-address-output></code>
+            </div>
+          </aside>
+
+          <div class="report-panel" data-report-panel hidden>
+            <div class="report-actions">
+              <span class="risk-pill" data-chain-output>unknown</span>
+              <a class="button small" href="#" data-copy-link>复制报告链接</a>
+            </div>
+
+            <div class="report-grid metrics-grid">
+              <article class="metric-card">
+                <span>调查评分</span>
+                <strong data-score-output>--</strong>
+              </article>
+              <article class="metric-card">
+                <span>风险等级</span>
+                <strong data-risk-output>--</strong>
+              </article>
+              <article class="metric-card">
+                <span>活跃倾向</span>
+                <strong data-activity-output>--</strong>
+              </article>
+              <article class="metric-card">
+                <span>地址完整性</span>
+                <strong data-integrity-output>--</strong>
+              </article>
+            </div>
+
+            <div class="report-grid">
+              <article class="analysis-card wide">
+                <h3>AI 摘要</h3>
+                <p data-summary-output></p>
+              </article>
+
+              <article class="analysis-card">
+                <h3>行为画像</h3>
+                <div class="bar-list" data-behavior-output></div>
+              </article>
+
+              <article class="analysis-card">
+                <h3>风险信号</h3>
+                <ul class="table-list" data-risk-list></ul>
+              </article>
+
+              <article class="analysis-card">
+                <h3>关联路径</h3>
+                <ul class="table-list" data-path-list></ul>
+              </article>
+
+              <article class="analysis-card wide">
+                <h3>监控建议</h3>
+                <ul class="table-list columns" data-watch-list></ul>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <p class="notice">
+          风险提示：本页报告用于产品演示、链上研究和信息整理，不构成投资建议。不要在任何网页输入助记词、私钥或交易所密码。
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <strong>加密货币情报局 / Crypto Intelligence Bureau</strong>
+          <div>Wallet investigation MVP, safe static browsing first.</div>
+        </div>
+        <div class="footer-links">
+          <a href="../">Home</a>
+          <a href="../docs/architecture.md">Architecture</a>
+          <a href="mailto:hello@crypto-intelligence-bureau.com">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/app.js" defer></script>
+    <script src="../assets/js/wallet.js" defer></script>
+  </body>
+</html>
+
