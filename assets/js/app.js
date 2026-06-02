@@ -89,6 +89,91 @@ function initDirectoryQuery() {
   }
 }
 
+function initWatchForm() {
+  const form = document.querySelector("[data-watch-form]");
+  const input = document.querySelector("[data-watch-input]");
+  const rule = document.querySelector("[data-watch-rule]");
+  const status = document.querySelector("[data-watch-status]");
+  const priority = document.querySelector("[data-watch-priority]");
+  const frequency = document.querySelector("[data-watch-frequency]");
+  const summary = document.querySelector("[data-watch-summary]");
+  if (!form || !input || !rule || !summary) return;
+
+  const copy = {
+    exchange: ["Active", "High", "实时", "将监控该钱包是否向交易所地址转入资产。若出现大额流入交易所，通常需要优先复核是否存在短线抛压。"],
+    large: ["Active", "Medium", "实时", "将监控单笔大额转账和余额变化。适合巨鲸、项目方钱包和聪明钱地址。"],
+    buy: ["Active", "Medium", "15 分钟", "将监控该钱包是否买入新 Token 或进入新池子。适合发现早期建仓线索。"],
+    risk: ["Active", "Critical", "实时", "将监控该钱包是否与高风险合约、异常授权或可疑地址交互。适合风险预警。"]
+  };
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const address = normalizeAddress(input.value) || "观察钱包";
+    const selected = copy[rule.value] || copy.exchange;
+    status.textContent = selected[0];
+    priority.textContent = selected[1];
+    frequency.textContent = selected[2];
+    summary.textContent = `${address} 已生成监控方案：${selected[3]}`;
+  });
+}
+
+function hashText(value) {
+  let hash = 0;
+  for (let index = 0; index < value.length; index += 1) {
+    hash = Math.imul(31, hash) + value.charCodeAt(index);
+  }
+  return Math.abs(hash);
+}
+
+function renderMbti(target) {
+  const name = document.querySelector("[data-mbti-name]");
+  const summary = document.querySelector("[data-mbti-summary]");
+  const bars = document.querySelector("[data-mbti-bars]");
+  const list = document.querySelector("[data-mbti-list]");
+  if (!name || !summary || !bars || !list) return;
+
+  const profiles = [
+    ["Diamond Whale", "偏长线配置、低频大额操作，适合观察其建仓节奏和资金流向。", ["风险偏好", 48], ["持仓耐心", 86], ["交易频率", 31]],
+    ["Meme Sniper", "偏高频、高波动资产和新池子机会，收益弹性强，但回撤风险也更高。", ["风险偏好", 88], ["持仓耐心", 28], ["交易频率", 91]],
+    ["Stable Farmer", "偏稳定收益、低波动资产和 DeFi 策略，适合长期监控收益路径。", ["风险偏好", 36], ["持仓耐心", 74], ["交易频率", 46]],
+    ["Liquidity Shadow", "偏潜伏型资金流，常在流动性变化前后出现动作，适合与巨鲸雷达联动观察。", ["风险偏好", 64], ["持仓耐心", 62], ["交易频率", 58]]
+  ];
+
+  const query = normalizeAddress(target) || "Diamond Whale";
+  const profile = profiles[hashText(query) % profiles.length];
+  name.textContent = profile[0];
+  summary.textContent = `${query} 的初步画像为 ${profile[0]}：${profile[1]}`;
+  bars.innerHTML = profile.slice(2).map(([label, value]) => `
+    <div class="bar-item">
+      <div class="bar-meta"><span>${label}</span><strong>${value}%</strong></div>
+      <div class="bar"><span style="width: ${value}%"></span></div>
+    </div>
+  `).join("");
+  list.innerHTML = [
+    "把人格画像作为观察框架，不要直接当作买卖信号。",
+    "结合钱包调查、巨鲸雷达和钱包监控一起判断行为是否持续。",
+    "重点关注画像是否随时间变化，例如从潜伏转为高频交易。"
+  ].map((item) => `<li>${item}</li>`).join("");
+}
+
+function initMbtiForm() {
+  const form = document.querySelector("[data-mbti-form]");
+  const input = document.querySelector("[data-mbti-input]");
+  if (!form || !input) return;
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    renderMbti(input.value);
+  });
+
+  document.querySelectorAll("[data-mbti-sample]").forEach((button) => {
+    button.addEventListener("click", () => {
+      input.value = button.dataset.mbtiSample || "";
+      renderMbti(input.value);
+    });
+  });
+}
+
 async function loadMarketOverview() {
   const marketStatus = document.querySelector("[data-market-status]");
   const cards = document.querySelectorAll("[data-coin]");
@@ -224,6 +309,8 @@ function initSite() {
 
   loadMarketOverview();
   initDirectoryQuery();
+  initWatchForm();
+  initMbtiForm();
 }
 
 if (document.readyState === "loading") {

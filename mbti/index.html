@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="Crypto MBTI，把钱包或交易员行为转化为加密交易人格，例如 Diamond Whale、Meme Sniper、Stable Farmer。">
+    <title>Crypto MBTI / Crypto Intelligence Bureau</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="../" aria-label="加密货币情报局首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3 4 7v6c0 5 3.4 7.7 8 8 4.6-.3 8-3 8-8V7l-8-4Z"></path>
+              <path d="M9 12h6"></path>
+              <path d="M12 9v6"></path>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span>加密货币情报局</span>
+            <span>Crypto Intelligence Bureau</span>
+          </span>
+        </a>
+        <div class="nav-links" data-nav-links>
+          <a href="../">首页</a>
+          <a href="../wallet/">钱包调查</a>
+          <a href="../watch/">钱包监控</a>
+          <a href="../traders/">交易员调查</a>
+          <a href="./" aria-current="page">Crypto MBTI</a>
+        </div>
+        <div class="nav-actions">
+          <a class="button small" href="../traders/">热门交易员</a>
+          <a class="button primary small" href="#generator">生成画像</a>
+        </div>
+        <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false" data-menu-button>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero" aria-labelledby="mbti-title">
+        <div>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Crypto MBTI</p>
+          <h1 id="mbti-title">加密人格画像</h1>
+          <p class="hero-lede">把钱包或交易员的行为风格转成易读、可分享的加密人格，帮助用户快速理解风险偏好、交易周期和资产偏好。</p>
+        </div>
+        <aside class="briefing-card page-note">
+          <h3>画像类型</h3>
+          <p>Diamond Whale、Meme Sniper、Stable Farmer、Degen Hunter、Liquidity Shadow 等。</p>
+        </aside>
+      </section>
+
+      <section class="section compact" id="generator" aria-labelledby="generator-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Personality Generator</p>
+            <h2 id="generator-title">生成钱包或交易员人格</h2>
+          </div>
+          <p>输入地址、交易员名称或任意观察对象，生成一份行为画像。</p>
+        </div>
+
+        <div class="investigation-layout">
+          <aside class="console-card">
+            <form class="wallet-search investigation-form" data-mbti-form>
+              <label for="mbti-target">分析对象</label>
+              <input id="mbti-target" type="text" inputmode="text" autocomplete="off" spellcheck="false" placeholder="输入钱包地址或交易员名称" data-mbti-input>
+              <button class="button primary" type="submit">生成 Crypto MBTI</button>
+            </form>
+            <div class="sample-row">
+              <button class="tag sample-button" type="button" data-mbti-sample="0x742d35Cc6634C0532925a3b844Bc454e4438f44e">巨鲸样例</button>
+              <button class="tag sample-button" type="button" data-mbti-sample="Meme Sniper">交易员样例</button>
+            </div>
+          </aside>
+
+          <div class="report-panel">
+            <div class="persona-card">
+              <span class="tag">Personality</span>
+              <h3 data-mbti-name>Diamond Whale</h3>
+              <p data-mbti-summary>偏长线配置、低频大额操作，适合观察其建仓节奏和资金流向。</p>
+            </div>
+
+            <div class="report-grid">
+              <article class="analysis-card">
+                <h3>行为维度</h3>
+                <div class="bar-list" data-mbti-bars>
+                  <div class="bar-item"><div class="bar-meta"><span>风险偏好</span><strong>62%</strong></div><div class="bar"><span style="width: 62%"></span></div></div>
+                  <div class="bar-item"><div class="bar-meta"><span>持仓耐心</span><strong>81%</strong></div><div class="bar"><span style="width: 81%"></span></div></div>
+                  <div class="bar-item"><div class="bar-meta"><span>交易频率</span><strong>34%</strong></div><div class="bar"><span style="width: 34%"></span></div></div>
+                </div>
+              </article>
+              <article class="analysis-card">
+                <h3>解读建议</h3>
+                <ul class="table-list" data-mbti-list>
+                  <li>重点观察是否连续建仓，而不是单笔交易。</li>
+                  <li>适合与巨鲸雷达和钱包监控结合使用。</li>
+                  <li>不要把人格画像当作买卖信号。</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="../assets/js/app.js" defer></script>
+  </body>
+</html>
+

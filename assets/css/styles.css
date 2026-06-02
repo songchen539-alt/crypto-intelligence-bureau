@@ -52,6 +52,10 @@ input {
   font: inherit;
 }
 
+select {
+  font: inherit;
+}
+
 button {
   cursor: pointer;
 }
@@ -840,6 +844,66 @@ h2 {
   gap: 16px;
 }
 
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.tool-card,
+.persona-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.062), rgba(255, 255, 255, 0.026));
+}
+
+.tool-card {
+  min-height: 250px;
+  padding: 20px;
+}
+
+.tool-card h3 {
+  margin-bottom: 10px;
+  font-size: 21px;
+}
+
+.tool-card p {
+  color: var(--muted-strong);
+}
+
+.select-input {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  outline: none;
+  background: rgba(0, 0, 0, 0.28);
+  color: var(--text);
+  padding: 11px 12px;
+}
+
+.select-input:focus {
+  border-color: rgba(88, 199, 255, 0.62);
+  box-shadow: 0 0 0 3px rgba(88, 199, 255, 0.12);
+}
+
+.persona-card {
+  margin-bottom: 14px;
+  padding: 22px;
+}
+
+.persona-card h3 {
+  margin: 14px 0 10px;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.05;
+}
+
+.persona-card p {
+  max-width: 760px;
+  margin-bottom: 0;
+  color: var(--muted-strong);
+}
+
 .trader-card {
   display: flex;
   min-height: 292px;
@@ -1450,7 +1514,8 @@ h2 {
   .module-grid,
   .today-grid,
   .price-grid,
-  .trader-grid {
+  .trader-grid,
+  .tool-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1527,7 +1592,8 @@ h2 {
   .market-grid,
   .whale-layout,
   .trader-grid,
-  .directory-grid {
+  .directory-grid,
+  .tool-grid {
     grid-template-columns: 1fr;
   }
 

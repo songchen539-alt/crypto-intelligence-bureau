@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="加密货币情报局钱包监控，创建钱包观察列表、大额转账提醒、交易所流入提醒和风险合约交互提醒。">
+    <title>钱包监控 / Crypto Intelligence Bureau</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="../" aria-label="加密货币情报局首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3 4 7v6c0 5 3.4 7.7 8 8 4.6-.3 8-3 8-8V7l-8-4Z"></path>
+              <path d="M9 12h6"></path>
+              <path d="M12 9v6"></path>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span>加密货币情报局</span>
+            <span>Crypto Intelligence Bureau</span>
+          </span>
+        </a>
+        <div class="nav-links" data-nav-links>
+          <a href="../">首页</a>
+          <a href="../wallet/">钱包调查</a>
+          <a href="./" aria-current="page">钱包监控</a>
+          <a href="../whales/">巨鲸雷达</a>
+          <a href="../mbti/">Crypto MBTI</a>
+        </div>
+        <div class="nav-actions">
+          <a class="button small" href="../wallet/">先调查钱包</a>
+          <a class="button primary small" href="#rules">创建规则</a>
+        </div>
+        <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false" data-menu-button>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero" aria-labelledby="watch-title">
+        <div>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Wallet Watch</p>
+          <h1 id="watch-title">钱包监控</h1>
+          <p class="hero-lede">把关键钱包加入观察列表，按大额转账、交易所流入、新资产买入和风险合约交互生成提醒规则。</p>
+        </div>
+        <aside class="briefing-card page-note">
+          <h3>安全浏览模式</h3>
+          <p>当前页面只创建监控方案，不连接钱包、不请求签名、不保存私钥。后续可接入邮件、Telegram 或 Webhook。</p>
+        </aside>
+      </section>
+
+      <section class="section compact" id="rules" aria-labelledby="rules-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Alert Rules</p>
+            <h2 id="rules-title">创建监控规则</h2>
+          </div>
+          <p>从最常用的 4 类规则开始，适合聪明钱、项目方、巨鲸和风险钱包。</p>
+        </div>
+
+        <div class="investigation-layout">
+          <aside class="console-card">
+            <form class="wallet-search investigation-form" data-watch-form>
+              <label for="watch-address">钱包地址</label>
+              <input id="watch-address" type="text" inputmode="text" autocomplete="off" spellcheck="false" placeholder="输入要监控的钱包地址" data-watch-input>
+              <label for="watch-rule">规则类型</label>
+              <select id="watch-rule" class="select-input" data-watch-rule>
+                <option value="exchange">转入交易所</option>
+                <option value="large">大额转账</option>
+                <option value="buy">买入指定 Token</option>
+                <option value="risk">风险合约交互</option>
+              </select>
+              <button class="button primary" type="submit">生成监控方案</button>
+            </form>
+          </aside>
+
+          <div class="report-panel" data-watch-result>
+            <div class="report-grid metrics-grid">
+              <article class="metric-card">
+                <span>规则状态</span>
+                <strong data-watch-status>Ready</strong>
+              </article>
+              <article class="metric-card">
+                <span>建议优先级</span>
+                <strong data-watch-priority>High</strong>
+              </article>
+              <article class="metric-card">
+                <span>提醒频率</span>
+                <strong data-watch-frequency>实时</strong>
+              </article>
+              <article class="metric-card">
+                <span>隐私级别</span>
+                <strong>本地</strong>
+              </article>
+            </div>
+
+            <div class="report-grid">
+              <article class="analysis-card wide">
+                <h3>监控摘要</h3>
+                <p data-watch-summary>输入钱包后会生成一份监控方案，说明触发条件、优先级和推荐提醒渠道。</p>
+              </article>
+              <article class="analysis-card">
+                <h3>推荐规则</h3>
+                <ul class="table-list">
+                  <li>转入交易所地址时提醒</li>
+                  <li>单笔转账超过组合价值 15% 时提醒</li>
+                  <li>首次买入新 Token 时提醒</li>
+                </ul>
+              </article>
+              <article class="analysis-card">
+                <h3>提醒渠道</h3>
+                <ul class="table-list">
+                  <li>站内通知</li>
+                  <li>Email</li>
+                  <li>Telegram / Discord Webhook</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="../assets/js/app.js" defer></script>
+  </body>
+</html>
+
