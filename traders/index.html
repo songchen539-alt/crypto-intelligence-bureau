@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="加密货币情报局交易员调查，查看热门交易员榜、稳定盈利、胜率、回撤和跟踪价值。">
+    <title>交易员调查 / Crypto Intelligence Bureau</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="../" aria-label="加密货币情报局首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3 4 7v6c0 5 3.4 7.7 8 8 4.6-.3 8-3 8-8V7l-8-4Z"></path>
+              <path d="M9 12h6"></path>
+              <path d="M12 9v6"></path>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span>加密货币情报局</span>
+            <span>Crypto Intelligence Bureau</span>
+          </span>
+        </a>
+        <div class="nav-links" data-nav-links>
+          <a href="../">首页</a>
+          <a href="../wallet/">钱包调查</a>
+          <a href="../whales/">巨鲸雷达</a>
+          <a href="./" aria-current="page">交易员调查</a>
+        </div>
+        <div class="nav-actions">
+          <a class="button small" href="../#hot-wallets">热门钱包</a>
+          <a class="button primary small" href="#ranking">查看榜单</a>
+        </div>
+        <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false" data-menu-button>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero" aria-labelledby="trader-page-title">
+        <div>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Trader Investigation</p>
+          <h1 id="trader-page-title">交易员调查</h1>
+          <p class="hero-lede">比较交易员胜率、收益、回撤、资产偏好和链上行为，判断是否值得长期观察或谨慎跟踪。</p>
+        </div>
+        <aside class="briefing-card page-note">
+          <h3>搜索目标</h3>
+          <p data-directory-query>正在查看热门交易员榜。</p>
+        </aside>
+      </section>
+
+      <section class="section compact" id="ranking" aria-labelledby="ranking-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Trader Ranking</p>
+            <h2 id="ranking-title">热门交易员榜</h2>
+          </div>
+          <p>以稳定盈利、风险控制和公开记录为核心，而不是只看单次暴利。</p>
+        </div>
+
+        <div class="trader-grid">
+          <article class="trader-card">
+            <div class="trader-top">
+              <span class="rank">#1</span>
+              <span class="tag">稳定盈利</span>
+            </div>
+            <h3>Alpha Hunter</h3>
+            <p>过去 30 天多次捕捉主流资产回调买点，胜率稳定，回撤控制较好。</p>
+            <div class="trader-stats">
+              <span><strong>71%</strong> 胜率</span>
+              <span><strong>+42%</strong> 30D</span>
+              <span><strong>8%</strong> 回撤</span>
+            </div>
+            <a class="button small" href="../wallet/?address=0x742d35Cc6634C0532925a3b844Bc454e4438f44e">查看关联钱包</a>
+          </article>
+          <article class="trader-card">
+            <div class="trader-top">
+              <span class="rank">#2</span>
+              <span class="tag">DeFi</span>
+            </div>
+            <h3>DeFi Navigator</h3>
+            <p>偏 DeFi 与收益策略，交易频率中等，擅长捕捉资金轮动。</p>
+            <div class="trader-stats">
+              <span><strong>64%</strong> 胜率</span>
+              <span><strong>+31%</strong> 30D</span>
+              <span><strong>11%</strong> 回撤</span>
+            </div>
+            <a class="button small" href="../wallet/?address=0x0000000000000000000000000000000000000000">查看关联钱包</a>
+          </article>
+          <article class="trader-card">
+            <div class="trader-top">
+              <span class="rank">#3</span>
+              <span class="tag">高风险</span>
+            </div>
+            <h3>Meme Sniper</h3>
+            <p>高频参与新池子与 Meme 资产，收益弹性高，波动和跟单风险也更高。</p>
+            <div class="trader-stats">
+              <span><strong>58%</strong> 胜率</span>
+              <span><strong>+67%</strong> 30D</span>
+              <span><strong>24%</strong> 回撤</span>
+            </div>
+            <a class="button small" href="../wallet/?address=So11111111111111111111111111111111111111112">查看关联钱包</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section compact">
+        <div class="directory-grid">
+          <article class="analysis-card">
+            <h3>调查维度</h3>
+            <ul class="table-list">
+              <li>胜率、收益率、最大回撤和持仓周期。</li>
+              <li>公开喊单与链上买卖时间是否一致。</li>
+              <li>是否存在高风险资产集中和追涨行为。</li>
+            </ul>
+          </article>
+          <article class="analysis-card">
+            <h3>跟踪建议</h3>
+            <ul class="table-list">
+              <li>先观察 7 到 14 天，不直接跟单。</li>
+              <li>重点看亏损后的处理方式，而不是只看收益截图。</li>
+              <li>把交易员钱包加入 Wallet Watch 做长期追踪。</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="../assets/js/app.js" defer></script>
+  </body>
+</html>

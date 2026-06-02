@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="加密货币情报局巨鲸雷达，查看 Top Whale Buys、Top Whale Sells、交易所流入流出和大额资金动作。">
+    <title>巨鲸雷达 / Crypto Intelligence Bureau</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="../" aria-label="加密货币情报局首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3 4 7v6c0 5 3.4 7.7 8 8 4.6-.3 8-3 8-8V7l-8-4Z"></path>
+              <path d="M9 12h6"></path>
+              <path d="M12 9v6"></path>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span>加密货币情报局</span>
+            <span>Crypto Intelligence Bureau</span>
+          </span>
+        </a>
+        <div class="nav-links" data-nav-links>
+          <a href="../">首页</a>
+          <a href="../wallet/">钱包调查</a>
+          <a href="./" aria-current="page">巨鲸雷达</a>
+          <a href="../traders/">交易员调查</a>
+        </div>
+        <div class="nav-actions">
+          <a class="button small" href="../#market">市场概览</a>
+          <a class="button primary small" href="#radar">查看雷达</a>
+        </div>
+        <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false" data-menu-button>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero" aria-labelledby="whale-page-title">
+        <div>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Whale Radar</p>
+          <h1 id="whale-page-title">巨鲸雷达</h1>
+          <p class="hero-lede">追踪大额买入、卖出、交易所流入流出和同步建仓行为。用户可以按 Token、方向或地址线索快速进入巨鲸情报。</p>
+        </div>
+        <aside class="briefing-card page-note">
+          <h3>搜索目标</h3>
+          <p data-directory-query>正在查看全市场巨鲸雷达。</p>
+        </aside>
+      </section>
+
+      <section class="section compact" id="radar" aria-labelledby="radar-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Live-Ready Radar</p>
+            <h2 id="radar-title">Top Whale Buys / Sells</h2>
+          </div>
+          <p>先用榜单结构承载体验，后续接入真实链上数据后会变成实时雷达。</p>
+        </div>
+
+        <div class="whale-layout">
+          <article class="leaderboard-card">
+            <div class="leaderboard-head">
+              <h3>Top Whale Buys</h3>
+              <span class="tag">买入</span>
+            </div>
+            <ol class="leaderboard-list">
+              <li><span>ETH</span><strong>$5.0M</strong><em>0x8f2...A91</em></li>
+              <li><span>BTC</span><strong>$3.8M</strong><em>bc1q...77c</em></li>
+              <li><span>LINK</span><strong>$1.6M</strong><em>0x21b...F02</em></li>
+              <li><span>SOL</span><strong>$1.2M</strong><em>9xQe...k71</em></li>
+            </ol>
+          </article>
+
+          <article class="leaderboard-card sell">
+            <div class="leaderboard-head">
+              <h3>Top Whale Sells</h3>
+              <span class="tag">卖出</span>
+            </div>
+            <ol class="leaderboard-list">
+              <li><span>DOGE</span><strong>$2.9M</strong><em>0x3cd...19E</em></li>
+              <li><span>ARB</span><strong>$2.1M</strong><em>0xa71...B62</em></li>
+              <li><span>OP</span><strong>$1.4M</strong><em>0x901...4D8</em></li>
+              <li><span>PEPE</span><strong>$0.9M</strong><em>0x6a9...C13</em></li>
+            </ol>
+          </article>
+        </div>
+      </section>
+
+      <section class="section compact">
+        <div class="directory-grid">
+          <article class="analysis-card">
+            <h3>交易所流入</h3>
+            <ul class="table-list">
+              <li>ETH 大额流入增加，关注短线抛压。</li>
+              <li>稳定币流入回升，可能提高后续买盘弹性。</li>
+              <li>多地址同步转账需要进一步聚类确认。</li>
+            </ul>
+          </article>
+          <article class="analysis-card">
+            <h3>监控建议</h3>
+            <ul class="table-list">
+              <li>设置 ETH / BTC 大额买入提醒。</li>
+              <li>对交易所流入地址设置高优先级观察。</li>
+              <li>追踪同批钱包是否出现同步建仓。</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="../assets/js/app.js" defer></script>
+  </body>
+</html>
+

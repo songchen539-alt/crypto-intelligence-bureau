@@ -834,6 +834,12 @@ h2 {
   font-size: 17px;
 }
 
+.directory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
 .module-card,
 .briefing-card,
 .security-card,
@@ -1414,7 +1420,8 @@ h2 {
   .page-hero,
   .investigation-layout,
   .market-grid,
-  .whale-layout {
+  .whale-layout,
+  .directory-grid {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -1480,7 +1487,8 @@ h2 {
   .table-list.columns,
   .market-grid,
   .whale-layout,
-  .trader-grid {
+  .trader-grid,
+  .directory-grid {
     grid-template-columns: 1fr;
   }
 

@@ -79,6 +79,16 @@ function renderMarketFallback() {
   });
 }
 
+function initDirectoryQuery() {
+  const target = document.querySelector("[data-directory-query]");
+  if (!target) return;
+
+  const query = new URLSearchParams(window.location.search).get("query");
+  if (query) {
+    target.textContent = `正在查看与「${query}」相关的情报。`;
+  }
+}
+
 async function loadMarketOverview() {
   const marketStatus = document.querySelector("[data-market-status]");
   const cards = document.querySelectorAll("[data-coin]");
@@ -195,14 +205,12 @@ function initSite() {
       }
 
       if (mode === "whale") {
-        if (hint) hint.textContent = query ? `正在查看与「${query}」相关的巨鲸雷达。` : "正在查看巨鲸雷达。";
-        document.querySelector("#whale-radar")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        window.location.href = `whales/?query=${encodeURIComponent(query || "Top Whale")}`;
         return;
       }
 
       if (mode === "trader") {
-        if (hint) hint.textContent = query ? `正在查看与「${query}」相关的交易员榜。` : "正在查看热门交易员榜。";
-        document.querySelector("#hot-traders")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        window.location.href = `traders/?query=${encodeURIComponent(query || "Hot Trader")}`;
       }
     });
   }
@@ -215,6 +223,7 @@ function initSite() {
   });
 
   loadMarketOverview();
+  initDirectoryQuery();
 }
 
 if (document.readyState === "loading") {
