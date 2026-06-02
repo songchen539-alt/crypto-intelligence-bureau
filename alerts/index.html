@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="加密货币情报局预警中心，集中查看钱包监控、巨鲸动态、交易所流入、大额转账和风险合约交互提醒。">
+    <title>预警中心 / Crypto Intelligence Bureau</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="../" aria-label="加密货币情报局首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3 4 7v6c0 5 3.4 7.7 8 8 4.6-.3 8-3 8-8V7l-8-4Z"></path>
+              <path d="M9 12h6"></path>
+              <path d="M12 9v6"></path>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span>加密货币情报局</span>
+            <span>Crypto Intelligence Bureau</span>
+          </span>
+        </a>
+        <div class="nav-links" data-nav-links>
+          <a href="../">首页</a>
+          <a href="../watch/">钱包监控</a>
+          <a href="./" aria-current="page">预警中心</a>
+          <a href="../whales/">巨鲸雷达</a>
+          <a href="../risk/">风险与隐私</a>
+        </div>
+        <div class="nav-actions">
+          <a class="button small" href="../watch/">创建规则</a>
+          <a class="button primary small" href="#feed">查看预警</a>
+        </div>
+        <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false" data-menu-button>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero" aria-labelledby="alerts-title">
+        <div>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Alerts Center</p>
+          <h1 id="alerts-title">预警中心</h1>
+          <p class="hero-lede">集中查看钱包监控和巨鲸雷达产生的重点提醒：交易所流入、大额转账、风险合约交互和聪明资金建仓。</p>
+        </div>
+        <aside class="briefing-card page-note">
+          <h3>当前模式</h3>
+          <p>公开页面展示预警中心结构。真实提醒会在账号、监控规则和通知渠道接入后开放。</p>
+        </aside>
+      </section>
+
+      <section class="section compact" id="feed" aria-labelledby="feed-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Alert Feed</p>
+            <h2 id="feed-title">今日预警</h2>
+          </div>
+          <p>按严重程度、资金规模和可行动性排序。</p>
+        </div>
+
+        <div class="filter-row" role="tablist" aria-label="预警筛选">
+          <a class="filter-button active" href="#all" data-alert-filter="all">全部</a>
+          <a class="filter-button" href="#critical" data-alert-filter="critical">高危</a>
+          <a class="filter-button" href="#whale" data-alert-filter="whale">巨鲸</a>
+          <a class="filter-button" href="#exchange" data-alert-filter="exchange">交易所</a>
+          <a class="filter-button" href="#smart" data-alert-filter="smart">聪明资金</a>
+        </div>
+
+        <div class="alerts-layout">
+          <div class="alert-feed" data-alert-feed>
+            <article class="alert-item critical" data-alert-type="critical exchange">
+              <span class="alert-severity">Critical</span>
+              <div>
+                <h3>高风险钱包向交易所转入资产</h3>
+                <p>0x3cd...19E 出现交易所流入行为，建议复核是否存在短线抛压或风险资产集中释放。</p>
+              </div>
+              <strong>$2.9M</strong>
+            </article>
+            <article class="alert-item whale" data-alert-type="whale">
+              <span class="alert-severity">Whale</span>
+              <div>
+                <h3>巨鲸地址继续买入 ETH</h3>
+                <p>0x8f2...A91 延续分批建仓节奏，后续重点看同批地址是否同步行动。</p>
+              </div>
+              <strong>$5.0M</strong>
+            </article>
+            <article class="alert-item exchange" data-alert-type="exchange">
+              <span class="alert-severity">Exchange</span>
+              <div>
+                <h3>稳定币流入交易所回升</h3>
+                <p>稳定币流入增加，可能提高后续买盘弹性，但也需要观察是否只是短期搬仓。</p>
+              </div>
+              <strong>+18%</strong>
+            </article>
+            <article class="alert-item smart" data-alert-type="smart whale">
+              <span class="alert-severity">Smart</span>
+              <div>
+                <h3>高收益钱包开始建仓 ETH</h3>
+                <p>过去 7 天收益靠前的钱包组合增加 ETH 暴露，适合加入 Wallet Watch 观察。</p>
+              </div>
+              <strong>7D</strong>
+            </article>
+            <article class="alert-item critical" data-alert-type="critical">
+              <span class="alert-severity">Risk</span>
+              <div>
+                <h3>疑似风险合约交互</h3>
+                <p>被监控地址出现异常授权行为。真实数据接入后应展示合约地址、授权额度和撤销入口说明。</p>
+              </div>
+              <strong>High</strong>
+            </article>
+          </div>
+
+          <aside class="alert-summary">
+            <article class="metric-card">
+              <span>高优先级</span>
+              <strong>2</strong>
+            </article>
+            <article class="metric-card">
+              <span>巨鲸事件</span>
+              <strong>2</strong>
+            </article>
+            <article class="metric-card">
+              <span>交易所流入</span>
+              <strong>2</strong>
+            </article>
+            <article class="metric-card">
+              <span>待处理</span>
+              <strong>5</strong>
+            </article>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <script src="../assets/js/app.js" defer></script>
+  </body>
+</html>
