@@ -871,6 +871,29 @@ h2 {
   color: var(--muted-strong);
 }
 
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.trust-card {
+  min-height: 190px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.062), rgba(255, 255, 255, 0.026));
+  padding: 20px;
+}
+
+.trust-card h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.trust-card p {
+  color: var(--muted-strong);
+}
+
 .select-input {
   width: 100%;
   min-height: 44px;
@@ -1515,7 +1538,8 @@ h2 {
   .today-grid,
   .price-grid,
   .trader-grid,
-  .tool-grid {
+  .tool-grid,
+  .trust-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1593,7 +1617,8 @@ h2 {
   .whale-layout,
   .trader-grid,
   .directory-grid,
-  .tool-grid {
+  .tool-grid,
+  .trust-grid {
     grid-template-columns: 1fr;
   }
 
