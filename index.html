@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.coingecko.com; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="color-scheme" content="dark">
-    <meta name="description" content="加密货币情报局 Crypto Intelligence Bureau，面向链上钱包调查、巨鲸雷达、钱包监控、每日情报和交易员调查的加密市场情报平台。">
+    <meta name="description" content="加密货币情报局 Crypto Intelligence Bureau，提供查钱包、查巨鲸、查交易员、今日核心情报、市场概览、巨鲸雷达和热门钱包榜。">
     <meta property="og:title" content="加密货币情报局 / Crypto Intelligence Bureau">
-    <meta property="og:description" content="链上侦查、巨鲸监控、钱包调查与每日情报的专业工作台。">
+    <meta property="og:description" content="查钱包、查巨鲸、查交易员，一站式浏览链上情报。">
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/img/hero-command-center.png">
     <title>加密货币情报局 / Crypto Intelligence Bureau</title>
@@ -18,7 +18,7 @@
   <body>
     <header class="site-header">
       <nav class="nav" aria-label="主导航">
-          <a class="brand" href="#top" aria-label="加密货币情报局首页">
+        <a class="brand" href="#top" aria-label="加密货币情报局首页">
           <span class="brand-mark" aria-hidden="true">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 3 4 7v6c0 5 3.4 7.7 8 8 4.6-.3 8-3 8-8V7l-8-4Z"></path>
@@ -33,16 +33,17 @@
         </a>
 
         <div class="nav-links" data-nav-links>
-          <a href="wallet/">钱包调查</a>
-          <a href="#modules">核心模块</a>
-          <a href="#workflow">情报流程</a>
-          <a href="#security">安全</a>
-          <a href="#pricing">会员</a>
+          <a href="#search">搜索</a>
+          <a href="#today">今日情报</a>
+          <a href="#market">市场概览</a>
+          <a href="#whale-radar">巨鲸雷达</a>
+          <a href="#hot-wallets">热门钱包</a>
+          <a href="#hot-traders">热门交易员</a>
         </div>
 
         <div class="nav-actions">
-          <a class="button small" href="wallet/">打开调查台</a>
-          <a class="button primary small" href="#pricing">加入候补</a>
+          <a class="button small" href="wallet/">钱包调查台</a>
+          <a class="button primary small" href="#search">开始搜索</a>
         </div>
 
         <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false" data-menu-button>
@@ -56,328 +57,294 @@
     </header>
 
     <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-inner">
+      <section class="hero intelligence-hero" id="search" aria-labelledby="hero-title">
+        <div class="hero-inner intelligence-hero-inner">
           <div class="hero-copy">
-            <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>On-chain intelligence workspace</p>
-            <h1 id="hero-title">加密货币情报局</h1>
+            <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Crypto Intelligence Search</p>
+            <h1 id="hero-title">查钱包，查巨鲸，查交易员。</h1>
             <p class="hero-lede">
-              面向钱包调查、巨鲸雷达、钱包监控、每日情报和交易员调查的正规链上情报网站，把复杂链上行为整理成清晰、可追踪、可行动的线索。
+              加密货币情报局把链上钱包、巨鲸资金、交易员表现和每日市场信号放进一个可浏览、可调查、可追踪的情报网站。
             </p>
-            <div class="hero-actions">
-              <a class="button primary" href="wallet/">
-                <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="11" cy="11" r="7"></circle>
-                  <path d="m16.5 16.5 4 4"></path>
-                </svg>
-                打开钱包调查台
-              </a>
-              <a class="button" href="#modules">
-                <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M3 12h18"></path>
-                  <path d="M12 3v18"></path>
-                </svg>
-                查看产品架构
-              </a>
-            </div>
 
-            <div class="intel-strip" aria-label="平台状态">
+            <form class="search-console" data-global-search-form>
+              <div class="search-tabs" role="tablist" aria-label="搜索类型">
+                <button class="search-tab active" type="button" role="tab" aria-selected="true" data-search-mode="wallet">查钱包</button>
+                <button class="search-tab" type="button" role="tab" aria-selected="false" data-search-mode="whale">查巨鲸</button>
+                <button class="search-tab" type="button" role="tab" aria-selected="false" data-search-mode="trader">查交易员</button>
+              </div>
+              <div class="search-main">
+                <label for="global-search">搜索目标</label>
+                <input id="global-search" type="text" inputmode="text" autocomplete="off" spellcheck="false" placeholder="输入钱包地址，例如 0x... 或 Solana 地址" data-global-search-input>
+                <button class="button primary" type="submit">
+                  <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="m16.5 16.5 4 4"></path>
+                  </svg>
+                  搜索情报
+                </button>
+              </div>
+              <p class="search-hint" data-search-hint>输入钱包地址后会进入钱包调查报告页。</p>
+            </form>
+
+            <div class="intel-strip">
               <div class="intel-chip">
-                <strong>6</strong>
-                <span>核心情报模块</span>
+                <strong>Wallet</strong>
+                <span>地址画像与风险调查</span>
               </div>
               <div class="intel-chip">
-                <strong>0</strong>
-                <span>第三方前端依赖</span>
+                <strong>Whale</strong>
+                <span>巨鲸买卖与资金流</span>
               </div>
               <div class="intel-chip">
-                <strong>CSP</strong>
-                <span>默认安全策略</span>
+                <strong>Trader</strong>
+                <span>胜率、回撤与跟踪价值</span>
               </div>
             </div>
           </div>
 
-          <aside class="scan-panel" id="wallet-lab" aria-label="钱包调查快速体验">
+          <aside class="hero-intel-card" aria-label="核心情报预览">
             <div class="panel-head">
               <div class="panel-title">
                 <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 12a9 9 0 1 1-9-9"></path>
-                  <path d="M21 3v6h-6"></path>
-                  <path d="m21 3-7.5 7.5"></path>
+                  <path d="M4 4h16v16H4z"></path>
+                  <path d="M8 9h8"></path>
+                  <path d="M8 13h5"></path>
                 </svg>
-                Wallet Investigation Preview
+                Intelligence Board
               </div>
-              <span class="risk-pill">demo</span>
+              <span class="risk-pill">live-ready</span>
             </div>
-            <div class="scan-body">
-              <form class="wallet-search" data-wallet-form>
-                <label for="wallet-address">钱包地址</label>
-                <input id="wallet-address" type="text" inputmode="text" autocomplete="off" spellcheck="false" placeholder="输入 0x... 或 Solana 地址" data-wallet-input>
-                <button class="button primary" type="submit">扫描</button>
-              </form>
-
-              <div class="scan-result" aria-live="polite">
-                <div class="signal-row" data-result-item>
-                  <span class="signal-icon" aria-hidden="true">
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M3 3v18h18"></path>
-                      <path d="m7 15 4-4 3 3 5-7"></path>
-                    </svg>
-                  </span>
-                  <span>
-                    <strong>行为画像</strong>
-                    <span>交易频率、资产偏好、持仓周期</span>
-                  </span>
-                  <strong class="signal-score" data-score>ready</strong>
-                </div>
-                <div class="signal-row" data-result-item>
-                  <span class="signal-icon" aria-hidden="true">
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <circle cx="12" cy="12" r="3"></circle>
-                      <path d="M12 3v6"></path>
-                      <path d="M12 15v6"></path>
-                      <path d="M3 12h6"></path>
-                      <path d="M15 12h6"></path>
-                    </svg>
-                  </span>
-                  <span>
-                    <strong>关联路径</strong>
-                    <span>资金来源、去向与关联钱包</span>
-                  </span>
-                  <strong class="signal-score" data-score>idle</strong>
-                </div>
-                <div class="signal-row" data-result-item>
-                  <span class="signal-icon" aria-hidden="true">
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path>
-                    </svg>
-                  </span>
-                  <span>
-                    <strong>风险评级</strong>
-                    <span>高危合约、异常转账与黑名单交互</span>
-                  </span>
-                  <strong class="signal-score" data-score>idle</strong>
-                </div>
+            <div class="priority-list">
+              <div class="priority-item">
+                <span>01</span>
+                <strong>过去 7 天聪明资金开始重新配置 ETH。</strong>
+              </div>
+              <div class="priority-item">
+                <span>02</span>
+                <strong>AI Agent 板块资金流入保持在热门叙事前列。</strong>
+              </div>
+              <div class="priority-item">
+                <span>03</span>
+                <strong>交易所大额流入需要重点观察后续抛压。</strong>
               </div>
             </div>
           </aside>
         </div>
       </section>
 
-      <section class="section compact" id="modules" aria-labelledby="modules-title">
+      <section class="section compact" id="today" aria-labelledby="today-title">
         <div class="section-head">
           <div>
-            <p class="section-kicker">Core Modules</p>
-            <h2 id="modules-title">从钱包到交易员，把链上噪音变成情报链路。</h2>
+            <p class="section-kicker">Today Intelligence</p>
+            <h2 id="today-title">今日核心情报</h2>
           </div>
-          <p>第一版官网先展示产品能力，后续每个模块都可以演进成独立工作台页面。</p>
+          <p>每天只保留最重要的 5 条，避免用户被噪音淹没。</p>
         </div>
 
-        <div class="module-grid">
-          <article class="module-card">
-            <div class="module-icon" aria-hidden="true">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M19 7V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-1"></path>
-                <path d="M18 12h.01"></path>
-                <path d="M16 10h5v4h-5a2 2 0 0 1 0-4Z"></path>
-              </svg>
-            </div>
-            <h3>钱包调查</h3>
-            <p>输入地址生成资产、交易、关联路径、标签和风险画像。</p>
-            <div class="tag-row"><span class="tag">Wallet profile</span><span class="tag">Risk</span><span class="tag">Report</span></div>
-          </article>
-
-          <article class="module-card">
-            <div class="module-icon" aria-hidden="true">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4.5 19.5A9 9 0 1 0 12 3"></path>
-                <path d="M12 12 21 3"></path>
-                <path d="M12 3v9"></path>
-              </svg>
-            </div>
-            <h3>巨鲸雷达</h3>
-            <p>监测大额转账、交易所流入流出、巨鲸建仓和同步行动。</p>
-            <div class="tag-row"><span class="tag">Whale flow</span><span class="tag">Exchange</span><span class="tag">Impact</span></div>
-          </article>
-
-          <article class="module-card">
-            <div class="module-icon" aria-hidden="true">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
-                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-              </svg>
-            </div>
-            <h3>钱包监控</h3>
-            <p>订阅地址、分组管理、规则触发和站内/邮件/Webhook 提醒。</p>
-            <div class="tag-row"><span class="tag">Watchlist</span><span class="tag">Rules</span><span class="tag">Alerts</span></div>
-          </article>
-
-          <article class="module-card">
-            <div class="module-icon" aria-hidden="true">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2v20"></path>
-                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H15a3.5 3.5 0 0 1 0 7H6"></path>
-              </svg>
-            </div>
-            <h3>Crypto MBTI</h3>
-            <p>把钱包行为转化为易读、可分享的交易人格和风险风格。</p>
-            <div class="tag-row"><span class="tag">Degen</span><span class="tag">Farmer</span><span class="tag">Whale</span></div>
-          </article>
-
-          <article class="module-card">
-            <div class="module-icon" aria-hidden="true">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 19.5V4a2 2 0 0 1 2-2h11v20H6a2 2 0 0 1-2-2.5Z"></path>
-                <path d="M8 7h5"></path>
-                <path d="M8 11h5"></path>
-                <path d="M8 15h3"></path>
-              </svg>
-            </div>
-            <h3>每日情报</h3>
-            <p>用简报形式输出巨鲸动作、聪明钱方向、热门叙事和风险事件。</p>
-            <div class="tag-row"><span class="tag">Briefing</span><span class="tag">Narrative</span><span class="tag">Risk</span></div>
-          </article>
-
-          <article class="module-card">
-            <div class="module-icon" aria-hidden="true">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="8" r="5"></circle>
-                <path d="M20 21a8 8 0 0 0-16 0"></path>
-              </svg>
-            </div>
-            <h3>交易员调查</h3>
-            <p>分析交易员公开钱包、盈亏曲线、胜率、回撤和跟单风险。</p>
-            <div class="tag-row"><span class="tag">Performance</span><span class="tag">Trust</span><span class="tag">PnL</span></div>
-          </article>
-        </div>
-      </section>
-
-      <div class="product-band" id="workflow">
-        <section class="section" aria-labelledby="workflow-title">
-          <div class="section-head">
+        <div class="today-grid">
+          <article class="today-card">
+            <span class="today-icon">🔥</span>
             <div>
-              <p class="section-kicker">Intelligence Flow</p>
-              <h2 id="workflow-title">先调查，再监控，最后形成每日情报。</h2>
+              <h3>巨鲸动态</h3>
+              <p>某巨鲸地址出现 ETH 大额买入行为，后续重点观察是否继续分批建仓。</p>
             </div>
-            <p>这条路径适合 MVP：先让用户理解产品价值，再逐步接入真实链上数据和账户系统。</p>
-          </div>
-
-          <div class="workflow">
-            <article class="briefing-card">
-              <h3>每日情报样式</h3>
-              <ul class="briefing-list">
-                <li>
-                  <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"></path></svg>
-                  <span>今日一句话判断：市场偏谨慎，稳定币流入回升。</span>
-                </li>
-                <li>
-                  <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"></path></svg>
-                  <span>巨鲸动作：多地址同步转入交易所，需要观察抛压。</span>
-                </li>
-                <li>
-                  <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"></path></svg>
-                  <span>聪明钱方向：AI、DeFi 收益策略和主流资产轮动。</span>
-                </li>
-                <li>
-                  <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"></path></svg>
-                  <span>明日观察：关注三组钱包和两条稳定币资金路径。</span>
-                </li>
-              </ul>
-            </article>
-
-            <div class="radar" aria-label="巨鲸雷达视觉示意">
-              <div class="radar-node node-a"><strong>0xA91...84F</strong><span>Exchange inflow</span></div>
-              <div class="radar-node node-b"><strong>Whale cluster</strong><span>3 wallets synced</span></div>
-              <div class="radar-node node-c"><strong>Stablecoin</strong><span>Bridge activity</span></div>
-              <div class="radar-node node-d"><strong>Smart money</strong><span>Accumulation</span></div>
+          </article>
+          <article class="today-card">
+            <span class="today-icon">⚠️</span>
+            <div>
+              <h3>风险事件</h3>
+              <p>SOL 相关解锁与大额转账窗口临近，短线交易需关注流动性冲击。</p>
             </div>
-          </div>
-        </section>
-      </div>
-
-      <section class="section" id="security" aria-labelledby="security-title">
-        <div class="section-head">
-          <div>
-            <p class="section-kicker">Safe By Default</p>
-            <h2 id="security-title">先做一个快速、安全、可信的网站底座。</h2>
-          </div>
-          <p>当前版本是静态站点，没有钱包连接、没有追踪脚本、没有第三方前端依赖，适合先公开浏览。</p>
-        </div>
-
-        <div class="security-grid">
-          <article class="security-card">
-            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path></svg>
-            <h3>严格 CSP</h3>
-            <p>默认只允许加载本站资源，减少脚本注入和外部资源风险。</p>
           </article>
-          <article class="security-card">
-            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16"></path><path d="M12 4v16"></path></svg>
-            <h3>零依赖</h3>
-            <p>不接 CDN、不装前端框架，首版更轻、更快、更好审计。</p>
+          <article class="today-card">
+            <span class="today-icon">📈</span>
+            <div>
+              <h3>热门板块</h3>
+              <p>AI Agent 叙事保持高热度，资金流与社交讨论度继续领先。</p>
+            </div>
           </article>
-          <article class="security-card">
-            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"></path><path d="M7 16V9"></path><path d="M12 16V5"></path><path d="M17 16v-3"></path></svg>
-            <h3>性能优先</h3>
-            <p>静态 HTML/CSS/JS，适合 GitHub Pages、Cloudflare Pages 或 Vercel。</p>
+          <article class="today-card">
+            <span class="today-icon">🐋</span>
+            <div>
+              <h3>聪明资金</h3>
+              <p>过去 7 天收益较高的钱包组合开始增加 ETH 暴露。</p>
+            </div>
           </article>
-          <article class="security-card">
-            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg>
-            <h3>正规表达</h3>
-            <p>强调情报、风控和研究，不承诺收益，不做误导性投资宣传。</p>
+          <article class="today-card">
+            <span class="today-icon">📰</span>
+            <div>
+              <h3>财经头条</h3>
+              <p>宏观事件窗口接近，市场关注利率路径、美元流动性与风险资产偏好。</p>
+            </div>
           </article>
         </div>
       </section>
 
-      <section class="section" id="pricing" aria-labelledby="pricing-title">
+      <section class="section" id="market" aria-labelledby="market-title">
         <div class="section-head">
           <div>
-            <p class="section-kicker">Access Plan</p>
-            <h2 id="pricing-title">商业化先留入口，功能按阶段开放。</h2>
+            <p class="section-kicker">Market Overview</p>
+            <h2 id="market-title">市场概览</h2>
           </div>
-          <p>首版可以先收集候补用户，等真实数据能力接入后再启用付费。</p>
+          <p data-market-status>正在加载 BTC、ETH、SOL、BNB 的 24 小时涨跌。</p>
         </div>
 
-        <div class="price-grid">
-          <article class="price-card">
-            <div class="price-top">
-              <h3>Free</h3>
-              <span class="tag">公开版</span>
+        <div class="market-grid" data-market-grid>
+          <article class="market-card" data-coin="bitcoin">
+            <span>BTC</span>
+            <strong data-price>--</strong>
+            <em data-change>--</em>
+          </article>
+          <article class="market-card" data-coin="ethereum">
+            <span>ETH</span>
+            <strong data-price>--</strong>
+            <em data-change>--</em>
+          </article>
+          <article class="market-card" data-coin="solana">
+            <span>SOL</span>
+            <strong data-price>--</strong>
+            <em data-change>--</em>
+          </article>
+          <article class="market-card" data-coin="binancecoin">
+            <span>BNB</span>
+            <strong data-price>--</strong>
+            <em data-change>--</em>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="whale-radar" aria-labelledby="whale-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Whale Radar</p>
+            <h2 id="whale-title">巨鲸雷达</h2>
+          </div>
+          <p>用买入和卖出两个视角，把大额资金动作直接摆到用户面前。</p>
+        </div>
+
+        <div class="whale-layout">
+          <article class="leaderboard-card">
+            <div class="leaderboard-head">
+              <h3>Top Whale Buys</h3>
+              <span class="tag">买入</span>
             </div>
-            <div class="price">$0 <span>/ month</span></div>
-            <ul class="feature-list">
-              <li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"></path></svg>公开每日情报</li>
-              <li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"></path></svg>基础钱包查询</li>
-              <li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"></path></svg>延迟巨鲸雷达</li>
-            </ul>
-            <a class="button" href="mailto:hello@crypto-intelligence-bureau.com?subject=CIB%20Free%20Access">获取通知</a>
+            <ol class="leaderboard-list">
+              <li><span>ETH</span><strong>$5.0M</strong><em>0x8f2...A91</em></li>
+              <li><span>BTC</span><strong>$3.8M</strong><em>bc1q...77c</em></li>
+              <li><span>LINK</span><strong>$1.6M</strong><em>0x21b...F02</em></li>
+              <li><span>SOL</span><strong>$1.2M</strong><em>9xQe...k71</em></li>
+            </ol>
           </article>
 
-          <article class="price-card featured">
-            <div class="price-top">
-              <h3>Pro</h3>
-              <span class="tag">推荐</span>
+          <article class="leaderboard-card sell">
+            <div class="leaderboard-head">
+              <h3>Top Whale Sells</h3>
+              <span class="tag">卖出</span>
             </div>
-            <div class="price">Soon <span>/ beta</span></div>
-            <ul class="feature-list">
-              <li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"></path></svg>实时巨鲸雷达</li>
-              <li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"></path></svg>自定义钱包监控</li>
-              <li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"></path></svg>完整调查报告</li>
-            </ul>
-            <a class="button primary" href="mailto:hello@crypto-intelligence-bureau.com?subject=CIB%20Pro%20Waitlist">加入候补</a>
+            <ol class="leaderboard-list">
+              <li><span>DOGE</span><strong>$2.9M</strong><em>0x3cd...19E</em></li>
+              <li><span>ARB</span><strong>$2.1M</strong><em>0xa71...B62</em></li>
+              <li><span>OP</span><strong>$1.4M</strong><em>0x901...4D8</em></li>
+              <li><span>PEPE</span><strong>$0.9M</strong><em>0x6a9...C13</em></li>
+            </ol>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="hot-wallets" aria-labelledby="hot-wallets-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Hot Wallets</p>
+            <h2 id="hot-wallets-title">热门钱包</h2>
+          </div>
+          <p>按过去 30 天收益率、活跃度和可跟踪价值排序。</p>
+        </div>
+
+        <div class="wallet-ranking">
+          <article class="wallet-row">
+            <span class="rank">#1</span>
+            <div>
+              <strong>0xA91...84F</strong>
+              <span>过去 30 天收益率最高，偏 ETH 与 AI 资产轮动。</span>
+            </div>
+            <em class="positive">+138%</em>
+            <a class="button small" href="wallet/?address=0x742d35Cc6634C0532925a3b844Bc454e4438f44e">查看</a>
+          </article>
+          <article class="wallet-row">
+            <span class="rank">#2</span>
+            <div>
+              <strong>So11...1112</strong>
+              <span>高频 SOL 生态钱包，Meme 与新池子交互密集。</span>
+            </div>
+            <em class="positive">+96%</em>
+            <a class="button small" href="wallet/?address=So11111111111111111111111111111111111111112">查看</a>
+          </article>
+          <article class="wallet-row">
+            <span class="rank">#3</span>
+            <div>
+              <strong>0x21b...F02</strong>
+              <span>稳定建仓型钱包，资金路径集中在主流 DEX 与 CEX。</span>
+            </div>
+            <em class="positive">+74%</em>
+            <a class="button small" href="wallet/?address=0x0000000000000000000000000000000000000000">查看</a>
+          </article>
+        </div>
+
+      </section>
+
+      <section class="section compact" id="hot-traders" aria-labelledby="hot-traders-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Hot Traders</p>
+            <h2 id="hot-traders-title">热门交易员榜</h2>
+          </div>
+          <p>按稳定盈利、回撤控制、公开记录和跟踪价值排序。</p>
+        </div>
+
+        <div class="trader-grid">
+          <article class="trader-card">
+            <div class="trader-top">
+              <span class="rank">#1</span>
+              <span class="tag">稳定盈利</span>
+            </div>
+            <h3>Alpha Hunter</h3>
+            <p>过去 30 天多次捕捉主流资产回调买点，胜率稳定，回撤控制较好。</p>
+            <div class="trader-stats">
+              <span><strong>71%</strong> 胜率</span>
+              <span><strong>+42%</strong> 30D</span>
+              <span><strong>8%</strong> 回撤</span>
+            </div>
+            <a class="button small" href="#search" data-trader-query="Alpha Hunter">调查交易员</a>
           </article>
 
-          <article class="price-card">
-            <div class="price-top">
-              <h3>Team / API</h3>
-              <span class="tag">团队</span>
+          <article class="trader-card">
+            <div class="trader-top">
+              <span class="rank">#2</span>
+              <span class="tag">链上活跃</span>
             </div>
-            <div class="price">Custom <span>/ access</span></div>
-            <ul class="feature-list">
-              <li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"></path></svg>批量钱包调查</li>
-              <li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"></path></svg>Webhook / API</li>
-              <li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 5 5L20 7"></path></svg>团队情报协作</li>
-            </ul>
-            <a class="button" href="mailto:hello@crypto-intelligence-bureau.com?subject=CIB%20Team%20Access">联系合作</a>
+            <h3>DeFi Navigator</h3>
+            <p>偏 DeFi 与收益策略，交易频率中等，擅长捕捉资金轮动。</p>
+            <div class="trader-stats">
+              <span><strong>64%</strong> 胜率</span>
+              <span><strong>+31%</strong> 30D</span>
+              <span><strong>11%</strong> 回撤</span>
+            </div>
+            <a class="button small" href="#search" data-trader-query="DeFi Navigator">调查交易员</a>
+          </article>
+
+          <article class="trader-card">
+            <div class="trader-top">
+              <span class="rank">#3</span>
+              <span class="tag">高风险</span>
+            </div>
+            <h3>Meme Sniper</h3>
+            <p>高频参与新池子与 Meme 资产，收益弹性高，波动和跟单风险也更高。</p>
+            <div class="trader-stats">
+              <span><strong>58%</strong> 胜率</span>
+              <span><strong>+67%</strong> 30D</span>
+              <span><strong>24%</strong> 回撤</span>
+            </div>
+            <a class="button small" href="#search" data-trader-query="Meme Sniper">调查交易员</a>
           </article>
         </div>
 
@@ -391,11 +358,12 @@
       <div class="footer-inner">
         <div>
           <strong>加密货币情报局 / Crypto Intelligence Bureau</strong>
-          <div>On-chain intelligence, wallet investigation, and market briefing.</div>
+          <div>Search wallets, whales, traders, and daily crypto intelligence.</div>
         </div>
         <div class="footer-links">
-          <a href="#modules">Modules</a>
-          <a href="#security">Security</a>
+          <a href="#search">Search</a>
+          <a href="#today">Today</a>
+          <a href="#market">Market</a>
           <a href="docs/architecture.md">Architecture</a>
           <a href="mailto:hello@crypto-intelligence-bureau.com">Contact</a>
         </div>
