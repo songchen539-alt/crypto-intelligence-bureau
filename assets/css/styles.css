@@ -1296,6 +1296,11 @@ h2 {
   color: var(--muted-strong);
 }
 
+.error-hero {
+  min-height: 100vh;
+  align-items: center;
+}
+
 .investigation-layout {
   display: grid;
   grid-template-columns: 360px minmax(0, 1fr);
