@@ -1,21 +1,25 @@
 # Crypto Intelligence Bureau
 
-鍔犲瘑璐у竵鎯呮姤灞€ / Crypto Intelligence Bureau
+加密货币情报局 / Crypto Intelligence Bureau
 
-涓€涓潰鍚戝姞瀵嗗競鍦虹殑淇℃伅渚︽煡涓庨摼涓婃儏鎶ュ钩鍙帮紝鎶婇挶鍖呰皟鏌ャ€佸法椴搁浄杈俱€侀挶鍖呯洃鎺с€佷汉鏍煎寲浜ゆ槗鐢诲儚銆佹瘡鏃ユ儏鎶ュ拰浜ゆ槗鍛樿皟鏌ョ粍鍚堟垚涓€濂楀彲琛屽姩鐨勬儏鎶ュ伐浣滃彴銆?
+一个面向加密市场的信息侦查与链上情报平台，把钱包调查、巨鲸雷达、钱包监控、人格化交易画像、每日情报和交易员调查组合成一套可行动的情报工作台。
+
 ## Product Positioning
 
 Crypto Intelligence Bureau is an intelligence-first crypto dashboard for users who want to investigate wallets, monitor whale activity, follow trader behavior, and turn on-chain signals into daily decisions.
 
-涓枃瀹氫綅锛?
-> 鍔犲瘑璐у竵鎯呮姤灞€鏄竴濂楅摼涓婁睛鏌ヤ笌甯傚満鎯呮姤绯荤粺锛屽府鍔╃敤鎴蜂粠閽卞寘銆佸法椴搞€佷氦鏄撳憳鍜屾瘡鏃ュ競鍦轰俊鍙蜂腑鍙戠幇鍙拷韪€佸彲瑙ｉ噴銆佸彲琛屽姩鐨勭嚎绱€?
+中文定位：
+
+> 加密货币情报局是一套链上侦查与市场情报系统，帮助用户从钱包、巨鲸、交易员和每日市场信号中发现可追踪、可解释、可行动的线索。
+
 ## Core Modules
 
-- Wallet Investigation: 閽卞寘璋冩煡涓庡湴鍧€鐢诲儚
-- Whale Radar: 宸ㄩ哺璧勯噾娴佷笌寮傚父琛屼负闆疯揪
-- Wallet Watch: 閽卞寘鐩戞帶銆佽闃呭拰棰勮
-- Crypto MBTI: 閽卞寘/浜ゆ槗鍛橀鏍间汉鏍煎寲鍒嗘瀽
-- Daily Intelligence: 姣忔棩鎯呮姤绠€鎶?- Trader Investigation: 浜ゆ槗鍛樿皟鏌ヤ笌绛栫暐鐢诲儚
+- Wallet Investigation: 钱包调查与地址画像
+- Whale Radar: 巨鲸资金流与异常行为雷达
+- Wallet Watch: 钱包监控、订阅和预警
+- Crypto MBTI: 钱包/交易员风格人格化分析
+- Daily Intelligence: 每日情报简报
+- Trader Investigation: 交易员调查与策略画像
 
 ## Initial Architecture
 
