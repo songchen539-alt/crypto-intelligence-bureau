@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="加密货币情报局 API 与数据接口说明，覆盖钱包调查、巨鲸雷达、钱包监控、交易员画像和每日情报。">
+    <title>API 与数据接口 / Crypto Intelligence Bureau</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="../" aria-label="加密货币情报局首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3 4 7v6c0 5 3.4 7.7 8 8 4.6-.3 8-3 8-8V7l-8-4Z"></path>
+              <path d="M9 12h6"></path>
+              <path d="M12 9v6"></path>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span>加密货币情报局</span>
+            <span>Crypto Intelligence Bureau</span>
+          </span>
+        </a>
+        <div class="nav-links" data-nav-links>
+          <a href="../">首页</a>
+          <a href="../wallet/">钱包调查</a>
+          <a href="../whales/">巨鲸雷达</a>
+          <a href="../traders/">交易员调查</a>
+          <a href="../pricing/">会员</a>
+        </div>
+        <div class="nav-actions">
+          <a class="button small" href="../roadmap/">路线图</a>
+          <a class="button primary small" href="mailto:hello@crypto-intelligence-bureau.com?subject=CIB%20API%20Access">申请 API</a>
+        </div>
+        <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false" data-menu-button>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero" aria-labelledby="api-title">
+        <div>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Data API</p>
+          <h1 id="api-title">API 与数据接口</h1>
+          <p class="hero-lede">为团队、研究员和交易工具提供钱包调查、巨鲸雷达、交易员画像、钱包监控和每日情报的数据接口。</p>
+        </div>
+        <aside class="briefing-card page-note">
+          <h3>当前状态</h3>
+          <p>API 文档为开放计划说明。正式接口会在数据源、权限、速率限制和安全审计完成后开放。</p>
+        </aside>
+      </section>
+
+      <section class="section compact" aria-labelledby="api-modules-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Endpoints</p>
+            <h2 id="api-modules-title">计划开放的接口</h2>
+          </div>
+          <p>接口设计围绕“可解释情报”，不是只返回原始交易列表。</p>
+        </div>
+
+        <div class="api-grid">
+          <article class="api-card">
+            <span class="method">GET</span>
+            <h3>/wallet/{address}</h3>
+            <p>返回钱包基础画像、风险等级、行为标签和监控建议。</p>
+          </article>
+          <article class="api-card">
+            <span class="method">GET</span>
+            <h3>/whales/flows</h3>
+            <p>返回巨鲸买入、卖出、交易所流入流出和大额资金路径。</p>
+          </article>
+          <article class="api-card">
+            <span class="method">GET</span>
+            <h3>/traders/{id}</h3>
+            <p>返回交易员胜率、收益、回撤、公开钱包和跟踪价值。</p>
+          </article>
+          <article class="api-card">
+            <span class="method">POST</span>
+            <h3>/watch/rules</h3>
+            <p>创建钱包监控规则，例如转入交易所、大额转账或风险合约交互。</p>
+          </article>
+          <article class="api-card">
+            <span class="method">GET</span>
+            <h3>/intelligence/daily</h3>
+            <p>返回每日 5 条核心情报，覆盖巨鲸、风险、板块、聪明资金和宏观。</p>
+          </article>
+          <article class="api-card">
+            <span class="method">POST</span>
+            <h3>/mbti/report</h3>
+            <p>根据钱包或交易员行为生成 Crypto MBTI 人格画像。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section compact">
+        <div class="directory-grid">
+          <article class="analysis-card">
+            <h3>安全原则</h3>
+            <ul class="table-list">
+              <li>API 不要求用户私钥、助记词或交易签名。</li>
+              <li>团队访问需要密钥、速率限制和权限隔离。</li>
+              <li>敏感数据只返回必要字段，避免扩大隐私风险。</li>
+            </ul>
+          </article>
+          <article class="analysis-card">
+            <h3>适用场景</h3>
+            <ul class="table-list">
+              <li>研究团队批量调查钱包。</li>
+              <li>社群或 KOL 生成每日情报。</li>
+              <li>交易工具接入钱包监控和巨鲸提醒。</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="../assets/js/app.js" defer></script>
+  </body>
+</html>
+

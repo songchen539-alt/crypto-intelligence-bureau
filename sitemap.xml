@@ -21,6 +21,14 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://songchen539-alt.github.io/crypto-intelligence-bureau/api/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://songchen539-alt.github.io/crypto-intelligence-bureau/roadmap/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://songchen539-alt.github.io/crypto-intelligence-bureau/wallet/</loc>
     <priority>0.9</priority>
   </url>

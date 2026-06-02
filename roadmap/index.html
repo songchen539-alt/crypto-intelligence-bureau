@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="加密货币情报局 Roadmap，展示网站、钱包调查、巨鲸雷达、钱包监控、API 和团队协作的开发路线。">
+    <title>Roadmap / Crypto Intelligence Bureau</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="../" aria-label="加密货币情报局首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3 4 7v6c0 5 3.4 7.7 8 8 4.6-.3 8-3 8-8V7l-8-4Z"></path>
+              <path d="M9 12h6"></path>
+              <path d="M12 9v6"></path>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span>加密货币情报局</span>
+            <span>Crypto Intelligence Bureau</span>
+          </span>
+        </a>
+        <div class="nav-links" data-nav-links>
+          <a href="../">首页</a>
+          <a href="../pricing/">会员</a>
+          <a href="../api/">API</a>
+          <a href="../methodology/">方法论</a>
+          <a href="../risk/">风险与隐私</a>
+        </div>
+        <div class="nav-actions">
+          <a class="button small" href="../api/">API</a>
+          <a class="button primary small" href="../pricing/">Beta Access</a>
+        </div>
+        <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false" data-menu-button>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero" aria-labelledby="roadmap-title">
+        <div>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Roadmap</p>
+          <h1 id="roadmap-title">产品路线图</h1>
+          <p class="hero-lede">先把安全浏览和核心产品结构做好，再逐步接入真实链上数据、账号系统、提醒渠道和团队 API。</p>
+        </div>
+        <aside class="briefing-card page-note">
+          <h3>路线原则</h3>
+          <p>每一步都围绕用户为什么来：查钱包、查巨鲸、查交易员、看核心情报。</p>
+        </aside>
+      </section>
+
+      <section class="section compact" aria-labelledby="roadmap-list-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Milestones</p>
+            <h2 id="roadmap-list-title">开发阶段</h2>
+          </div>
+          <p>路线图会随着数据源和产品验证结果持续调整。</p>
+        </div>
+
+        <div class="roadmap-list">
+          <article class="roadmap-item done">
+            <span>Phase 1</span>
+            <h3>公开官网与核心页面</h3>
+            <p>首页、今日情报、钱包调查、巨鲸雷达、交易员调查、钱包监控、Crypto MBTI。</p>
+          </article>
+          <article class="roadmap-item active">
+            <span>Phase 2</span>
+            <h3>真实链上数据接入</h3>
+            <p>接入钱包余额、交易历史、Token 持仓、交易所流入流出和巨鲸资金流。</p>
+          </article>
+          <article class="roadmap-item">
+            <span>Phase 3</span>
+            <h3>账号与监控提醒</h3>
+            <p>支持关注列表、监控规则、Email / Telegram / Discord / Webhook 提醒。</p>
+          </article>
+          <article class="roadmap-item">
+            <span>Phase 4</span>
+            <h3>团队与 API</h3>
+            <p>开放团队协作、批量钱包调查、API 密钥、速率限制和数据导出。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="../assets/js/app.js" defer></script>
+  </body>
+</html>
