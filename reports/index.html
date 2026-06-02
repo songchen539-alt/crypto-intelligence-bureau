@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="加密货币情报局调查报告库，集中浏览钱包、巨鲸、交易员、风险事件和板块资金流报告。">
+    <title>调查报告库 / Crypto Intelligence Bureau</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="../" aria-label="加密货币情报局首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3 4 7v6c0 5 3.4 7.7 8 8 4.6-.3 8-3 8-8V7l-8-4Z"></path>
+              <path d="M9 12h6"></path>
+              <path d="M12 9v6"></path>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span>加密货币情报局</span>
+            <span>Crypto Intelligence Bureau</span>
+          </span>
+        </a>
+        <div class="nav-links" data-nav-links>
+          <a href="../">首页</a>
+          <a href="../intelligence/">今日情报</a>
+          <a href="./" aria-current="page">报告库</a>
+          <a href="../wallet/">钱包调查</a>
+          <a href="../whales/">巨鲸雷达</a>
+          <a href="../traders/">交易员调查</a>
+        </div>
+        <div class="nav-actions">
+          <a class="button small" href="../alerts/">预警中心</a>
+          <a class="button primary small" href="../#search">开始搜索</a>
+        </div>
+        <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false" data-menu-button>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero report-hero" aria-labelledby="reports-title">
+        <div>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Investigation Reports</p>
+          <h1 id="reports-title">调查报告库</h1>
+          <p class="hero-lede">把钱包调查、巨鲸雷达、交易员榜、风险预警和板块资金流整理成可浏览的报告流，让用户能快速判断哪些线索值得继续跟踪。</p>
+        </div>
+        <aside class="report-hero-panel">
+          <div class="report-hero-stat">
+            <span>今日新增</span>
+            <strong>6</strong>
+          </div>
+          <div class="report-hero-stat">
+            <span>高优先级</span>
+            <strong>3</strong>
+          </div>
+          <div class="report-hero-stat">
+            <span>覆盖模块</span>
+            <strong>5</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section compact" aria-labelledby="report-feed-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Report Feed</p>
+            <h2 id="report-feed-title">精选调查报告</h2>
+          </div>
+          <p>每份报告都保留目标、信号、证据、风险和下一步观察方向，适合公开站点先做浏览入口。</p>
+        </div>
+
+        <div class="filter-row" role="tablist" aria-label="报告筛选">
+          <button class="filter-button active" type="button" data-report-filter="all">全部</button>
+          <button class="filter-button" type="button" data-report-filter="wallet">钱包</button>
+          <button class="filter-button" type="button" data-report-filter="whale">巨鲸</button>
+          <button class="filter-button" type="button" data-report-filter="trader">交易员</button>
+          <button class="filter-button" type="button" data-report-filter="risk">风险</button>
+          <button class="filter-button" type="button" data-report-filter="sector">板块</button>
+        </div>
+
+        <div class="reports-layout">
+          <div class="report-list" data-report-list>
+            <article class="report-item" data-report-type="wallet whale">
+              <div class="report-score high">91</div>
+              <div>
+                <div class="report-meta">
+                  <span>Wallet Investigation</span>
+                  <span>12 min ago</span>
+                </div>
+                <h3>0x742d...f44e 资金路径与巨鲸关联报告</h3>
+                <p>该地址近期出现多笔 ETH 与稳定币流转，关联地址里包含高净值钱包和交易所充值地址，适合加入持续监控。</p>
+                <div class="tag-row">
+                  <span class="tag">ETH</span>
+                  <span class="tag">CEX inflow</span>
+                  <span class="tag">Whale link</span>
+                </div>
+              </div>
+              <a class="button small" href="../wallet/?address=0x742d35Cc6634C0532925a3b844Bc454e4438f44e">打开</a>
+            </article>
+
+            <article class="report-item" data-report-type="trader wallet">
+              <div class="report-score medium">78</div>
+              <div>
+                <div class="report-meta">
+                  <span>Trader Investigation</span>
+                  <span>38 min ago</span>
+                </div>
+                <h3>Alpha Hunter 稳定盈利画像</h3>
+                <p>过去 30 天胜率、回撤和持仓节奏相对稳定，当前更像趋势跟随型交易员，而不是短线追涨型账户。</p>
+                <div class="tag-row">
+                  <span class="tag">71% win rate</span>
+                  <span class="tag">Low drawdown</span>
+                  <span class="tag">Follow list</span>
+                </div>
+              </div>
+              <a class="button small" href="../traders/?query=Alpha%20Hunter">打开</a>
+            </article>
+
+            <article class="report-item" data-report-type="risk sector">
+              <div class="report-score high">88</div>
+              <div>
+                <div class="report-meta">
+                  <span>Risk Brief</span>
+                  <span>1 hr ago</span>
+                </div>
+                <h3>SOL 解锁窗口与大额转账风险观察</h3>
+                <p>未来 48 小时流动性窗口需要重点观察交易所流入、稳定币换手和衍生品资金费率是否同步升温。</p>
+                <div class="tag-row">
+                  <span class="tag">Unlock</span>
+                  <span class="tag">Liquidity</span>
+                  <span class="tag">48H</span>
+                </div>
+              </div>
+              <a class="button small" href="../intelligence/#risk">打开</a>
+            </article>
+
+            <article class="report-item" data-report-type="whale sector">
+              <div class="report-score medium">74</div>
+              <div>
+                <div class="report-meta">
+                  <span>Whale Radar</span>
+                  <span>2 hr ago</span>
+                </div>
+                <h3>Top Whale Buys 中 ETH 与 LINK 集中买入</h3>
+                <p>多地址在同一时间段加仓 ETH 与 LINK，当前还不能直接推断趋势反转，但资金同步性值得追踪。</p>
+                <div class="tag-row">
+                  <span class="tag">ETH</span>
+                  <span class="tag">LINK</span>
+                  <span class="tag">Accumulation</span>
+                </div>
+              </div>
+              <a class="button small" href="../whales/">打开</a>
+            </article>
+
+            <article class="report-item" data-report-type="risk wallet">
+              <div class="report-score critical">96</div>
+              <div>
+                <div class="report-meta">
+                  <span>Security Watch</span>
+                  <span>3 hr ago</span>
+                </div>
+                <h3>疑似风险合约授权与异常交互</h3>
+                <p>被监控地址出现异常授权行为，真实数据接入后应展示合约地址、授权额度、撤销入口和影响资产范围。</p>
+                <div class="tag-row">
+                  <span class="tag">Approval</span>
+                  <span class="tag">Contract risk</span>
+                  <span class="tag">Critical</span>
+                </div>
+              </div>
+              <a class="button small" href="../alerts/?filter=critical">打开</a>
+            </article>
+          </div>
+
+          <aside class="report-side">
+            <article class="metric-card">
+              <span>报告覆盖</span>
+              <strong>钱包 / 巨鲸 / 交易员</strong>
+            </article>
+            <article class="metric-card">
+              <span>风险优先级</span>
+              <strong data-severity="高">高</strong>
+            </article>
+            <article class="metric-card">
+              <span>下一步</span>
+              <strong>接入数据源</strong>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section compact" aria-labelledby="evidence-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Evidence Model</p>
+            <h2 id="evidence-title">报告结构</h2>
+          </div>
+          <p>报告不是一句结论，而是把线索拆成可复核的证据层，降低误读和过度交易的风险。</p>
+        </div>
+
+        <div class="evidence-grid">
+          <article class="analysis-card">
+            <h3>目标对象</h3>
+            <p>钱包地址、交易员、巨鲸账户、Token、板块或风险事件。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>核心信号</h3>
+            <p>大额买卖、交易所流入、收益率变化、持仓暴露、异常授权和资金费率。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>证据链</h3>
+            <p>展示来源、时间、金额、关联对象和置信度，不把单个信号包装成确定结论。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>后续观察</h3>
+            <p>给出需要继续跟踪的地址、规则和风险窗口，连接 Wallet Watch 与 Alerts Center。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="../assets/js/app.js" defer></script>
+  </body>
+</html>
