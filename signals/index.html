@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="加密货币情报局链上信号库，解释交易所流入、巨鲸建仓、异常授权、Token 解锁、聪明资金和交易员表现等情报信号。">
+    <title>链上信号库 / Crypto Intelligence Bureau</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="../" aria-label="加密货币情报局首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3 4 7v6c0 5 3.4 7.7 8 8 4.6-.3 8-3 8-8V7l-8-4Z"></path>
+              <path d="M9 12h6"></path>
+              <path d="M12 9v6"></path>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span>加密货币情报局</span>
+            <span>Crypto Intelligence Bureau</span>
+          </span>
+        </a>
+        <div class="nav-links" data-nav-links>
+          <a href="../">首页</a>
+          <a href="../intelligence/">今日情报</a>
+          <a href="../reports/">报告库</a>
+          <a href="../calendar/">情报日历</a>
+          <a href="./" aria-current="page">信号库</a>
+          <a href="../alerts/">预警中心</a>
+        </div>
+        <div class="nav-actions">
+          <a class="button small" href="../methodology/">方法论</a>
+          <a class="button primary small" href="#signal-library">浏览信号</a>
+        </div>
+        <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false" data-menu-button>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero" aria-labelledby="signals-title">
+        <div>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Signal Library</p>
+          <h1 id="signals-title">链上信号库</h1>
+          <p class="hero-lede">解释常见链上情报信号：它可能说明什么、需要怎样复核、容易被怎样误读，以及应该连接到哪个调查模块继续看。</p>
+        </div>
+        <aside class="briefing-card page-note">
+          <h3>使用原则</h3>
+          <p>单个信号只代表观察线索，不代表交易结论。所有信号都应结合时间、金额、关联地址和市场环境一起判断。</p>
+        </aside>
+      </section>
+
+      <section class="section compact" id="signal-library" aria-labelledby="signal-library-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Signal Framework</p>
+            <h2 id="signal-library-title">情报信号</h2>
+          </div>
+          <p>把复杂行为拆成可解释的信号卡，适合新用户快速理解，也适合以后接真实数据源。</p>
+        </div>
+
+        <div class="filter-row" role="tablist" aria-label="信号筛选">
+          <button class="filter-button active" type="button" data-signal-filter="all">全部</button>
+          <button class="filter-button" type="button" data-signal-filter="flow">资金流</button>
+          <button class="filter-button" type="button" data-signal-filter="risk">风险</button>
+          <button class="filter-button" type="button" data-signal-filter="trader">交易员</button>
+          <button class="filter-button" type="button" data-signal-filter="sector">板块</button>
+          <button class="filter-button" type="button" data-signal-filter="macro">宏观</button>
+        </div>
+
+        <div class="signals-layout">
+          <div class="signal-library-list" data-signal-list>
+            <article class="signal-card" data-signal-type="flow risk">
+              <div class="signal-card-head">
+                <span class="signal-badge danger">High</span>
+                <span>Exchange Inflow</span>
+              </div>
+              <h3>交易所大额流入</h3>
+              <p>钱包把资产转入交易所地址，可能意味着准备交易、做市、换仓或卖出。</p>
+              <dl class="signal-definition">
+                <div><dt>复核</dt><dd>看金额占钱包余额比例、是否持续分批流入、是否伴随价格和成交量变化。</dd></div>
+                <div><dt>误读</dt><dd>交易所流入不一定等于立刻卖出，也可能只是托管、做市或跨平台调仓。</dd></div>
+              </dl>
+              <a class="text-link" href="../alerts/?filter=exchange">查看相关预警</a>
+            </article>
+
+            <article class="signal-card" data-signal-type="flow sector">
+              <div class="signal-card-head">
+                <span class="signal-badge">Medium</span>
+                <span>Accumulation</span>
+              </div>
+              <h3>巨鲸分批建仓</h3>
+              <p>大额地址在多个时间点逐步买入同一资产，可能代表长期配置或阶段性策略。</p>
+              <dl class="signal-definition">
+                <div><dt>复核</dt><dd>看是否多地址同步、买入后是否继续持有、是否与板块资金流一致。</dd></div>
+                <div><dt>误读</dt><dd>单个大额买入可能只是内部调仓，不能直接判断趋势反转。</dd></div>
+              </dl>
+              <a class="text-link" href="../whales/">打开巨鲸雷达</a>
+            </article>
+
+            <article class="signal-card" data-signal-type="risk">
+              <div class="signal-card-head">
+                <span class="signal-badge danger">Critical</span>
+                <span>Approval Risk</span>
+              </div>
+              <h3>异常授权与风险合约交互</h3>
+              <p>钱包对陌生合约授权，或与高风险合约发生交互，需要优先确认资产暴露范围。</p>
+              <dl class="signal-definition">
+                <div><dt>复核</dt><dd>查看合约地址、授权额度、交互时间、是否发生后续资产转出。</dd></div>
+                <div><dt>误读</dt><dd>不是所有授权都危险，但高额度、陌生合约和异常时间点要重点标记。</dd></div>
+              </dl>
+              <a class="text-link" href="../risk/">查看风险说明</a>
+            </article>
+
+            <article class="signal-card" data-signal-type="trader flow">
+              <div class="signal-card-head">
+                <span class="signal-badge">Medium</span>
+                <span>Trader Quality</span>
+              </div>
+              <h3>交易员稳定盈利</h3>
+              <p>交易员连续多个周期有正收益、回撤可控、交易记录可复核，才具备跟踪价值。</p>
+              <dl class="signal-definition">
+                <div><dt>复核</dt><dd>看胜率、平均收益、最大回撤、仓位变化和公开观点是否与链上行为一致。</dd></div>
+                <div><dt>误读</dt><dd>短期收益高不等于能力强，可能来自高杠杆、高波动或单次运气。</dd></div>
+              </dl>
+              <a class="text-link" href="../traders/">调查交易员</a>
+            </article>
+
+            <article class="signal-card" data-signal-type="sector macro">
+              <div class="signal-card-head">
+                <span class="signal-badge">Watch</span>
+                <span>Narrative Flow</span>
+              </div>
+              <h3>热门板块资金流入</h3>
+              <p>某个叙事板块同时出现资金流、交易量和社交讨论度升温，可能进入市场注意力窗口。</p>
+              <dl class="signal-definition">
+                <div><dt>复核</dt><dd>看是否只有单个 Token 拉升，还是多个相关资产同步获得资金流。</dd></div>
+                <div><dt>误读</dt><dd>高热度也可能意味着拥挤交易，追踪时要同时看回撤和退出流动性。</dd></div>
+              </dl>
+              <a class="text-link" href="../reports/?type=sector">查看板块报告</a>
+            </article>
+
+            <article class="signal-card" data-signal-type="macro risk">
+              <div class="signal-card-head">
+                <span class="signal-badge">Window</span>
+                <span>Macro Event</span>
+              </div>
+              <h3>宏观事件窗口</h3>
+              <p>利率、美元流动性和重大财经事件可能影响风险资产偏好，需要结合链上资金行为复核。</p>
+              <dl class="signal-definition">
+                <div><dt>复核</dt><dd>观察 BTC/ETH、稳定币流入、交易所净流和衍生品资金费率是否同步变化。</dd></div>
+                <div><dt>误读</dt><dd>宏观事件只是背景，不应脱离链上确认信号直接做方向判断。</dd></div>
+              </dl>
+              <a class="text-link" href="../calendar/?type=macro">打开情报日历</a>
+            </article>
+          </div>
+
+          <aside class="signal-side">
+            <article class="metric-card">
+              <span>信号类别</span>
+              <strong>6</strong>
+            </article>
+            <article class="metric-card">
+              <span>高风险信号</span>
+              <strong data-severity="高">2</strong>
+            </article>
+            <article class="metric-card">
+              <span>建议流程</span>
+              <strong>信号 → 报告 → 预警</strong>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section compact" aria-labelledby="signal-workflow-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Workflow</p>
+            <h2 id="signal-workflow-title">从信号到行动</h2>
+          </div>
+          <p>信号库的作用是建立解释框架，而不是鼓励用户凭单一指标交易。</p>
+        </div>
+
+        <div class="evidence-grid">
+          <article class="analysis-card">
+            <h3>发现信号</h3>
+            <p>从钱包、巨鲸、交易员、日历和每日情报里发现异常或值得跟踪的动作。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>复核证据</h3>
+            <p>检查地址、金额、时间、关联对象和历史行为，避免单点误读。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>沉淀报告</h3>
+            <p>把高价值线索写入调查报告，保留证据链和结论边界。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>加入监控</h3>
+            <p>对高优先级地址或事件设置 Wallet Watch 规则和预警条件。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="../assets/js/app.js" defer></script>
+  </body>
+</html>

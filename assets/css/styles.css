@@ -1301,6 +1301,113 @@ h2 {
   line-height: 1.15;
 }
 
+.signals-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 16px;
+  align-items: start;
+}
+
+.signal-library-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.signal-side {
+  position: sticky;
+  top: 92px;
+  display: grid;
+  gap: 12px;
+}
+
+.signal-card {
+  display: grid;
+  align-content: start;
+  min-height: 360px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.062), rgba(255, 255, 255, 0.026));
+  padding: 18px;
+}
+
+.signal-card[data-hidden="true"] {
+  display: none;
+}
+
+.signal-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.signal-badge {
+  border: 1px solid rgba(88, 199, 255, 0.26);
+  border-radius: 999px;
+  background: rgba(88, 199, 255, 0.08);
+  color: var(--cyan);
+  padding: 5px 8px;
+}
+
+.signal-badge.danger {
+  border-color: rgba(255, 107, 107, 0.34);
+  background: rgba(255, 107, 107, 0.09);
+  color: var(--danger);
+}
+
+.signal-card h3 {
+  margin-bottom: 9px;
+  font-size: 21px;
+}
+
+.signal-card p {
+  margin-bottom: 16px;
+  color: var(--muted-strong);
+}
+
+.signal-definition {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.signal-definition div {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  background: rgba(0, 0, 0, 0.16);
+  padding: 11px;
+}
+
+.signal-definition dt {
+  margin-bottom: 4px;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.signal-definition dd {
+  margin: 0;
+  color: var(--muted-strong);
+  font-size: 13px;
+}
+
+.signal-card .text-link {
+  align-self: end;
+  margin-top: 18px;
+}
+
+.signal-side .metric-card strong {
+  overflow-wrap: anywhere;
+  font-size: 20px;
+  line-height: 1.15;
+}
+
 .select-input {
   width: 100%;
   min-height: 44px;
@@ -1966,13 +2073,15 @@ h2 {
   .alerts-layout,
   .reports-layout,
   .evidence-grid,
-  .calendar-layout {
+  .calendar-layout,
+  .signals-layout {
     grid-template-columns: 1fr 1fr;
   }
 
   .alert-summary,
   .report-side,
-  .calendar-side {
+  .calendar-side,
+  .signal-side {
     position: static;
   }
 
@@ -2047,6 +2156,8 @@ h2 {
   .reports-layout,
   .evidence-grid,
   .calendar-layout,
+  .signals-layout,
+  .signal-library-list,
   .report-hero-panel {
     grid-template-columns: 1fr;
   }
