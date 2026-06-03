@@ -272,6 +272,55 @@ function initReportFilters() {
   applyFilter(getFilterFromLocation());
 }
 
+function initCalendarFilters() {
+  const buttons = document.querySelectorAll("[data-calendar-filter]");
+  const items = document.querySelectorAll("[data-calendar-type]");
+  if (!buttons.length || !items.length) return;
+
+  const getFilterFromLocation = () => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("type") || (window.location.hash || "#all").slice(1) || "all";
+  };
+
+  const applyFilter = (filter) => {
+    const allowed = Array.from(buttons).some((button) => button.dataset.calendarFilter === filter);
+    const activeFilter = allowed ? filter : "all";
+
+    buttons.forEach((button) => {
+      const active = button.dataset.calendarFilter === activeFilter;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-selected", String(active));
+    });
+
+    items.forEach((item) => {
+      const types = item.dataset.calendarType || "";
+      const hidden = activeFilter !== "all" && !types.includes(activeFilter);
+      item.dataset.hidden = String(hidden);
+      item.setAttribute("aria-hidden", String(hidden));
+    });
+  };
+
+  document.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-calendar-filter]");
+    if (!button) return;
+
+    event.preventDefault();
+    const filter = button.dataset.calendarFilter || "all";
+    const url = new URL(window.location.href);
+    url.hash = filter === "all" ? "" : filter;
+    if (filter === "all") {
+      url.searchParams.delete("type");
+    } else {
+      url.searchParams.set("type", filter);
+    }
+    window.history.replaceState({}, "", url);
+    applyFilter(filter);
+  });
+
+  window.addEventListener("hashchange", () => applyFilter(getFilterFromLocation()));
+  applyFilter(getFilterFromLocation());
+}
+
 async function loadMarketOverview() {
   const marketStatus = document.querySelector("[data-market-status]");
   const cards = document.querySelectorAll("[data-coin]");
@@ -411,6 +460,7 @@ function initSite() {
   initMbtiForm();
   initAlertFilters();
   initReportFilters();
+  initCalendarFilters();
 }
 
 if (document.readyState === "loading") {

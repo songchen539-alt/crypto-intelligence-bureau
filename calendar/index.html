@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="加密货币情报局情报日历，集中浏览宏观事件、Token 解锁、链上风险窗口、治理投票和市场观察节点。">
+    <title>情报日历 / Crypto Intelligence Bureau</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="../" aria-label="加密货币情报局首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3 4 7v6c0 5 3.4 7.7 8 8 4.6-.3 8-3 8-8V7l-8-4Z"></path>
+              <path d="M9 12h6"></path>
+              <path d="M12 9v6"></path>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span>加密货币情报局</span>
+            <span>Crypto Intelligence Bureau</span>
+          </span>
+        </a>
+        <div class="nav-links" data-nav-links>
+          <a href="../">首页</a>
+          <a href="../intelligence/">今日情报</a>
+          <a href="../reports/">报告库</a>
+          <a href="./" aria-current="page">情报日历</a>
+          <a href="../alerts/">预警中心</a>
+          <a href="../risk/">风险与隐私</a>
+        </div>
+        <div class="nav-actions">
+          <a class="button small" href="../reports/?type=risk">风险报告</a>
+          <a class="button primary small" href="#calendar-feed">查看日历</a>
+        </div>
+        <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false" data-menu-button>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero calendar-hero" aria-labelledby="calendar-title">
+        <div>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Intelligence Calendar</p>
+          <h1 id="calendar-title">情报日历</h1>
+          <p class="hero-lede">把未来几天需要盯的宏观窗口、Token 解锁、链上风险、治理投票和资金观察节点排成时间线，帮助用户提前安排调查和监控。</p>
+        </div>
+        <aside class="briefing-card page-note">
+          <h3>公开展示模式</h3>
+          <p>当前为网站结构样例。真实版本会接入可复核数据源，并在每个事件旁标注来源、更新时间和置信度。</p>
+        </aside>
+      </section>
+
+      <section class="section compact" id="calendar-feed" aria-labelledby="calendar-feed-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Upcoming Windows</p>
+            <h2 id="calendar-feed-title">未来观察节点</h2>
+          </div>
+          <p>按时间、影响范围和可行动性排序。用户可以先浏览，再把重点事件加入报告或监控规则。</p>
+        </div>
+
+        <div class="filter-row" role="tablist" aria-label="日历筛选">
+          <button class="filter-button active" type="button" data-calendar-filter="all">全部</button>
+          <button class="filter-button" type="button" data-calendar-filter="macro">宏观</button>
+          <button class="filter-button" type="button" data-calendar-filter="unlock">解锁</button>
+          <button class="filter-button" type="button" data-calendar-filter="onchain">链上</button>
+          <button class="filter-button" type="button" data-calendar-filter="governance">治理</button>
+          <button class="filter-button" type="button" data-calendar-filter="risk">风险</button>
+        </div>
+
+        <div class="calendar-layout">
+          <div class="calendar-list" data-calendar-list>
+            <article class="calendar-item high" data-calendar-type="macro risk">
+              <time class="calendar-date" datetime="2026-06-04">
+                <span>Jun</span>
+                <strong>04</strong>
+              </time>
+              <div>
+                <div class="calendar-meta">
+                  <span>Macro Window</span>
+                  <span>高影响</span>
+                </div>
+                <h3>美元流动性与风险资产偏好观察</h3>
+                <p>关注利率路径、美元指数和风险资产同步性。如果链上交易所流入同时上升，需要把风险等级上调。</p>
+                <div class="tag-row">
+                  <span class="tag">USD liquidity</span>
+                  <span class="tag">BTC / ETH</span>
+                  <span class="tag">Risk-on</span>
+                </div>
+              </div>
+              <a class="button small" href="../reports/?type=risk">关联报告</a>
+            </article>
+
+            <article class="calendar-item medium" data-calendar-type="unlock risk">
+              <time class="calendar-date" datetime="2026-06-05">
+                <span>Jun</span>
+                <strong>05</strong>
+              </time>
+              <div>
+                <div class="calendar-meta">
+                  <span>Token Unlock</span>
+                  <span>中高影响</span>
+                </div>
+                <h3>SOL 相关解锁与大额转账窗口</h3>
+                <p>观察解锁前后是否出现交易所充值、稳定币换手和衍生品资金费率升温，避免只凭单一事件下结论。</p>
+                <div class="tag-row">
+                  <span class="tag">SOL</span>
+                  <span class="tag">Unlock</span>
+                  <span class="tag">Exchange inflow</span>
+                </div>
+              </div>
+              <a class="button small" href="../alerts/?filter=critical">设置预警</a>
+            </article>
+
+            <article class="calendar-item" data-calendar-type="onchain whale">
+              <time class="calendar-date" datetime="2026-06-06">
+                <span>Jun</span>
+                <strong>06</strong>
+              </time>
+              <div>
+                <div class="calendar-meta">
+                  <span>On-chain Watch</span>
+                  <span>资金观察</span>
+                </div>
+                <h3>ETH 巨鲸建仓节奏复核</h3>
+                <p>复核 Top Whale Buys 中 ETH 地址是否继续分批建仓，重点看同批钱包是否出现同步操作。</p>
+                <div class="tag-row">
+                  <span class="tag">ETH</span>
+                  <span class="tag">Whale</span>
+                  <span class="tag">Accumulation</span>
+                </div>
+              </div>
+              <a class="button small" href="../whales/">巨鲸雷达</a>
+            </article>
+
+            <article class="calendar-item" data-calendar-type="governance sector">
+              <time class="calendar-date" datetime="2026-06-07">
+                <span>Jun</span>
+                <strong>07</strong>
+              </time>
+              <div>
+                <div class="calendar-meta">
+                  <span>Governance</span>
+                  <span>协议事件</span>
+                </div>
+                <h3>DeFi 协议参数调整投票观察</h3>
+                <p>跟踪收益率、抵押率和清算参数变化是否影响 DeFi 资金迁移，后续可并入板块资金流报告。</p>
+                <div class="tag-row">
+                  <span class="tag">DeFi</span>
+                  <span class="tag">Governance</span>
+                  <span class="tag">Yield</span>
+                </div>
+              </div>
+              <a class="button small" href="../reports/?type=sector">板块报告</a>
+            </article>
+
+            <article class="calendar-item high" data-calendar-type="risk onchain">
+              <time class="calendar-date" datetime="2026-06-08">
+                <span>Jun</span>
+                <strong>08</strong>
+              </time>
+              <div>
+                <div class="calendar-meta">
+                  <span>Security Watch</span>
+                  <span>高优先级</span>
+                </div>
+                <h3>风险合约授权复查窗口</h3>
+                <p>复查已进入预警中心的异常授权地址，确认是否出现二次交互、资产迁移或关联地址扩散。</p>
+                <div class="tag-row">
+                  <span class="tag">Approval</span>
+                  <span class="tag">Contract risk</span>
+                  <span class="tag">Wallet Watch</span>
+                </div>
+              </div>
+              <a class="button small" href="../alerts/?filter=critical">查看预警</a>
+            </article>
+          </div>
+
+          <aside class="calendar-side">
+            <article class="metric-card">
+              <span>本周观察节点</span>
+              <strong>5</strong>
+            </article>
+            <article class="metric-card">
+              <span>高优先级窗口</span>
+              <strong data-severity="高">2</strong>
+            </article>
+            <article class="metric-card">
+              <span>推荐动作</span>
+              <strong>加入监控</strong>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section compact" aria-labelledby="calendar-method-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Calendar Method</p>
+            <h2 id="calendar-method-title">如何阅读日历</h2>
+          </div>
+          <p>情报日历不是预测工具，而是把“什么时候需要复核什么”提前整理出来。</p>
+        </div>
+
+        <div class="evidence-grid">
+          <article class="analysis-card">
+            <h3>先看影响范围</h3>
+            <p>宏观事件影响全市场，解锁和治理事件通常影响具体资产或板块。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>再看链上确认</h3>
+            <p>事件本身不是信号，交易所流入、巨鲸同步和资金费率变化才是复核重点。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>连接报告库</h3>
+            <p>重要事件会沉淀为调查报告，保留证据、结论边界和后续观察项。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>加入预警中心</h3>
+            <p>高风险窗口适合转成 Wallet Watch 规则，持续观察地址和资金路径变化。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="../assets/js/app.js" defer></script>
+  </body>
+</html>
