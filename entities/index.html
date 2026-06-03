@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="加密货币情报局实体标签库，浏览交易所、基金、项目方、桥、DAO 和高风险地址等链上实体标签。">
+    <title>实体标签库 / Crypto Intelligence Bureau</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="../" aria-label="加密货币情报局首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3 4 7v6c0 5 3.4 7.7 8 8 4.6-.3 8-3 8-8V7l-8-4Z"></path>
+              <path d="M9 12h6"></path>
+              <path d="M12 9v6"></path>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span>加密货币情报局</span>
+            <span>Crypto Intelligence Bureau</span>
+          </span>
+        </a>
+        <div class="nav-links" data-nav-links>
+          <a href="../">首页</a>
+          <a href="../wallet/">钱包调查</a>
+          <a href="./" aria-current="page">实体标签库</a>
+          <a href="../signals/">信号库</a>
+          <a href="../reports/">报告库</a>
+          <a href="../risk/">风险与隐私</a>
+        </div>
+        <div class="nav-actions">
+          <a class="button small" href="../wallet/">钱包调查</a>
+          <a class="button primary small" href="#entity-directory">浏览实体</a>
+        </div>
+        <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false" data-menu-button>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero" aria-labelledby="entities-title">
+        <div>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Entity Directory</p>
+          <h1 id="entities-title">实体标签库</h1>
+          <p class="hero-lede">把链上地址背后的身份标签整理成可浏览目录：交易所、基金、协议、桥、DAO 和高风险实体，帮助用户理解钱包资金路径和风险来源。</p>
+        </div>
+        <aside class="briefing-card page-note">
+          <h3>标签边界</h3>
+          <p>公开页面展示标签体系和产品结构。真实标签需要来源、置信度、更新时间和人工复核记录。</p>
+        </aside>
+      </section>
+
+      <section class="section compact" id="entity-directory" aria-labelledby="entity-directory-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Labeled Entities</p>
+            <h2 id="entity-directory-title">链上实体</h2>
+          </div>
+          <p>按实体类别筛选，查看用途、风险等级、复核方式和后续调查入口。</p>
+        </div>
+
+        <div class="filter-row" role="tablist" aria-label="实体筛选">
+          <button class="filter-button active" type="button" data-entity-filter="all">全部</button>
+          <button class="filter-button" type="button" data-entity-filter="exchange">交易所</button>
+          <button class="filter-button" type="button" data-entity-filter="fund">基金</button>
+          <button class="filter-button" type="button" data-entity-filter="protocol">协议</button>
+          <button class="filter-button" type="button" data-entity-filter="bridge">桥</button>
+          <button class="filter-button" type="button" data-entity-filter="dao">DAO</button>
+          <button class="filter-button" type="button" data-entity-filter="risk">风险</button>
+        </div>
+
+        <div class="entity-layout">
+          <div class="entity-list" data-entity-list>
+            <article class="entity-card" data-entity-type="exchange">
+              <div class="entity-card-top">
+                <span class="entity-kind">Exchange</span>
+                <strong data-severity="中">中</strong>
+              </div>
+              <h3>Centralized Exchange Deposit Cluster</h3>
+              <p>交易所充值地址簇。钱包向此类地址转入资产时，通常需要复核是否存在卖出、换仓或托管行为。</p>
+              <ul class="table-list">
+                <li>复核重点：流入金额、频率、是否分批转入。</li>
+                <li>常见误读：充值交易所不一定等于立即卖出。</li>
+              </ul>
+              <a class="text-link" href="../alerts/?filter=exchange">查看交易所预警</a>
+            </article>
+
+            <article class="entity-card" data-entity-type="fund exchange">
+              <div class="entity-card-top">
+                <span class="entity-kind">Fund</span>
+                <strong data-severity="低">低</strong>
+              </div>
+              <h3>Institutional Custody Wallet</h3>
+              <p>机构托管或基金地址。资金大额变化通常需要结合托管规则、关联地址和市场窗口判断。</p>
+              <ul class="table-list">
+                <li>复核重点：关联地址、持仓周期、是否与公开披露一致。</li>
+                <li>常见误读：托管迁移不一定代表主动交易。</li>
+              </ul>
+              <a class="text-link" href="../reports/?type=whale">查看巨鲸报告</a>
+            </article>
+
+            <article class="entity-card" data-entity-type="protocol defi">
+              <div class="entity-card-top">
+                <span class="entity-kind">Protocol</span>
+                <strong data-severity="中">中</strong>
+              </div>
+              <h3>DeFi Protocol Treasury</h3>
+              <p>协议金库或项目方地址。适合观察治理、资金使用、解锁和生态激励相关事件。</p>
+              <ul class="table-list">
+                <li>复核重点：治理提案、支出方向、转账接收方。</li>
+                <li>常见误读：项目方转账未必是抛售，也可能是运营支出。</li>
+              </ul>
+              <a class="text-link" href="../calendar/?type=governance">查看治理日历</a>
+            </article>
+
+            <article class="entity-card" data-entity-type="bridge protocol">
+              <div class="entity-card-top">
+                <span class="entity-kind">Bridge</span>
+                <strong data-severity="中">中</strong>
+              </div>
+              <h3>Cross-chain Bridge Contract</h3>
+              <p>跨链桥合约或流动性池。跨链行为需要与目标链地址、资产流向和桥状态一起复核。</p>
+              <ul class="table-list">
+                <li>复核重点：源链、目标链、桥内余额和接收地址。</li>
+                <li>常见误读：跨链转移不等于资金离场。</li>
+              </ul>
+              <a class="text-link" href="../signals/?type=flow">查看资金流信号</a>
+            </article>
+
+            <article class="entity-card" data-entity-type="dao protocol">
+              <div class="entity-card-top">
+                <span class="entity-kind">DAO</span>
+                <strong data-severity="低">低</strong>
+              </div>
+              <h3>DAO Governance Wallet</h3>
+              <p>DAO 治理或多签地址。重点不是单笔金额，而是决策过程、授权范围和多签执行记录。</p>
+              <ul class="table-list">
+                <li>复核重点：多签成员、提案编号、执行时间。</li>
+                <li>常见误读：治理执行不一定是风险事件。</li>
+              </ul>
+              <a class="text-link" href="../methodology/">查看方法论</a>
+            </article>
+
+            <article class="entity-card risk" data-entity-type="risk protocol">
+              <div class="entity-card-top">
+                <span class="entity-kind">Risk</span>
+                <strong data-severity="高">高</strong>
+              </div>
+              <h3>Suspicious Contract Cluster</h3>
+              <p>疑似风险合约或异常交互地址簇。钱包与此类实体互动时，需要优先确认授权额度和资产暴露。</p>
+              <ul class="table-list">
+                <li>复核重点：授权额度、交互历史、是否发生资产转出。</li>
+                <li>常见误读：只看合约名称不够，需要看真实交互行为。</li>
+              </ul>
+              <a class="text-link" href="../signals/?type=risk">查看风险信号</a>
+            </article>
+          </div>
+
+          <aside class="entity-side">
+            <article class="metric-card">
+              <span>实体类型</span>
+              <strong>6</strong>
+            </article>
+            <article class="metric-card">
+              <span>高风险标签</span>
+              <strong data-severity="高">1</strong>
+            </article>
+            <article class="metric-card">
+              <span>标签字段</span>
+              <strong>来源 / 置信度 / 更新时间</strong>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section compact" aria-labelledby="entity-method-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Label Method</p>
+            <h2 id="entity-method-title">如何使用标签</h2>
+          </div>
+          <p>实体标签是调查辅助信息，不是最终结论。标签越敏感，越需要来源和复核记录。</p>
+        </div>
+
+        <div class="evidence-grid">
+          <article class="analysis-card">
+            <h3>看类别</h3>
+            <p>交易所、基金、桥、协议和风险合约的行为含义不同，不能用同一个解释。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>看置信度</h3>
+            <p>真实版本应展示来源、证据、更新时间和是否经过人工复核。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>看行为</h3>
+            <p>标签只是身份背景，资金流、授权、频率和时间窗口才是调查重点。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>接入预警</h3>
+            <p>高风险实体适合转成 Wallet Watch 规则，持续观察后续交互。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="../assets/js/app.js" defer></script>
+  </body>
+</html>
