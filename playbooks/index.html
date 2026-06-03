@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="加密货币情报局调查手册，提供钱包调查、巨鲸追踪、交易员复核、风险响应、资产观察和每日简报的链上情报工作流。">
+    <title>调查手册 / Crypto Intelligence Bureau</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="../" aria-label="加密货币情报局首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3 4 7v6c0 5 3.4 7.7 8 8 4.6-.3 8-3 8-8V7l-8-4Z"></path>
+              <path d="M9 12h6"></path>
+              <path d="M12 9v6"></path>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span>加密货币情报局</span>
+            <span>Crypto Intelligence Bureau</span>
+          </span>
+        </a>
+        <div class="nav-links" data-nav-links>
+          <a href="../">首页</a>
+          <a href="./" aria-current="page">调查手册</a>
+          <a href="../wallet/">钱包调查</a>
+          <a href="../signals/">信号库</a>
+          <a href="../sources/">数据源</a>
+          <a href="../risk/">风险与隐私</a>
+        </div>
+        <div class="nav-actions">
+          <a class="button small" href="../reports/">报告库</a>
+          <a class="button primary small" href="#playbook-list">查看手册</a>
+        </div>
+        <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false" data-menu-button>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero" aria-labelledby="playbooks-title">
+        <div>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Investigation Playbooks</p>
+          <h1 id="playbooks-title">调查手册</h1>
+          <p class="hero-lede">把链上情报拆成可执行的工作流：发现线索、复核证据、沉淀报告、设置预警。适合新用户快速理解，也适合团队统一调查标准。</p>
+        </div>
+        <aside class="briefing-card page-note">
+          <h3>使用边界</h3>
+          <p>调查手册只用于信息整理和风险复核，不构成投资建议、跟单建议或交易指令。</p>
+        </aside>
+      </section>
+
+      <section class="section compact" id="playbook-list" aria-labelledby="playbook-list-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Workflow Library</p>
+            <h2 id="playbook-list-title">情报工作流</h2>
+          </div>
+          <p>按任务类型筛选手册，快速找到对应的调查路径和后续模块。</p>
+        </div>
+
+        <div class="filter-row" role="tablist" aria-label="手册筛选">
+          <button class="filter-button active" type="button" data-playbook-filter="all">全部</button>
+          <button class="filter-button" type="button" data-playbook-filter="wallet">钱包</button>
+          <button class="filter-button" type="button" data-playbook-filter="whale">巨鲸</button>
+          <button class="filter-button" type="button" data-playbook-filter="trader">交易员</button>
+          <button class="filter-button" type="button" data-playbook-filter="risk">风险</button>
+          <button class="filter-button" type="button" data-playbook-filter="token">资产</button>
+          <button class="filter-button" type="button" data-playbook-filter="daily">简报</button>
+        </div>
+
+        <div class="playbook-layout">
+          <div class="playbook-list" data-playbook-list>
+            <article class="playbook-card" data-playbook-type="wallet risk">
+              <div class="playbook-card-top">
+                <span>Wallet</span>
+                <strong>基础手册</strong>
+              </div>
+              <h3>陌生钱包快速调查</h3>
+              <p>当你拿到一个地址时，先判断链、余额、交易频率、实体标签和风险信号，再决定是否继续跟踪。</p>
+              <ol class="step-list">
+                <li>输入地址，确认链类型和地址完整性。</li>
+                <li>查看实体标签、交易所流入和异常授权。</li>
+                <li>把高价值线索写入报告或加入 Wallet Watch。</li>
+              </ol>
+              <a class="text-link" href="../wallet/">打开钱包调查</a>
+            </article>
+
+            <article class="playbook-card" data-playbook-type="whale wallet token">
+              <div class="playbook-card-top">
+                <span>Whale</span>
+                <strong>资金流</strong>
+              </div>
+              <h3>巨鲸建仓复核</h3>
+              <p>大额买入不等于确定机会，需要看是否分批、是否多地址同步、是否与资产雷达和板块资金流一致。</p>
+              <ol class="step-list">
+                <li>查看 Top Whale Buys / Sells。</li>
+                <li>复核地址是否属于同一实体或关联集群。</li>
+                <li>连接资产雷达和报告库，记录后续观察点。</li>
+              </ol>
+              <a class="text-link" href="../whales/">打开巨鲸雷达</a>
+            </article>
+
+            <article class="playbook-card" data-playbook-type="trader wallet">
+              <div class="playbook-card-top">
+                <span>Trader</span>
+                <strong>质量复核</strong>
+              </div>
+              <h3>交易员可信度调查</h3>
+              <p>不要只看收益截图。稳定盈利、最大回撤、仓位节奏和公开观点与链上行为是否一致都要复核。</p>
+              <ol class="step-list">
+                <li>查看胜率、收益和回撤是否跨周期稳定。</li>
+                <li>复核公开观点与链上交易是否一致。</li>
+                <li>把高风险跟单对象标记为观察，而不是直接跟随。</li>
+              </ol>
+              <a class="text-link" href="../traders/">调查交易员</a>
+            </article>
+
+            <article class="playbook-card risk" data-playbook-type="risk wallet">
+              <div class="playbook-card-top">
+                <span>Risk</span>
+                <strong>高优先级</strong>
+              </div>
+              <h3>异常授权与风险合约响应</h3>
+              <p>当钱包出现异常授权或高风险合约交互时，优先确认资产暴露范围，而不是急着解释价格方向。</p>
+              <ol class="step-list">
+                <li>记录合约地址、授权额度和交互时间。</li>
+                <li>查看后续是否发生资产转出或关联地址扩散。</li>
+                <li>进入预警中心，持续观察二次交互。</li>
+              </ol>
+              <a class="text-link" href="../alerts/?filter=critical">查看风险预警</a>
+            </article>
+
+            <article class="playbook-card" data-playbook-type="token daily">
+              <div class="playbook-card-top">
+                <span>Token</span>
+                <strong>资产观察</strong>
+              </div>
+              <h3>资产与板块观察</h3>
+              <p>资产雷达适合回答“这个 Token 或板块现在值得关注吗”，但必须结合资金流、事件窗口和风险信号。</p>
+              <ol class="step-list">
+                <li>先按主流币、AI、DeFi、Meme 或风险筛选。</li>
+                <li>查看是否有巨鲸、交易所流入或解锁窗口。</li>
+                <li>把高价值资产放进报告库或日历观察。</li>
+              </ol>
+              <a class="text-link" href="../tokens/">打开资产雷达</a>
+            </article>
+
+            <article class="playbook-card" data-playbook-type="daily risk token">
+              <div class="playbook-card-top">
+                <span>Daily</span>
+                <strong>简报流程</strong>
+              </div>
+              <h3>每日情报压缩</h3>
+              <p>每天只保留少量高价值信息：核心判断、巨鲸动作、风险事件、热门板块和明日观察节点。</p>
+              <ol class="step-list">
+                <li>从今日情报查看最重要的 5 条。</li>
+                <li>把风险事件放入日历和预警中心。</li>
+                <li>把需要追踪的钱包或资产沉淀为报告。</li>
+              </ol>
+              <a class="text-link" href="../intelligence/">查看今日情报</a>
+            </article>
+          </div>
+
+          <aside class="playbook-side">
+            <article class="metric-card">
+              <span>手册数量</span>
+              <strong>6</strong>
+            </article>
+            <article class="metric-card">
+              <span>推荐流程</span>
+              <strong>线索 → 证据 → 报告 → 预警</strong>
+            </article>
+            <article class="metric-card">
+              <span>风险优先级</span>
+              <strong data-severity="高">先复核</strong>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section compact" aria-labelledby="operating-rules-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Operating Rules</p>
+            <h2 id="operating-rules-title">调查原则</h2>
+          </div>
+          <p>好的情报流程要能降低误读，而不是把每个链上动作都变成交易冲动。</p>
+        </div>
+
+        <div class="evidence-grid">
+          <article class="analysis-card">
+            <h3>先事实</h3>
+            <p>先确认交易、地址、金额和时间，再讨论可能含义。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>再标签</h3>
+            <p>实体标签可以辅助解释，但敏感标签必须看来源和置信度。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>后推断</h3>
+            <p>资金意图、交易员风格和板块热度都属于推断，需要标注边界。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>持续观察</h3>
+            <p>重要线索应进入报告、日历或预警，而不是立即当作结论。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="../assets/js/app.js" defer></script>
+  </body>
+</html>
