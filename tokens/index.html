@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="加密货币情报局资产雷达，浏览 BTC、ETH、SOL、BNB、LINK、AI Agent、DeFi 与 Meme 板块的资金流、风险和观察信号。">
+    <title>资产雷达 / Crypto Intelligence Bureau</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="../" aria-label="加密货币情报局首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3 4 7v6c0 5 3.4 7.7 8 8 4.6-.3 8-3 8-8V7l-8-4Z"></path>
+              <path d="M9 12h6"></path>
+              <path d="M12 9v6"></path>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span>加密货币情报局</span>
+            <span>Crypto Intelligence Bureau</span>
+          </span>
+        </a>
+        <div class="nav-links" data-nav-links>
+          <a href="../">首页</a>
+          <a href="../intelligence/">今日情报</a>
+          <a href="./" aria-current="page">资产雷达</a>
+          <a href="../signals/">信号库</a>
+          <a href="../reports/">报告库</a>
+          <a href="../whales/">巨鲸雷达</a>
+        </div>
+        <div class="nav-actions">
+          <a class="button small" href="../calendar/">情报日历</a>
+          <a class="button primary small" href="#token-board">浏览资产</a>
+        </div>
+        <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false" data-menu-button>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero" aria-labelledby="tokens-title">
+        <div>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Token Radar</p>
+          <h1 id="tokens-title">资产雷达</h1>
+          <p class="hero-lede">把主流币、Layer 1、DeFi、AI Agent 和 Meme 板块放进统一的观察面板，快速查看资金流、风险窗口、巨鲸动作和后续调查入口。</p>
+        </div>
+        <aside class="briefing-card page-note">
+          <h3>观察原则</h3>
+          <p>资产雷达用于整理市场和链上信号，不构成投资建议。重点看趋势是否被多类证据确认，而不是只看单个价格变化。</p>
+        </aside>
+      </section>
+
+      <section class="section compact" id="token-board" aria-labelledby="token-board-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Asset Board</p>
+            <h2 id="token-board-title">资产与板块</h2>
+          </div>
+          <p>按资产类别筛选，快速定位值得继续阅读报告、设置预警或进入巨鲸雷达的对象。</p>
+        </div>
+
+        <div class="filter-row" role="tablist" aria-label="资产筛选">
+          <button class="filter-button active" type="button" data-token-filter="all">全部</button>
+          <button class="filter-button" type="button" data-token-filter="major">主流币</button>
+          <button class="filter-button" type="button" data-token-filter="layer1">Layer 1</button>
+          <button class="filter-button" type="button" data-token-filter="defi">DeFi</button>
+          <button class="filter-button" type="button" data-token-filter="ai">AI</button>
+          <button class="filter-button" type="button" data-token-filter="meme">Meme</button>
+          <button class="filter-button" type="button" data-token-filter="risk">风险</button>
+        </div>
+
+        <div class="token-layout">
+          <div class="token-grid" data-token-list>
+            <article class="token-card" data-token-type="major layer1">
+              <div class="token-card-top">
+                <div>
+                  <span>BTC</span>
+                  <h3>Bitcoin</h3>
+                </div>
+                <strong class="positive">核心资产</strong>
+              </div>
+              <p>市场风险偏好的主要锚点。观察重点是 ETF 资金流、交易所净流入和宏观事件窗口。</p>
+              <div class="token-metrics">
+                <span><strong>低</strong> 协议风险</span>
+                <span><strong>高</strong> 宏观敏感度</span>
+                <span><strong>中</strong> 巨鲸活跃</span>
+              </div>
+              <a class="text-link" href="../signals/?type=macro">查看宏观信号</a>
+            </article>
+
+            <article class="token-card" data-token-type="major layer1 defi">
+              <div class="token-card-top">
+                <div>
+                  <span>ETH</span>
+                  <h3>Ethereum</h3>
+                </div>
+                <strong class="positive">资金观察</strong>
+              </div>
+              <p>DeFi、质押、Layer 2 和巨鲸资金流的核心资产。当前适合观察聪明资金是否持续增持。</p>
+              <div class="token-metrics">
+                <span><strong>高</strong> 生态深度</span>
+                <span><strong>中</strong> 交易所流入</span>
+                <span><strong>高</strong> 报告价值</span>
+              </div>
+              <a class="text-link" href="../reports/?type=whale">查看巨鲸报告</a>
+            </article>
+
+            <article class="token-card warn" data-token-type="layer1 risk">
+              <div class="token-card-top">
+                <div>
+                  <span>SOL</span>
+                  <h3>Solana</h3>
+                </div>
+                <strong>风险窗口</strong>
+              </div>
+              <p>高活跃生态资产，短线需要关注解锁窗口、大额转账、Meme 资金波动和交易所流入。</p>
+              <div class="token-metrics">
+                <span><strong>高</strong> 波动</span>
+                <span><strong>中</strong> 解锁关注</span>
+                <span><strong>高</strong> 链上活跃</span>
+              </div>
+              <a class="text-link" href="../calendar/?type=risk">查看风险日历</a>
+            </article>
+
+            <article class="token-card" data-token-type="major defi">
+              <div class="token-card-top">
+                <div>
+                  <span>BNB</span>
+                  <h3>BNB Chain</h3>
+                </div>
+                <strong>生态资产</strong>
+              </div>
+              <p>交易所生态、链上应用和稳定币流动性共同影响观察价值。重点看资金流和生态热度变化。</p>
+              <div class="token-metrics">
+                <span><strong>中</strong> 生态热度</span>
+                <span><strong>中</strong> 资金流</span>
+                <span><strong>中</strong> 风险级别</span>
+              </div>
+              <a class="text-link" href="../signals/?type=flow">查看资金流信号</a>
+            </article>
+
+            <article class="token-card" data-token-type="defi">
+              <div class="token-card-top">
+                <div>
+                  <span>LINK</span>
+                  <h3>Chainlink</h3>
+                </div>
+                <strong>DeFi 信号</strong>
+              </div>
+              <p>适合观察 DeFi 叙事、预言机需求和巨鲸分批建仓。需要确认是否多地址同步。</p>
+              <div class="token-metrics">
+                <span><strong>中</strong> 板块相关</span>
+                <span><strong>中</strong> 巨鲸活跃</span>
+                <span><strong>低</strong> Meme 属性</span>
+              </div>
+              <a class="text-link" href="../whales/">打开巨鲸雷达</a>
+            </article>
+
+            <article class="token-card" data-token-type="ai sector">
+              <div class="token-card-top">
+                <div>
+                  <span>AI</span>
+                  <h3>AI Agent 板块</h3>
+                </div>
+                <strong class="positive">热门叙事</strong>
+              </div>
+              <p>当前适合观察资金流、社交讨论度和多个相关资产是否同步升温，避免只看单一 Token 拉升。</p>
+              <div class="token-metrics">
+                <span><strong>高</strong> 热度</span>
+                <span><strong>高</strong> 拥挤风险</span>
+                <span><strong>中</strong> 资金持续性</span>
+              </div>
+              <a class="text-link" href="../reports/?type=sector">查看板块报告</a>
+            </article>
+
+            <article class="token-card warn" data-token-type="meme risk">
+              <div class="token-card-top">
+                <div>
+                  <span>MEME</span>
+                  <h3>Meme 资产篮子</h3>
+                </div>
+                <strong>高波动</strong>
+              </div>
+              <p>适合高风险观察，不适合用单一收益截图判断价值。重点看流动性、持仓集中度和退出风险。</p>
+              <div class="token-metrics">
+                <span><strong>高</strong> 波动</span>
+                <span><strong>高</strong> 集中度风险</span>
+                <span><strong>低</strong> 可预测性</span>
+              </div>
+              <a class="text-link" href="../signals/?type=risk">查看风险信号</a>
+            </article>
+          </div>
+
+          <aside class="token-side">
+            <article class="metric-card">
+              <span>覆盖资产</span>
+              <strong>7</strong>
+            </article>
+            <article class="metric-card">
+              <span>高风险板块</span>
+              <strong data-severity="高">2</strong>
+            </article>
+            <article class="metric-card">
+              <span>推荐流程</span>
+              <strong>资产 → 信号 → 报告</strong>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section compact" aria-labelledby="token-method-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Asset Method</p>
+            <h2 id="token-method-title">如何阅读资产雷达</h2>
+          </div>
+          <p>资产雷达只提供观察框架，真正的判断要回到钱包、巨鲸、信号和报告证据链。</p>
+        </div>
+
+        <div class="evidence-grid">
+          <article class="analysis-card">
+            <h3>先看类别</h3>
+            <p>主流币、Layer 1、DeFi、AI、Meme 的风险来源不同，不能用同一套标准比较。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>再看资金</h3>
+            <p>关注交易所流入、巨鲸同步、稳定币换手和链上活跃度是否互相确认。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>连接事件</h3>
+            <p>解锁、治理和宏观窗口需要接入情报日历，避免只看当前状态。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>沉淀报告</h3>
+            <p>高价值资产线索应进入报告库，保留证据、风险和后续观察清单。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="../assets/js/app.js" defer></script>
+  </body>
+</html>
