@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="加密货币情报局数据源与证据中心，说明链上交易、实体标签、市场数据、治理公告、风险列表和人工复核如何支撑情报结论。">
+    <title>数据源与证据中心 / Crypto Intelligence Bureau</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="../" aria-label="加密货币情报局首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3 4 7v6c0 5 3.4 7.7 8 8 4.6-.3 8-3 8-8V7l-8-4Z"></path>
+              <path d="M9 12h6"></path>
+              <path d="M12 9v6"></path>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span>加密货币情报局</span>
+            <span>Crypto Intelligence Bureau</span>
+          </span>
+        </a>
+        <div class="nav-links" data-nav-links>
+          <a href="../">首页</a>
+          <a href="../entities/">实体标签</a>
+          <a href="./" aria-current="page">数据源</a>
+          <a href="../methodology/">方法论</a>
+          <a href="../signals/">信号库</a>
+          <a href="../risk/">风险与隐私</a>
+        </div>
+        <div class="nav-actions">
+          <a class="button small" href="../reports/">报告库</a>
+          <a class="button primary small" href="#source-center">查看来源</a>
+        </div>
+        <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false" data-menu-button>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero" aria-labelledby="sources-title">
+        <div>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Evidence Center</p>
+          <h1 id="sources-title">数据源与证据中心</h1>
+          <p class="hero-lede">解释链上情报结论如何形成：哪些来源参与判断、证据强度如何区分、多久更新一次，以及哪些地方不能过度解读。</p>
+        </div>
+        <aside class="briefing-card page-note">
+          <h3>透明原则</h3>
+          <p>正式版本的报告、标签和预警都应显示来源、更新时间、置信度和人工复核状态，让用户知道结论边界。</p>
+        </aside>
+      </section>
+
+      <section class="section compact" id="source-center" aria-labelledby="source-center-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Source Map</p>
+            <h2 id="source-center-title">证据来源</h2>
+          </div>
+          <p>不同来源的可靠性、更新频率和误用风险不同。情报结论需要多类证据共同支撑。</p>
+        </div>
+
+        <div class="filter-row" role="tablist" aria-label="来源筛选">
+          <button class="filter-button active" type="button" data-source-filter="all">全部</button>
+          <button class="filter-button" type="button" data-source-filter="onchain">链上</button>
+          <button class="filter-button" type="button" data-source-filter="market">市场</button>
+          <button class="filter-button" type="button" data-source-filter="label">标签</button>
+          <button class="filter-button" type="button" data-source-filter="governance">治理</button>
+          <button class="filter-button" type="button" data-source-filter="risk">风险</button>
+          <button class="filter-button" type="button" data-source-filter="review">人工复核</button>
+        </div>
+
+        <div class="source-layout">
+          <div class="source-list" data-source-list>
+            <article class="source-card" data-source-type="onchain">
+              <div class="source-card-top">
+                <span>On-chain</span>
+                <strong>强证据</strong>
+              </div>
+              <h3>链上交易与余额变化</h3>
+              <p>直接来自链上交易、余额、合约调用和授权记录，是钱包调查与预警最核心的证据层。</p>
+              <dl class="signal-definition">
+                <div><dt>更新节奏</dt><dd>真实版本应接近实时或按链同步延迟更新。</dd></div>
+                <div><dt>边界</dt><dd>链上行为能说明发生了什么，但不能单独说明动机。</dd></div>
+              </dl>
+            </article>
+
+            <article class="source-card" data-source-type="label review">
+              <div class="source-card-top">
+                <span>Labels</span>
+                <strong>需复核</strong>
+              </div>
+              <h3>实体标签与地址归类</h3>
+              <p>交易所、基金、协议、桥和高风险实体标签能帮助解释资金路径，但必须保留来源和置信度。</p>
+              <dl class="signal-definition">
+                <div><dt>更新节奏</dt><dd>标签变更应记录版本、来源和复核人。</dd></div>
+                <div><dt>边界</dt><dd>标签错误会放大误判，因此敏感标签不能只靠单一来源。</dd></div>
+              </dl>
+            </article>
+
+            <article class="source-card" data-source-type="market">
+              <div class="source-card-top">
+                <span>Market</span>
+                <strong>背景证据</strong>
+              </div>
+              <h3>价格、成交量与资金费率</h3>
+              <p>市场数据用于判断链上动作发生时的环境，例如波动、流动性和风险资产偏好。</p>
+              <dl class="signal-definition">
+                <div><dt>更新节奏</dt><dd>公开页面可延迟展示，专业版可接近实时更新。</dd></div>
+                <div><dt>边界</dt><dd>价格波动不能自动解释钱包意图，需要链上证据确认。</dd></div>
+              </dl>
+            </article>
+
+            <article class="source-card" data-source-type="governance">
+              <div class="source-card-top">
+                <span>Governance</span>
+                <strong>事件证据</strong>
+              </div>
+              <h3>治理提案、公告与解锁日程</h3>
+              <p>项目公告、治理投票、Token 解锁和协议参数变更会进入情报日历，用于提前标注观察窗口。</p>
+              <dl class="signal-definition">
+                <div><dt>更新节奏</dt><dd>按事件发生和公告更新，重要事件进入日历。</dd></div>
+                <div><dt>边界</dt><dd>公告本身不是交易信号，需要结合链上资金确认。</dd></div>
+              </dl>
+            </article>
+
+            <article class="source-card risk" data-source-type="risk onchain">
+              <div class="source-card-top">
+                <span>Risk</span>
+                <strong>高优先级</strong>
+              </div>
+              <h3>风险合约、异常授权与可疑地址</h3>
+              <p>高风险信号需要快速进入预警中心，同时显示交互时间、授权额度、资产范围和后续转出情况。</p>
+              <dl class="signal-definition">
+                <div><dt>更新节奏</dt><dd>高风险来源应优先更新，并保留撤销或复核入口。</dd></div>
+                <div><dt>边界</dt><dd>风险列表可能误伤，最终判断要看具体交互行为。</dd></div>
+              </dl>
+            </article>
+
+            <article class="source-card" data-source-type="review label risk">
+              <div class="source-card-top">
+                <span>Review</span>
+                <strong>人工层</strong>
+              </div>
+              <h3>人工复核与结论边界</h3>
+              <p>高影响报告和敏感实体标签应有人审查，明确哪些是事实、哪些是推断、哪些仍需观察。</p>
+              <dl class="signal-definition">
+                <div><dt>更新节奏</dt><dd>每次复核应留下时间、人员和变更摘要。</dd></div>
+                <div><dt>边界</dt><dd>人工复核不能保证结果绝对正确，只能提高可解释性和责任边界。</dd></div>
+              </dl>
+            </article>
+          </div>
+
+          <aside class="source-side">
+            <article class="metric-card">
+              <span>来源类别</span>
+              <strong>6</strong>
+            </article>
+            <article class="metric-card">
+              <span>强证据层</span>
+              <strong>链上交易</strong>
+            </article>
+            <article class="metric-card">
+              <span>结论要求</span>
+              <strong>多源确认</strong>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section compact" aria-labelledby="confidence-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Confidence Model</p>
+            <h2 id="confidence-title">置信度模型</h2>
+          </div>
+          <p>公开站先展示结构。真实产品应把证据等级写进每份报告和每个实体标签里。</p>
+        </div>
+
+        <div class="evidence-grid">
+          <article class="analysis-card">
+            <h3>事实</h3>
+            <p>链上交易、余额变化、合约调用、公告原文等可直接复核的信息。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>标签</h3>
+            <p>交易所、基金、协议、风险地址等实体归类，需要来源和置信度。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>推断</h3>
+            <p>资金意图、交易员风格、板块热度等解释性结论，应标注证据不足之处。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>观察</h3>
+            <p>仍未确认的线索应进入日历、报告或预警，而不是包装成确定结论。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="../assets/js/app.js" defer></script>
+  </body>
+</html>
