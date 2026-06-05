@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="市场 Alpha 情报局，使用 Alpha Score、Business Model Score、Token Capture Score 和 Risk Score 评估新币与加密项目。">
+    <title>市场 Alpha 情报局 / Crypto Intelligence Bureau</title>
+    <link rel="stylesheet" href="../assets/css/styles.css?v=20260605-alpha">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="../" aria-label="加密货币情报局首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3 4 7v6c0 5 3.4 7.7 8 8 4.6-.3 8-3 8-8V7l-8-4Z"></path>
+              <path d="M9 12h6"></path>
+              <path d="M12 9v6"></path>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span>加密货币情报局</span>
+            <span>Crypto Intelligence Bureau</span>
+          </span>
+        </a>
+        <div class="nav-links" data-nav-links>
+          <a href="../">首页</a>
+          <a href="./" aria-current="page">Alpha 情报局</a>
+          <a href="../tokens/">资产雷达</a>
+          <a href="../signals/">信号库</a>
+          <a href="../casefiles/">案例档案</a>
+          <a href="../sources/">数据源</a>
+        </div>
+        <div class="nav-actions">
+          <a class="button small" href="../tokens/">资产雷达</a>
+          <a class="button primary small" href="#alpha-board">查看评分</a>
+        </div>
+        <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false" data-menu-button>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero" aria-labelledby="alpha-title">
+        <div>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Market Alpha Intelligence</p>
+          <h1 id="alpha-title">市场 Alpha 情报局</h1>
+          <p class="hero-lede">不只看价格和涨跌，而是用四个核心分数回答：项目有没有成长潜力、商业模式是否成立、代币能否捕获价值、风险在哪里。</p>
+        </div>
+        <aside class="briefing-card page-note">
+          <h3>产品定位</h3>
+          <p>Alpha 评分用于筛选和持续跟踪项目，不是买卖建议。分数必须能回到证据、假设和风险边界。</p>
+        </aside>
+      </section>
+
+      <section class="section compact" aria-labelledby="score-model-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Four-score Model</p>
+            <h2 id="score-model-title">四个核心分数</h2>
+          </div>
+          <p>这套模型的竞争力在于把新币研究拆成用户真正关心的四个问题，而不是只做热度排行。</p>
+        </div>
+
+        <div class="alpha-score-grid">
+          <article class="alpha-score-card">
+            <span>01</span>
+            <h3>Alpha Score</h3>
+            <p>成长潜力：市场空间、叙事强度、产品进展、用户增长、资金关注度。</p>
+          </article>
+          <article class="alpha-score-card">
+            <span>02</span>
+            <h3>Business Model Score</h3>
+            <p>商业模式：收入来源、客户付费意愿、毛利结构、可持续性和竞争壁垒。</p>
+          </article>
+          <article class="alpha-score-card">
+            <span>03</span>
+            <h3>Token Capture Score</h3>
+            <p>代币价值捕获：协议收入、质押、回购、费用分配、治理权和代币需求。</p>
+          </article>
+          <article class="alpha-score-card danger">
+            <span>04</span>
+            <h3>Risk Score</h3>
+            <p>风险评分：合约风险、团队风险、解锁压力、估值拥挤、流动性和监管不确定性。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section compact" id="alpha-board" aria-labelledby="alpha-board-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Alpha Board</p>
+            <h2 id="alpha-board-title">项目评分样例</h2>
+          </div>
+          <p>按项目类型筛选。每张卡都展示四个分数和一句可执行的跟踪结论。</p>
+        </div>
+
+        <div class="filter-row" role="tablist" aria-label="Alpha 项目筛选">
+          <button class="filter-button active" type="button" data-alpha-filter="all">全部</button>
+          <button class="filter-button" type="button" data-alpha-filter="ai">AI</button>
+          <button class="filter-button" type="button" data-alpha-filter="defi">DeFi</button>
+          <button class="filter-button" type="button" data-alpha-filter="infra">基础设施</button>
+          <button class="filter-button" type="button" data-alpha-filter="rwa">RWA</button>
+          <button class="filter-button" type="button" data-alpha-filter="meme">Meme</button>
+          <button class="filter-button" type="button" data-alpha-filter="risk">高风险</button>
+        </div>
+
+        <div class="alpha-layout">
+          <div class="alpha-list" data-alpha-list>
+            <article class="alpha-card" data-alpha-type="ai infra">
+              <div class="alpha-card-top">
+                <span>AI Agent Infra</span>
+                <strong>持续跟踪</strong>
+              </div>
+              <h3>AI Agent 执行层协议</h3>
+              <p>有明确开发者需求和叙事空间，但代币价值捕获需要证明费用和使用量能回流到 Token。</p>
+              <div class="alpha-bars">
+                <div><span>Alpha</span><strong>86</strong><em style="width: 86%"></em></div>
+                <div><span>Business</span><strong>72</strong><em style="width: 72%"></em></div>
+                <div><span>Token Capture</span><strong>58</strong><em style="width: 58%"></em></div>
+                <div><span>Risk</span><strong>44</strong><em style="width: 44%"></em></div>
+              </div>
+              <a class="text-link" href="../tokens/?type=ai">查看 AI 资产</a>
+            </article>
+
+            <article class="alpha-card" data-alpha-type="defi">
+              <div class="alpha-card-top">
+                <span>DeFi Revenue</span>
+                <strong>质量较高</strong>
+              </div>
+              <h3>真实收益型 DeFi 协议</h3>
+              <p>商业模式更容易验证，关键看协议收入是否稳定、费用是否能捕获到代币，以及激励成本是否过高。</p>
+              <div class="alpha-bars">
+                <div><span>Alpha</span><strong>74</strong><em style="width: 74%"></em></div>
+                <div><span>Business</span><strong>84</strong><em style="width: 84%"></em></div>
+                <div><span>Token Capture</span><strong>76</strong><em style="width: 76%"></em></div>
+                <div><span>Risk</span><strong>39</strong><em style="width: 39%"></em></div>
+              </div>
+              <a class="text-link" href="../signals/?type=sector">查看板块信号</a>
+            </article>
+
+            <article class="alpha-card" data-alpha-type="infra rwa">
+              <div class="alpha-card-top">
+                <span>RWA Infra</span>
+                <strong>长期观察</strong>
+              </div>
+              <h3>链上资产发行基础设施</h3>
+              <p>商业模式可能扎实，但增长速度和合规路径不确定。适合长期跟踪真实客户、TVL 和收入质量。</p>
+              <div class="alpha-bars">
+                <div><span>Alpha</span><strong>68</strong><em style="width: 68%"></em></div>
+                <div><span>Business</span><strong>81</strong><em style="width: 81%"></em></div>
+                <div><span>Token Capture</span><strong>52</strong><em style="width: 52%"></em></div>
+                <div><span>Risk</span><strong>47</strong><em style="width: 47%"></em></div>
+              </div>
+              <a class="text-link" href="../calendar/?type=governance">查看事件窗口</a>
+            </article>
+
+            <article class="alpha-card risk" data-alpha-type="meme risk">
+              <div class="alpha-card-top">
+                <span>Meme Launch</span>
+                <strong>高风险</strong>
+              </div>
+              <h3>高热度 Meme 新币</h3>
+              <p>短期 Alpha 可能强，但商业模式和代币价值捕获通常弱。适合风险观察，不适合包装成长线项目。</p>
+              <div class="alpha-bars">
+                <div><span>Alpha</span><strong>61</strong><em style="width: 61%"></em></div>
+                <div><span>Business</span><strong>18</strong><em style="width: 18%"></em></div>
+                <div><span>Token Capture</span><strong>24</strong><em style="width: 24%"></em></div>
+                <div><span>Risk</span><strong>88</strong><em style="width: 88%"></em></div>
+              </div>
+              <a class="text-link" href="../signals/?type=risk">查看风险信号</a>
+            </article>
+          </div>
+
+          <aside class="alpha-side">
+            <article class="metric-card">
+              <span>核心分数</span>
+              <strong>4</strong>
+            </article>
+            <article class="metric-card">
+              <span>建议动作</span>
+              <strong>评分 → 证据 → 跟踪</strong>
+            </article>
+            <article class="metric-card">
+              <span>产品差异</span>
+              <strong>价值捕获分析</strong>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section compact" aria-labelledby="alpha-method-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Scoring Method</p>
+            <h2 id="alpha-method-title">为什么这套评分有用</h2>
+          </div>
+          <p>它把“这个币会不会涨”的问题，拆成更长期、更可复核的项目质量问题。</p>
+        </div>
+
+        <div class="evidence-grid">
+          <article class="analysis-card">
+            <h3>回答赚钱能力</h3>
+            <p>Business Model Score 逼用户看收入、客户和可持续性，而不是只看叙事。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>回答代币价值</h3>
+            <p>Token Capture Score 区分“项目好”和“币有价值捕获”这两个不同问题。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>回答持续跟踪</h3>
+            <p>Alpha Score 用来识别成长线索，把项目加入日历、报告和资产雷达。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>回答风险边界</h3>
+            <p>Risk Score 把解锁、合约、流动性、团队和监管风险放在同一张图里。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="../assets/js/app.js?v=20260605-alpha" defer></script>
+  </body>
+</html>
