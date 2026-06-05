@@ -63,6 +63,31 @@ function formatUsd(value) {
   }).format(value);
 }
 
+function formatCompactUsd(value) {
+  if (!Number.isFinite(value)) return "--";
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    notation: "compact",
+    maximumFractionDigits: 2
+  }).format(value);
+}
+
+function shortAddress(value) {
+  if (!value) return "Unknown";
+  return value.length > 13 ? `${value.slice(0, 6)}...${value.slice(-4)}` : value;
+}
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (character) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    "\"": "&quot;",
+    "'": "&#039;"
+  })[character]);
+}
+
 function renderMarketFallback() {
   const fallback = {
     bitcoin: ["$--", "等待数据"],
@@ -77,6 +102,120 @@ function renderMarketFallback() {
     card.querySelector("[data-price]").textContent = values[0];
     card.querySelector("[data-change]").textContent = values[1];
   });
+}
+
+function renderLiveRows(target, rows) {
+  if (!target) return;
+  target.innerHTML = rows.map((row) => {
+    const valueClass = row.valueClass ? ` class="${row.valueClass}"` : "";
+    return `<div class="live-row"><span>${escapeHtml(row.label)}</span><strong>${escapeHtml(row.title)}</strong><em${valueClass}>${escapeHtml(row.value)}</em></div>`;
+  }).join("");
+}
+
+function setLiveSourceStatus(name, state, text) {
+  const target = document.querySelector(`[data-live-source-status="${name}"]`);
+  if (!target) return;
+  target.dataset.state = state;
+  target.textContent = text;
+}
+
+async function loadLiveDataCenter() {
+  const root = document.querySelector("[data-live-data-center]");
+  if (!root) return;
+
+  const status = document.querySelector("[data-live-data-status]");
+  const marketList = document.querySelector("[data-live-market-list]");
+  const defiList = document.querySelector("[data-live-defi-list]");
+  const dexList = document.querySelector("[data-live-dex-list]");
+  const connections = [];
+
+  const loadMarket = async () => {
+    const coins = [
+      ["bitcoin", "BTC"],
+      ["ethereum", "ETH"],
+      ["solana", "SOL"],
+      ["binancecoin", "BNB"]
+    ];
+    const ids = coins.map(([id]) => id).join(",");
+    const response = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true&include_last_updated_at=true`, {
+      headers: { accept: "application/json" }
+    });
+    if (!response.ok) throw new Error("coingecko unavailable");
+    const data = await response.json();
+    renderLiveRows(marketList, coins.map(([id, symbol]) => {
+      const item = data[id] || {};
+      const change = Number(item.usd_24h_change);
+      return {
+        label: symbol,
+        title: formatUsd(Number(item.usd)),
+        value: Number.isFinite(change) ? `${change >= 0 ? "+" : ""}${change.toFixed(2)}%` : "--",
+        valueClass: change >= 0 ? "positive" : "negative"
+      };
+    }));
+    setLiveSourceStatus("coingecko", "live", "已接入");
+    connections.push("CoinGecko");
+  };
+
+  const loadDefi = async () => {
+    const response = await fetch("https://api.llama.fi/protocols", {
+      headers: { accept: "application/json" }
+    });
+    if (!response.ok) throw new Error("defillama unavailable");
+    const data = await response.json();
+    const protocols = (Array.isArray(data) ? data : [])
+      .filter((protocol) => Number(protocol.tvl) > 0 && protocol.category !== "CEX")
+      .sort((a, b) => Number(b.tvl) - Number(a.tvl))
+      .slice(0, 4);
+    renderLiveRows(defiList, protocols.map((protocol) => ({
+      label: protocol.category || protocol.chain || "DeFi",
+      title: protocol.name || "Unknown protocol",
+      value: formatCompactUsd(Number(protocol.tvl))
+    })));
+    setLiveSourceStatus("defillama", "live", "已接入");
+    connections.push("DeFiLlama");
+  };
+
+  const loadDex = async () => {
+    const response = await fetch("https://api.dexscreener.com/token-boosts/latest/v1", {
+      headers: { accept: "application/json" }
+    });
+    if (!response.ok) throw new Error("dexscreener unavailable");
+    const data = await response.json();
+    const boosts = [];
+    const seenTokens = new Set();
+    (Array.isArray(data) ? data : []).forEach((item) => {
+      const key = `${item.chainId || ""}:${item.tokenAddress || ""}`;
+      if (boosts.length >= 4 || seenTokens.has(key)) return;
+      seenTokens.add(key);
+      boosts.push(item);
+    });
+    renderLiveRows(dexList, boosts.map((item) => ({
+      label: item.chainId || "DEX",
+      title: shortAddress(item.tokenAddress),
+      value: Number.isFinite(Number(item.totalAmount)) ? `${Number(item.totalAmount).toLocaleString("en-US")} boost` : "Boost"
+    })));
+    setLiveSourceStatus("dexscreener", "live", "已接入");
+    connections.push("DEX Screener");
+  };
+
+  const tasks = [
+    ["coingecko", loadMarket],
+    ["defillama", loadDefi],
+    ["dexscreener", loadDex]
+  ];
+
+  const results = await Promise.allSettled(tasks.map(([, task]) => task()));
+  results.forEach((result, index) => {
+    if (result.status === "rejected") {
+      setLiveSourceStatus(tasks[index][0], "error", "暂不可用");
+    }
+  });
+
+  if (status) {
+    status.textContent = connections.length
+      ? `已连接 ${connections.join("、")}。公开 API 可能限流，生产版应通过后端缓存。`
+      : "公开数据源暂时不可用，生产版需要后端缓存和重试机制。";
+  }
 }
 
 function initDirectoryQuery() {
@@ -956,6 +1095,7 @@ function initSite() {
   initAlphaReportTabs();
   initAlphaWatchFilters();
   initAlphaUpdateFilters();
+  loadLiveDataCenter();
 }
 
 if (document.readyState === "loading") {

@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.coingecko.com https://api.llama.fi https://api.dexscreener.com; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="color-scheme" content="dark">
-    <meta name="description" content="加密货币情报局数据源与证据中心，说明链上交易、实体标签、市场数据、治理公告、风险列表和人工复核如何支撑情报结论。">
-    <title>数据源与证据中心 / Crypto Intelligence Bureau</title>
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <meta name="description" content="加密货币情报局数据源与实时接入中心，展示已接入公开数据、需要后端的数据和商业级数据路线。">
+    <title>数据源与实时接入中心 / Crypto Intelligence Bureau</title>
+    <link rel="stylesheet" href="../assets/css/styles.css?v=20260605-data-live2">
   </head>
   <body>
     <header class="site-header">
@@ -29,15 +29,15 @@
         <div class="nav-links" data-nav-links>
           <a href="../">首页</a>
           <a href="../entities/">实体标签</a>
-          <a href="./" aria-current="page">数据源</a>
+          <a href="./" aria-current="page">数据接入</a>
           <a href="../playbooks/">调查手册</a>
           <a href="../methodology/">方法论</a>
           <a href="../signals/">信号库</a>
           <a href="../risk/">风险与隐私</a>
         </div>
         <div class="nav-actions">
-          <a class="button small" href="../reports/">报告库</a>
-          <a class="button primary small" href="../playbooks/?type=risk">风险手册</a>
+          <a class="button small" href="#integration-plan">接入清单</a>
+          <a class="button primary small" href="#live-data">实时数据</a>
         </div>
         <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false" data-menu-button>
           <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
@@ -52,14 +52,117 @@
     <main class="page-shell">
       <section class="page-hero" aria-labelledby="sources-title">
         <div>
-          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Evidence Center</p>
-          <h1 id="sources-title">数据源与证据中心</h1>
-          <p class="hero-lede">解释链上情报结论如何形成：哪些来源参与判断、证据强度如何区分、多久更新一次，以及哪些地方不能过度解读。</p>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Live Data & Evidence Center</p>
+          <h1 id="sources-title">数据源与实时接入中心</h1>
+          <p class="hero-lede">先接入公开、无需密钥的数据源；把需要后端和商业 API 的数据列成产品化路线，让调查局逐步从展示站变成可收费的情报系统。</p>
         </div>
         <aside class="briefing-card page-note">
-          <h3>透明原则</h3>
-          <p>正式版本的报告、标签和预警都应显示来源、更新时间、置信度和人工复核状态，让用户知道结论边界。</p>
+          <h3>接入原则</h3>
+          <p>不能把私密 API Key 放在 GitHub Pages 前端。需要密钥、限流或付费授权的数据会进入后端代理、缓存和定时任务层。</p>
         </aside>
+      </section>
+
+      <section class="section compact" id="live-data" aria-labelledby="live-data-title" data-live-data-center>
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Live Public Data</p>
+            <h2 id="live-data-title">已接入公开数据</h2>
+          </div>
+          <p data-live-data-status>正在连接公开数据源。若某个数据源限流或暂时不可用，页面会自动降级显示。</p>
+        </div>
+
+        <div class="live-data-grid">
+          <article class="live-panel">
+            <div class="live-panel-head">
+              <div>
+                <span>CoinGecko</span>
+                <h3>主流资产价格</h3>
+              </div>
+              <strong data-live-source-status="coingecko">连接中</strong>
+            </div>
+            <div class="live-row-list" data-live-market-list>
+              <div class="live-row"><span>BTC</span><strong>等待数据</strong><em>--</em></div>
+              <div class="live-row"><span>ETH</span><strong>等待数据</strong><em>--</em></div>
+              <div class="live-row"><span>SOL</span><strong>等待数据</strong><em>--</em></div>
+              <div class="live-row"><span>BNB</span><strong>等待数据</strong><em>--</em></div>
+            </div>
+          </article>
+
+          <article class="live-panel">
+            <div class="live-panel-head">
+              <div>
+                <span>DeFiLlama</span>
+                <h3>DeFi TVL Top</h3>
+              </div>
+              <strong data-live-source-status="defillama">连接中</strong>
+            </div>
+            <div class="live-row-list" data-live-defi-list>
+              <div class="live-row"><span>协议</span><strong>等待数据</strong><em>TVL</em></div>
+              <div class="live-row"><span>协议</span><strong>等待数据</strong><em>TVL</em></div>
+              <div class="live-row"><span>协议</span><strong>等待数据</strong><em>TVL</em></div>
+              <div class="live-row"><span>协议</span><strong>等待数据</strong><em>TVL</em></div>
+            </div>
+          </article>
+
+          <article class="live-panel">
+            <div class="live-panel-head">
+              <div>
+                <span>DEX Screener</span>
+                <h3>DEX 热门 Boost</h3>
+              </div>
+              <strong data-live-source-status="dexscreener">连接中</strong>
+            </div>
+            <div class="live-row-list" data-live-dex-list>
+              <div class="live-row"><span>Token</span><strong>等待数据</strong><em>Boost</em></div>
+              <div class="live-row"><span>Token</span><strong>等待数据</strong><em>Boost</em></div>
+              <div class="live-row"><span>Token</span><strong>等待数据</strong><em>Boost</em></div>
+              <div class="live-row"><span>Token</span><strong>等待数据</strong><em>Boost</em></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section compact" id="integration-plan" aria-labelledby="integration-plan-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Data Roadmap</p>
+            <h2 id="integration-plan-title">数据接入清单</h2>
+          </div>
+          <p>把数据源按接入难度分层，先用公开数据验证需求，再用后端和商业 API 做付费能力。</p>
+        </div>
+
+        <div class="integration-grid">
+          <article class="integration-card live">
+            <span>已接入</span>
+            <h3>公开市场与 DeFi 数据</h3>
+            <p>CoinGecko、DeFiLlama、DEX Screener 可直接支持价格、TVL、DEX 热度和早期资产发现。</p>
+          </article>
+          <article class="integration-card backend">
+            <span>需要后端</span>
+            <h3>钱包、链上交易与地址标签</h3>
+            <p>Etherscan、Solscan、Covalent、Moralis、The Graph 等适合放进后端代理，隐藏密钥并做缓存。</p>
+          </article>
+          <article class="integration-card backend">
+            <span>需要数据库</span>
+            <h3>观察池、预警和评分历史</h3>
+            <p>用户关注列表、分数变化、预警记录和日报需要数据库与定时任务，不能只靠静态页面。</p>
+          </article>
+          <article class="integration-card premium">
+            <span>商业 API</span>
+            <h3>机构级情报源</h3>
+            <p>Nansen、Arkham、Dune、TokenUnlocks、TRM/Chainalysis 等可形成付费版差异化，但要控制授权成本。</p>
+          </article>
+          <article class="integration-card premium">
+            <span>收费能力</span>
+            <h3>可变现功能</h3>
+            <p>高级预警、钱包监控、Alpha 评分历史、API 输出、团队报告和自定义观察池可以进入订阅套餐。</p>
+          </article>
+          <article class="integration-card">
+            <span>治理要求</span>
+            <h3>来源、置信度与免责</h3>
+            <p>每条结论都要显示来源、更新时间、置信度和风险边界，避免把观察线索包装成确定建议。</p>
+          </article>
+        </div>
       </section>
 
       <section class="section compact" id="source-center" aria-labelledby="source-center-title">
@@ -209,6 +312,6 @@
       </section>
     </main>
 
-    <script src="../assets/js/app.js?v=20260603-playbooks" defer></script>
+    <script src="../assets/js/app.js?v=20260605-data-live2" defer></script>
   </body>
 </html>
