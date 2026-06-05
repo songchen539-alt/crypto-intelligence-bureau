@@ -2288,6 +2288,118 @@ h2 {
   line-height: 1.15;
 }
 
+.alpha-update-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 16px;
+  align-items: start;
+}
+
+.alpha-update-list,
+.alpha-update-side {
+  display: grid;
+  gap: 12px;
+}
+
+.alpha-update-side {
+  position: sticky;
+  top: 92px;
+}
+
+.alpha-update-item {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.062), rgba(255, 255, 255, 0.026));
+  padding: 16px;
+}
+
+.alpha-update-item[data-hidden="true"] {
+  display: none;
+}
+
+.alpha-update-item.risk {
+  border-color: rgba(255, 107, 107, 0.34);
+}
+
+.alpha-update-item h3 {
+  margin-bottom: 8px;
+  font-size: 21px;
+}
+
+.alpha-update-item p {
+  margin-bottom: 14px;
+  color: var(--muted-strong);
+}
+
+.delta-badge {
+  min-height: 86px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  background: rgba(0, 0, 0, 0.18);
+  color: var(--muted);
+  text-align: center;
+}
+
+.delta-badge strong {
+  color: var(--text);
+  font-size: 26px;
+  line-height: 1;
+}
+
+.delta-badge span {
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.delta-badge.positive {
+  border-color: rgba(50, 213, 131, 0.28);
+  background: rgba(50, 213, 131, 0.08);
+}
+
+.delta-badge.positive strong,
+.delta-badge.positive span {
+  color: var(--emerald);
+}
+
+.delta-badge.danger {
+  border-color: rgba(255, 107, 107, 0.3);
+  background: rgba(255, 107, 107, 0.08);
+}
+
+.delta-badge.danger strong,
+.delta-badge.danger span {
+  color: var(--danger);
+}
+
+.update-evidence {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.update-evidence span {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.045);
+  color: var(--muted);
+  font-size: 12px;
+  padding: 6px 9px;
+}
+
+.alpha-update-side .metric-card strong {
+  overflow-wrap: anywhere;
+  font-size: 20px;
+  line-height: 1.15;
+}
+
 .select-input {
   width: 100%;
   min-height: 44px;
@@ -2961,7 +3073,8 @@ h2 {
   .playbook-layout,
   .case-layout,
   .alpha-layout,
-  .alpha-watch-layout {
+  .alpha-watch-layout,
+  .alpha-update-layout {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -2975,7 +3088,8 @@ h2 {
   .playbook-side,
   .case-side,
   .alpha-side,
-  .alpha-watch-side {
+  .alpha-watch-side,
+  .alpha-update-side {
     position: static;
   }
 
@@ -3080,6 +3194,8 @@ h2 {
   .alpha-report-grid,
   .alpha-watch-layout,
   .alpha-watch-item,
+  .alpha-update-layout,
+  .alpha-update-item,
   .report-hero-panel {
     grid-template-columns: 1fr;
   }

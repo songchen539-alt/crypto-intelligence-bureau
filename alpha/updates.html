@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="市场 Alpha 情报局更新流，追踪项目评分上调、下调、证据新增、催化剂和风险触发事件。">
+    <title>Alpha 更新流 / Crypto Intelligence Bureau</title>
+    <link rel="stylesheet" href="../assets/css/styles.css?v=20260605-alpha-updates">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="../" aria-label="加密货币情报局首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3 4 7v6c0 5 3.4 7.7 8 8 4.6-.3 8-3 8-8V7l-8-4Z"></path>
+              <path d="M9 12h6"></path>
+              <path d="M12 9v6"></path>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span>加密货币情报局</span>
+            <span>Crypto Intelligence Bureau</span>
+          </span>
+        </a>
+        <div class="nav-links" data-nav-links>
+          <a href="../">首页</a>
+          <a href="./">Alpha 情报局</a>
+          <a href="report.html">评分报告</a>
+          <a href="watchlist.html">观察池</a>
+          <a href="updates.html" aria-current="page">更新流</a>
+          <a href="../signals/">信号库</a>
+        </div>
+        <div class="nav-actions">
+          <a class="button small" href="watchlist.html">观察池</a>
+          <a class="button primary small" href="#update-feed">查看更新</a>
+        </div>
+        <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false" data-menu-button>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero report-hero" aria-labelledby="alpha-updates-title">
+        <div>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Score Change Log</p>
+          <h1 id="alpha-updates-title">Alpha 更新流</h1>
+          <p class="hero-lede">每天只看真正改变判断的内容：哪些项目分数变了，新增了什么证据，风险是否触发，下一步该复核什么。</p>
+        </div>
+        <aside class="report-hero-panel">
+          <div class="report-hero-stat">
+            <span>今日更新</span>
+            <strong>5</strong>
+          </div>
+          <div class="report-hero-stat">
+            <span>分数上调</span>
+            <strong>2</strong>
+          </div>
+          <div class="report-hero-stat">
+            <span>风险触发</span>
+            <strong>1</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section compact" id="update-feed" aria-labelledby="update-feed-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Daily Alpha Changes</p>
+            <h2 id="update-feed-title">今日评分变化</h2>
+          </div>
+          <p>更新流只记录会改变判断的证据，避免用户被价格噪音和重复新闻淹没。</p>
+        </div>
+
+        <div class="filter-row" role="tablist" aria-label="Alpha 更新筛选">
+          <button class="filter-button active" type="button" data-alpha-update-filter="all">全部</button>
+          <button class="filter-button" type="button" data-alpha-update-filter="upgrade">上调</button>
+          <button class="filter-button" type="button" data-alpha-update-filter="downgrade">下调</button>
+          <button class="filter-button" type="button" data-alpha-update-filter="evidence">新证据</button>
+          <button class="filter-button" type="button" data-alpha-update-filter="catalyst">催化剂</button>
+          <button class="filter-button" type="button" data-alpha-update-filter="risk">风险</button>
+          <button class="filter-button" type="button" data-alpha-update-filter="ai">AI</button>
+          <button class="filter-button" type="button" data-alpha-update-filter="defi">DeFi</button>
+        </div>
+
+        <div class="alpha-update-layout">
+          <div class="alpha-update-list" data-alpha-update-list>
+            <article class="alpha-update-item" data-alpha-update-type="upgrade evidence ai">
+              <div class="delta-badge positive">
+                <strong>+4</strong>
+                <span>Alpha</span>
+              </div>
+              <div>
+                <div class="report-meta">
+                  <span>AI Agent Infra</span>
+                  <span>09:40</span>
+                </div>
+                <h3>AI Agent 执行层协议进入高优先复核</h3>
+                <p>开发者活跃和生态集成数量上升，Alpha Score 从 82 调整到 86。仍需等待费用开关和真实调用收入确认 Token Capture。</p>
+                <div class="update-evidence">
+                  <span>新增证据：SDK 集成数增加</span>
+                  <span>下一步：复核调用量与费用</span>
+                  <a class="text-link" href="report.html?project=ai-agent-execution">打开报告</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="alpha-update-item" data-alpha-update-type="upgrade catalyst defi">
+              <div class="delta-badge positive">
+                <strong>+5</strong>
+                <span>Token</span>
+              </div>
+              <div>
+                <div class="report-meta">
+                  <span>DeFi Revenue</span>
+                  <span>11:15</span>
+                </div>
+                <h3>真实收益型 DeFi 协议费用捕获分数上调</h3>
+                <p>费用分配提案进入执行窗口，Token Capture Score 从 71 调整到 76。后续观察实际回购或分配是否落地。</p>
+                <div class="update-evidence">
+                  <span>催化剂：费用分配窗口</span>
+                  <span>下一步：写入情报日历</span>
+                  <a class="text-link" href="report.html?project=defi-revenue">打开报告</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="alpha-update-item" data-alpha-update-type="evidence rwa">
+              <div class="delta-badge neutral">
+                <strong>0</strong>
+                <span>Hold</span>
+              </div>
+              <div>
+                <div class="report-meta">
+                  <span>RWA Infra</span>
+                  <span>13:05</span>
+                </div>
+                <h3>RWA 基础设施继续等待真实客户证据</h3>
+                <p>新增合作公告不足以直接提高 Alpha Score。需要看到发行资产规模、客户质量和收入条款后再调整。</p>
+                <div class="update-evidence">
+                  <span>新增证据：合作公告</span>
+                  <span>结论：维持观察</span>
+                  <a class="text-link" href="report.html?project=rwa-infra">打开报告</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="alpha-update-item risk" data-alpha-update-type="downgrade risk meme">
+              <div class="delta-badge danger">
+                <strong>+12</strong>
+                <span>Risk</span>
+              </div>
+              <div>
+                <div class="report-meta">
+                  <span>Meme Launch</span>
+                  <span>15:30</span>
+                </div>
+                <h3>高热度 Meme 新币风险分数快速上升</h3>
+                <p>大户转出和交易所流入同步出现，Risk Score 从 76 调整到 88。项目保持风险观察，不进入成长项目池。</p>
+                <div class="update-evidence">
+                  <span>风险触发：大户转出</span>
+                  <span>下一步：进入预警中心</span>
+                  <a class="text-link" href="watchlist.html?status=risk">查看观察池</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="alpha-update-item" data-alpha-update-type="catalyst ai">
+              <div class="delta-badge neutral">
+                <strong>48H</strong>
+                <span>Window</span>
+              </div>
+              <div>
+                <div class="report-meta">
+                  <span>AI Agent Infra</span>
+                  <span>18:20</span>
+                </div>
+                <h3>AI 执行层进入 48 小时事件窗口</h3>
+                <p>主网候选版本即将公布，若费用开关和开发者留存数据同步改善，下一轮会重点复核 Business 和 Token Capture。</p>
+                <div class="update-evidence">
+                  <span>催化剂：主网候选版本</span>
+                  <span>下一步：设置复核提醒</span>
+                  <a class="text-link" href="../calendar/?type=governance">查看日历</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <aside class="alpha-update-side">
+            <article class="metric-card">
+              <span>今日重点</span>
+              <strong>AI / DeFi</strong>
+            </article>
+            <article class="metric-card">
+              <span>分数变化</span>
+              <strong>+4 / +5 / +12</strong>
+            </article>
+            <article class="metric-card">
+              <span>下次复核</span>
+              <strong>48 小时窗口</strong>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section compact" aria-labelledby="update-method-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Retention Loop</p>
+            <h2 id="update-method-title">为什么更新流重要</h2>
+          </div>
+          <p>用户不是每天重新读完整报告，而是每天确认哪些判断被新证据改变。</p>
+        </div>
+
+        <div class="evidence-grid">
+          <article class="analysis-card">
+            <h3>减少噪音</h3>
+            <p>只记录会影响分数和跟踪动作的证据，不复制普通新闻流。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>解释变化</h3>
+            <p>每一次上调、下调或维持都要说明证据和边界。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>连接动作</h3>
+            <p>更新可以跳转到评分报告、观察池、日历、信号库或预警中心。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>形成习惯</h3>
+            <p>用户每天回来不是看行情，而是看自己的观察池有没有被新证据改写。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="../assets/js/app.js?v=20260605-alpha-updates" defer></script>
+  </body>
+</html>
