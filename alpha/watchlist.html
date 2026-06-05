@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="市场 Alpha 情报局观察池，跟踪高潜力项目、等待证据项目和风险观察项目的评分变化、催化剂与复核动作。">
+    <title>Alpha 观察池 / Crypto Intelligence Bureau</title>
+    <link rel="stylesheet" href="../assets/css/styles.css?v=20260605-alpha-watchlist">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="../" aria-label="加密货币情报局首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3 4 7v6c0 5 3.4 7.7 8 8 4.6-.3 8-3 8-8V7l-8-4Z"></path>
+              <path d="M9 12h6"></path>
+              <path d="M12 9v6"></path>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span>加密货币情报局</span>
+            <span>Crypto Intelligence Bureau</span>
+          </span>
+        </a>
+        <div class="nav-links" data-nav-links>
+          <a href="../">首页</a>
+          <a href="./">Alpha 情报局</a>
+          <a href="report.html">评分报告</a>
+          <a href="watchlist.html" aria-current="page">观察池</a>
+          <a href="../tokens/">资产雷达</a>
+          <a href="../calendar/">日历</a>
+        </div>
+        <div class="nav-actions">
+          <a class="button small" href="report.html">评分报告</a>
+          <a class="button primary small" href="#watchlist-board">查看队列</a>
+        </div>
+        <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false" data-menu-button>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero report-hero" aria-labelledby="alpha-watch-title">
+        <div>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Alpha Watchlist</p>
+          <h1 id="alpha-watch-title">Alpha 观察池</h1>
+          <p class="hero-lede">把评分报告里的跟踪动作沉淀成项目队列：哪些要优先复核，哪些等待证据，哪些只做风险观察。</p>
+        </div>
+        <aside class="report-hero-panel">
+          <div class="report-hero-stat">
+            <span>高优先级</span>
+            <strong>2</strong>
+          </div>
+          <div class="report-hero-stat">
+            <span>等待证据</span>
+            <strong>2</strong>
+          </div>
+          <div class="report-hero-stat">
+            <span>风险观察</span>
+            <strong>1</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section compact" id="watchlist-board" aria-labelledby="watchlist-board-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Tracking Queue</p>
+            <h2 id="watchlist-board-title">项目跟踪队列</h2>
+          </div>
+          <p>每个项目都保留当前结论、分数变化、下一次复核触发条件和应进入的后续模块。</p>
+        </div>
+
+        <div class="filter-row" role="tablist" aria-label="Alpha 观察池筛选">
+          <button class="filter-button active" type="button" data-alpha-watch-filter="all">全部</button>
+          <button class="filter-button" type="button" data-alpha-watch-filter="priority">高优先</button>
+          <button class="filter-button" type="button" data-alpha-watch-filter="evidence">等待证据</button>
+          <button class="filter-button" type="button" data-alpha-watch-filter="risk">风险观察</button>
+          <button class="filter-button" type="button" data-alpha-watch-filter="ai">AI</button>
+          <button class="filter-button" type="button" data-alpha-watch-filter="defi">DeFi</button>
+          <button class="filter-button" type="button" data-alpha-watch-filter="rwa">RWA</button>
+        </div>
+
+        <div class="alpha-watch-layout">
+          <div class="alpha-watch-list" data-alpha-watch-list>
+            <article class="alpha-watch-item" data-alpha-watch-status="priority evidence ai">
+              <div class="watch-score positive">
+                <strong>86</strong>
+                <span>+4</span>
+              </div>
+              <div>
+                <div class="report-meta">
+                  <span>AI Agent Infra</span>
+                  <span>高优先</span>
+                </div>
+                <h3>AI Agent 执行层协议</h3>
+                <p>开发者需求和叙事强度上升，下一步重点验证真实费用、调用量和 Token 捕获路径。</p>
+                <div class="watch-progress">
+                  <span style="width: 86%"></span>
+                </div>
+                <div class="watch-actions">
+                  <span>触发条件：费用开关或主网上线</span>
+                  <span>复核周期：每周</span>
+                  <a class="text-link" href="report.html?project=ai-agent-execution">打开报告</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="alpha-watch-item" data-alpha-watch-status="priority defi">
+              <div class="watch-score positive">
+                <strong>74</strong>
+                <span>+2</span>
+              </div>
+              <div>
+                <div class="report-meta">
+                  <span>DeFi Revenue</span>
+                  <span>高优先</span>
+                </div>
+                <h3>真实收益型 DeFi 协议</h3>
+                <p>商业模式分数较高，重点比较协议收入、激励成本和费用是否真正回流到代币。</p>
+                <div class="watch-progress">
+                  <span style="width: 74%"></span>
+                </div>
+                <div class="watch-actions">
+                  <span>触发条件：费用分配上线</span>
+                  <span>复核周期：每周</span>
+                  <a class="text-link" href="report.html?project=defi-revenue">打开报告</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="alpha-watch-item" data-alpha-watch-status="evidence rwa">
+              <div class="watch-score neutral">
+                <strong>68</strong>
+                <span>0</span>
+              </div>
+              <div>
+                <div class="report-meta">
+                  <span>RWA Infra</span>
+                  <span>等待证据</span>
+                </div>
+                <h3>链上资产发行基础设施</h3>
+                <p>商业模式可能扎实，但代币捕获还不清晰。等待真实客户、发行规模和合规路径进一步确认。</p>
+                <div class="watch-progress">
+                  <span style="width: 68%"></span>
+                </div>
+                <div class="watch-actions">
+                  <span>触发条件：机构发行或监管许可</span>
+                  <span>复核周期：每月</span>
+                  <a class="text-link" href="report.html?project=rwa-infra">打开报告</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="alpha-watch-item risk" data-alpha-watch-status="risk meme">
+              <div class="watch-score danger">
+                <strong>88</strong>
+                <span>+12</span>
+              </div>
+              <div>
+                <div class="report-meta">
+                  <span>Meme Launch</span>
+                  <span>风险观察</span>
+                </div>
+                <h3>高热度 Meme 新币</h3>
+                <p>风险分数快速上升，只保留资金流和持仓集中度观察，不进入长期成长项目池。</p>
+                <div class="watch-progress danger">
+                  <span style="width: 88%"></span>
+                </div>
+                <div class="watch-actions">
+                  <span>触发条件：交易所流入或大户转出</span>
+                  <span>复核周期：48 小时</span>
+                  <a class="text-link" href="report.html?project=meme-launch">打开报告</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <aside class="alpha-watch-side">
+            <article class="metric-card">
+              <span>本周复核</span>
+              <strong>AI / DeFi</strong>
+            </article>
+            <article class="metric-card">
+              <span>等待证据</span>
+              <strong>费用 / 客户 / 合规</strong>
+            </article>
+            <article class="metric-card">
+              <span>风险触发</span>
+              <strong data-severity="高">大户转出</strong>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section compact" aria-labelledby="watchflow-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Watchflow</p>
+            <h2 id="watchflow-title">从评分到复核</h2>
+          </div>
+          <p>观察池把一次性报告变成可反复打开的工作流，用户会回来查看分数是否被新证据改写。</p>
+        </div>
+
+        <div class="evidence-grid">
+          <article class="analysis-card">
+            <h3>进入观察池</h3>
+            <p>Alpha 高、商业模式清晰或风险快速上升的项目进入队列。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>等待证据</h3>
+            <p>把费用开关、真实客户、合规许可、解锁窗口和钱包变化设成复核条件。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>更新分数</h3>
+            <p>新证据出现后调整四项分数，并保留分数变化原因。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>分流动作</h3>
+            <p>高价值项目进入报告库，高风险项目进入预警中心，弱证据项目继续等待。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="../assets/js/app.js?v=20260605-alpha-watchlist" defer></script>
+  </body>
+</html>

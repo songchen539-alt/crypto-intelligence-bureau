@@ -708,6 +708,55 @@ function initAlphaReportTabs() {
   applyProject(getProjectFromLocation());
 }
 
+function initAlphaWatchFilters() {
+  const buttons = document.querySelectorAll("[data-alpha-watch-filter]");
+  const items = document.querySelectorAll("[data-alpha-watch-status]");
+  if (!buttons.length || !items.length) return;
+
+  const getFilterFromLocation = () => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("status") || (window.location.hash || "#all").slice(1) || "all";
+  };
+
+  const applyFilter = (filter) => {
+    const allowed = Array.from(buttons).some((button) => button.dataset.alphaWatchFilter === filter);
+    const activeFilter = allowed ? filter : "all";
+
+    buttons.forEach((button) => {
+      const active = button.dataset.alphaWatchFilter === activeFilter;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-selected", String(active));
+    });
+
+    items.forEach((item) => {
+      const statuses = item.dataset.alphaWatchStatus || "";
+      const hidden = activeFilter !== "all" && !statuses.includes(activeFilter);
+      item.dataset.hidden = String(hidden);
+      item.setAttribute("aria-hidden", String(hidden));
+    });
+  };
+
+  document.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-alpha-watch-filter]");
+    if (!button) return;
+
+    event.preventDefault();
+    const filter = button.dataset.alphaWatchFilter || "all";
+    const url = new URL(window.location.href);
+    url.hash = filter === "all" ? "" : filter;
+    if (filter === "all") {
+      url.searchParams.delete("status");
+    } else {
+      url.searchParams.set("status", filter);
+    }
+    window.history.replaceState({}, "", url);
+    applyFilter(filter);
+  });
+
+  window.addEventListener("hashchange", () => applyFilter(getFilterFromLocation()));
+  applyFilter(getFilterFromLocation());
+}
+
 async function loadMarketOverview() {
   const marketStatus = document.querySelector("[data-market-status]");
   const cards = document.querySelectorAll("[data-coin]");
@@ -856,6 +905,7 @@ function initSite() {
   initCaseFilters();
   initAlphaFilters();
   initAlphaReportTabs();
+  initAlphaWatchFilters();
 }
 
 if (document.readyState === "loading") {
