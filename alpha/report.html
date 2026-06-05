@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="市场 Alpha 情报局评分报告，展示项目成长潜力、商业模式、代币价值捕获和风险评分的证据拆解。">
+    <title>Alpha 评分报告 / Crypto Intelligence Bureau</title>
+    <link rel="stylesheet" href="../assets/css/styles.css?v=20260605-alpha-report">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="../" aria-label="加密货币情报局首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3 4 7v6c0 5 3.4 7.7 8 8 4.6-.3 8-3 8-8V7l-8-4Z"></path>
+              <path d="M9 12h6"></path>
+              <path d="M12 9v6"></path>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span>加密货币情报局</span>
+            <span>Crypto Intelligence Bureau</span>
+          </span>
+        </a>
+        <div class="nav-links" data-nav-links>
+          <a href="../">首页</a>
+          <a href="./">Alpha 情报局</a>
+          <a href="report.html" aria-current="page">评分报告</a>
+          <a href="../tokens/">资产雷达</a>
+          <a href="../signals/">信号库</a>
+          <a href="../reports/">报告库</a>
+        </div>
+        <div class="nav-actions">
+          <a class="button small" href="./">Alpha 看板</a>
+          <a class="button primary small" href="#report-detail">查看报告</a>
+        </div>
+        <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false" data-menu-button>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero report-hero" aria-labelledby="alpha-report-title">
+        <div>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Alpha Score Report</p>
+          <h1 id="alpha-report-title">Alpha 评分报告</h1>
+          <p class="hero-lede">把一个项目拆成成长潜力、商业模式、代币价值捕获和风险边界四层，让用户不只看价格，也能判断是否值得持续跟踪。</p>
+        </div>
+        <aside class="report-hero-panel">
+          <div class="report-hero-stat">
+            <span>评分维度</span>
+            <strong>4</strong>
+          </div>
+          <div class="report-hero-stat">
+            <span>证据层</span>
+            <strong>6</strong>
+          </div>
+          <div class="report-hero-stat">
+            <span>跟踪动作</span>
+            <strong>3</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section compact" id="report-detail" aria-labelledby="report-detail-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Project Reports</p>
+            <h2 id="report-detail-title">项目评分详情</h2>
+          </div>
+          <p>切换样例项目，观察同一套评分模型如何处理不同资产类型。真实版本可以接入数据库和链上数据源。</p>
+        </div>
+
+        <div class="filter-row" role="tablist" aria-label="Alpha 报告切换">
+          <button class="filter-button active" type="button" data-alpha-report-filter="ai-agent-execution">AI 执行层</button>
+          <button class="filter-button" type="button" data-alpha-report-filter="defi-revenue">DeFi 收益</button>
+          <button class="filter-button" type="button" data-alpha-report-filter="rwa-infra">RWA 基建</button>
+          <button class="filter-button" type="button" data-alpha-report-filter="meme-launch">Meme 高风险</button>
+        </div>
+
+        <div class="alpha-report-list">
+          <article class="alpha-report-item" data-alpha-report-item="ai-agent-execution">
+            <div class="alpha-report-overview">
+              <div>
+                <div class="report-meta">
+                  <span>AI Agent Infra</span>
+                  <span>持续跟踪</span>
+                </div>
+                <h3>AI Agent 执行层协议</h3>
+                <p>开发者需求和叙事空间清晰，适合进入观察池。当前最大问题是代币价值捕获仍需被真实费用、调用量和回购机制验证。</p>
+              </div>
+              <div class="alpha-score-strip">
+                <span><strong>86</strong>Alpha</span>
+                <span><strong>72</strong>Business</span>
+                <span><strong>58</strong>Token Capture</span>
+                <span data-risk="medium"><strong>44</strong>Risk</span>
+              </div>
+            </div>
+            <div class="alpha-report-grid">
+              <section class="analysis-card wide">
+                <h3>核心判断</h3>
+                <p>这是一个值得持续跟踪的早期 Alpha，但不能只因为 AI 叙事强就直接判定代币有长期支撑。后续必须观察协议费用是否真实产生、费用是否进入代币经济、开发者留存是否超过补贴周期。</p>
+              </section>
+              <section class="analysis-card">
+                <h3>证据重点</h3>
+                <p>开发者活跃、Agent 调用次数、协议收入、生态集成数量、核心钱包持仓变化。</p>
+              </section>
+              <section class="analysis-card">
+                <h3>催化剂</h3>
+                <p>主网上线、SDK 集成、费用开关、生态基金、头部 Agent 应用接入。</p>
+              </section>
+              <section class="analysis-card">
+                <h3>风险边界</h3>
+                <p>估值过早反映叙事、使用量靠补贴驱动、Token 与协议收入没有明确连接。</p>
+              </section>
+              <section class="analysis-card">
+                <h3>跟踪动作</h3>
+                <p>加入 AI 资产观察池；设置收入和活跃开发者阈值；每周复核一次代币捕获分数。</p>
+              </section>
+            </div>
+          </article>
+
+          <article class="alpha-report-item" data-alpha-report-item="defi-revenue" data-hidden="true">
+            <div class="alpha-report-overview">
+              <div>
+                <div class="report-meta">
+                  <span>DeFi Revenue</span>
+                  <span>质量较高</span>
+                </div>
+                <h3>真实收益型 DeFi 协议</h3>
+                <p>商业模式更容易被数据验证。若收入稳定、费用能回流给代币，项目质量和代币价值捕获会比纯叙事资产更扎实。</p>
+              </div>
+              <div class="alpha-score-strip">
+                <span><strong>74</strong>Alpha</span>
+                <span><strong>84</strong>Business</span>
+                <span><strong>76</strong>Token Capture</span>
+                <span data-risk="low"><strong>39</strong>Risk</span>
+              </div>
+            </div>
+            <div class="alpha-report-grid">
+              <section class="analysis-card wide">
+                <h3>核心判断</h3>
+                <p>这类项目的优势是收入和用户行为可验证，但要警惕收益来自短期激励或高风险杠杆。真正有价值的是低补贴下仍然存在的交易需求和费用留存。</p>
+              </section>
+              <section class="analysis-card">
+                <h3>证据重点</h3>
+                <p>协议收入、净费用、TVL 质量、交易量留存、费用分配规则。</p>
+              </section>
+              <section class="analysis-card">
+                <h3>催化剂</h3>
+                <p>费用分配上线、回购机制、稳定币扩展、新抵押品和机构流动性接入。</p>
+              </section>
+              <section class="analysis-card">
+                <h3>风险边界</h3>
+                <p>流动性挖矿过度、坏账暴露、预言机风险、单一大户贡献过高。</p>
+              </section>
+              <section class="analysis-card">
+                <h3>跟踪动作</h3>
+                <p>每周比较收入和激励成本；把费用捕获分数接入资产雷达；异常 TVL 波动进入信号库。</p>
+              </section>
+            </div>
+          </article>
+
+          <article class="alpha-report-item" data-alpha-report-item="rwa-infra" data-hidden="true">
+            <div class="alpha-report-overview">
+              <div>
+                <div class="report-meta">
+                  <span>RWA Infra</span>
+                  <span>长期观察</span>
+                </div>
+                <h3>链上资产发行基础设施</h3>
+                <p>商业模式可能扎实，但增长速度、合规路径和代币捕获关系更慢。适合进入长期跟踪，而不是用短期热度判断。</p>
+              </div>
+              <div class="alpha-score-strip">
+                <span><strong>68</strong>Alpha</span>
+                <span><strong>81</strong>Business</span>
+                <span><strong>52</strong>Token Capture</span>
+                <span data-risk="medium"><strong>47</strong>Risk</span>
+              </div>
+            </div>
+            <div class="alpha-report-grid">
+              <section class="analysis-card wide">
+                <h3>核心判断</h3>
+                <p>RWA 基础设施的重点不是短期叙事，而是真实客户、合规资产规模和收入质量。代币如果只承担治理而不捕获现金流，评分需要保持克制。</p>
+              </section>
+              <section class="analysis-card">
+                <h3>证据重点</h3>
+                <p>真实客户、发行资产规模、资产赎回记录、收入条款、合规合作方。</p>
+              </section>
+              <section class="analysis-card">
+                <h3>催化剂</h3>
+                <p>机构发行、监管许可、稳定收益资产接入、跨链清算基础设施上线。</p>
+              </section>
+              <section class="analysis-card">
+                <h3>风险边界</h3>
+                <p>合规不确定性、资产透明度不足、代币捕获弱、增长节奏慢于市场预期。</p>
+              </section>
+              <section class="analysis-card">
+                <h3>跟踪动作</h3>
+                <p>进入月度跟踪名单；把治理和合规事件加入日历；优先复核收入来源和客户质量。</p>
+              </section>
+            </div>
+          </article>
+
+          <article class="alpha-report-item risk" data-alpha-report-item="meme-launch" data-hidden="true">
+            <div class="alpha-report-overview">
+              <div>
+                <div class="report-meta">
+                  <span>Meme Launch</span>
+                  <span>高风险</span>
+                </div>
+                <h3>高热度 Meme 新币</h3>
+                <p>短期 Alpha 可能很强，但商业模式和代币捕获通常薄弱。它更适合做风险情报和资金流观察，不适合包装成长线项目。</p>
+              </div>
+              <div class="alpha-score-strip">
+                <span><strong>61</strong>Alpha</span>
+                <span><strong>18</strong>Business</span>
+                <span><strong>24</strong>Token Capture</span>
+                <span data-risk="high"><strong>88</strong>Risk</span>
+              </div>
+            </div>
+            <div class="alpha-report-grid">
+              <section class="analysis-card wide">
+                <h3>核心判断</h3>
+                <p>Meme 项目的核心价值是情绪、注意力和流动性，不是可持续商业模式。评分必须明确风险，避免用户把短线交易机会误读为长期投资逻辑。</p>
+              </section>
+              <section class="analysis-card">
+                <h3>证据重点</h3>
+                <p>持仓集中度、交易所流入、聪明资金退出、社媒热度、流动性深度。</p>
+              </section>
+              <section class="analysis-card">
+                <h3>催化剂</h3>
+                <p>交易所上线、社群事件、头部 KOL 关注、短期资金轮动。</p>
+              </section>
+              <section class="analysis-card">
+                <h3>风险边界</h3>
+                <p>大户抛压、流动性抽离、合约权限、热度衰减、估值完全由情绪支撑。</p>
+              </section>
+              <section class="analysis-card">
+                <h3>跟踪动作</h3>
+                <p>默认进入风险观察；只展示证据和风险窗口；高集中度或异常授权同步到预警中心。</p>
+              </section>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section compact" aria-labelledby="method-checklist-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Analyst Checklist</p>
+            <h2 id="method-checklist-title">情报员复核清单</h2>
+          </div>
+          <p>每份 Alpha 报告都应该把事实、假设和结论分开，降低用户把评分当成确定性建议的风险。</p>
+        </div>
+
+        <div class="evidence-grid">
+          <article class="analysis-card">
+            <h3>事实</h3>
+            <p>链上交易、协议收入、合约权限、解锁计划、治理公告和公开市场数据。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>假设</h3>
+            <p>增长能否持续、费用能否捕获、用户是否真实、叙事是否已经被估值反映。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>结论</h3>
+            <p>进入观察池、提高优先级、仅做风险观察、等待更多证据或移出跟踪名单。</p>
+          </article>
+          <article class="analysis-card">
+            <h3>动作</h3>
+            <p>加入资产雷达、写入日历、生成报告、设置预警、进入钱包或巨鲸调查。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="../assets/js/app.js?v=20260605-alpha-report" defer></script>
+  </body>
+</html>

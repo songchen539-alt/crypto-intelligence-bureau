@@ -664,6 +664,50 @@ function initAlphaFilters() {
   applyFilter(getFilterFromLocation());
 }
 
+function initAlphaReportTabs() {
+  const buttons = document.querySelectorAll("[data-alpha-report-filter]");
+  const reports = document.querySelectorAll("[data-alpha-report-item]");
+  if (!buttons.length || !reports.length) return;
+
+  const getProjectFromLocation = () => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("project") || (window.location.hash || "#ai-agent-execution").slice(1) || "ai-agent-execution";
+  };
+
+  const applyProject = (project) => {
+    const allowed = Array.from(buttons).some((button) => button.dataset.alphaReportFilter === project);
+    const activeProject = allowed ? project : "ai-agent-execution";
+
+    buttons.forEach((button) => {
+      const active = button.dataset.alphaReportFilter === activeProject;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-selected", String(active));
+    });
+
+    reports.forEach((report) => {
+      const hidden = report.dataset.alphaReportItem !== activeProject;
+      report.dataset.hidden = String(hidden);
+      report.setAttribute("aria-hidden", String(hidden));
+    });
+  };
+
+  document.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-alpha-report-filter]");
+    if (!button) return;
+
+    event.preventDefault();
+    const project = button.dataset.alphaReportFilter || "ai-agent-execution";
+    const url = new URL(window.location.href);
+    url.searchParams.set("project", project);
+    url.hash = project;
+    window.history.replaceState({}, "", url);
+    applyProject(project);
+  });
+
+  window.addEventListener("hashchange", () => applyProject(getProjectFromLocation()));
+  applyProject(getProjectFromLocation());
+}
+
 async function loadMarketOverview() {
   const marketStatus = document.querySelector("[data-market-status]");
   const cards = document.querySelectorAll("[data-coin]");
@@ -811,6 +855,7 @@ function initSite() {
   initPlaybookFilters();
   initCaseFilters();
   initAlphaFilters();
+  initAlphaReportTabs();
 }
 
 if (document.readyState === "loading") {
