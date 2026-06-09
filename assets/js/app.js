@@ -218,6 +218,197 @@ async function loadLiveDataCenter() {
   }
 }
 
+function renderLiveAlertItems(target, items) {
+  if (!target) return;
+
+  target.innerHTML = items.map((item) => {
+    const toneClass = item.tone ? ` ${item.tone}` : "";
+    const links = (item.links || []).map((link) => (
+      `<a class="text-link" href="${escapeHtml(link.href)}">${escapeHtml(link.label)}</a>`
+    )).join("");
+
+    return `
+      <article class="live-alert-item${toneClass}">
+        <span class="live-alert-severity">${escapeHtml(item.severity)}</span>
+        <div>
+          <div class="live-alert-meta">
+            <span>${escapeHtml(item.source)}</span>
+            <em>${escapeHtml(item.kind)}</em>
+          </div>
+          <h3>${escapeHtml(item.title)}</h3>
+          <p>${escapeHtml(item.body)}</p>
+          <div class="live-alert-actions">${links}</div>
+        </div>
+        <strong>${escapeHtml(item.score)}</strong>
+      </article>
+    `;
+  }).join("");
+}
+
+async function loadLiveAlphaAlerts() {
+  const root = document.querySelector("[data-live-alpha-alerts]");
+  if (!root) return;
+
+  const status = document.querySelector("[data-live-alert-status]");
+  const list = document.querySelector("[data-live-alert-list]");
+  const countNode = document.querySelector("[data-live-alert-count]");
+  const sourceNode = document.querySelector("[data-live-alert-sources]");
+  const ruleNode = document.querySelector("[data-live-alert-rule]");
+  const alerts = [];
+  const sources = [];
+
+  const fetchJson = async (url) => {
+    const response = await fetch(url, { headers: { accept: "application/json" } });
+    if (!response.ok) throw new Error("request failed");
+    return response.json();
+  };
+
+  const addMarketAlerts = async () => {
+    const coins = [
+      ["bitcoin", "BTC"],
+      ["ethereum", "ETH"],
+      ["solana", "SOL"],
+      ["binancecoin", "BNB"]
+    ];
+    const ids = coins.map(([id]) => id).join(",");
+    const data = await fetchJson(`https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true`);
+    const marketMoves = coins.map(([id, symbol]) => {
+      const item = data[id] || {};
+      return {
+        symbol,
+        price: Number(item.usd),
+        change: Number(item.usd_24h_change)
+      };
+    }).filter((item) => Number.isFinite(item.change))
+      .sort((a, b) => Math.abs(b.change) - Math.abs(a.change))
+      .slice(0, 2);
+
+    marketMoves.forEach((item) => {
+      const changeText = `${item.change >= 0 ? "+" : ""}${item.change.toFixed(2)}%`;
+      const isRisk = item.change < -2;
+      const isCritical = Math.abs(item.change) >= 4;
+      alerts.push({
+        severity: isCritical ? "High" : (isRisk ? "Risk" : "Move"),
+        tone: isRisk ? "risk" : (isCritical ? "critical" : ""),
+        source: "CoinGecko",
+        kind: "市场背景",
+        title: `${item.symbol} 24 小时${item.change >= 0 ? "上行" : "下行"} ${Math.abs(item.change).toFixed(2)}%`,
+        body: `当前价格 ${formatUsd(item.price)}。主流资产波动会影响新币风险偏好，应先进入市场背景层，再复核巨鲸、交易所流入和板块资金。`,
+        score: changeText,
+        links: [
+          { label: "资金流信号", href: "../signals/?type=flow" },
+          { label: "实时雷达", href: "live.html" }
+        ]
+      });
+    });
+
+    sources.push("CoinGecko");
+  };
+
+  const addDefiAlerts = async () => {
+    const data = await fetchJson("https://api.llama.fi/protocols");
+    const protocols = (Array.isArray(data) ? data : [])
+      .filter((protocol) => Number(protocol.tvl) > 0 && protocol.category !== "CEX")
+      .sort((a, b) => Number(b.tvl) - Number(a.tvl))
+      .slice(0, 2);
+
+    protocols.forEach((protocol) => {
+      alerts.push({
+        severity: "Quality",
+        tone: "",
+        source: "DeFiLlama",
+        kind: protocol.category || "DeFi TVL",
+        title: `${protocol.name || "DeFi 协议"} 保持资金沉淀前列`,
+        body: "TVL 靠前不等于代币一定有价值，但它能帮助我们优先复核商业模式、收入质量和 Token Capture Score。",
+        score: formatCompactUsd(Number(protocol.tvl)),
+        links: [
+          { label: "DeFi 评分报告", href: "report.html?project=defi-revenue" },
+          { label: "观察池", href: "watchlist.html?status=priority" }
+        ]
+      });
+    });
+
+    sources.push("DeFiLlama");
+  };
+
+  const addDexAlerts = async () => {
+    const data = await fetchJson("https://api.dexscreener.com/token-boosts/latest/v1");
+    const boosts = [];
+    const seenTokens = new Set();
+    (Array.isArray(data) ? data : []).forEach((item) => {
+      const key = `${item.chainId || ""}:${item.tokenAddress || ""}`;
+      if (boosts.length >= 2 || seenTokens.has(key)) return;
+      seenTokens.add(key);
+      boosts.push(item);
+    });
+
+    boosts.forEach((item) => {
+      const amount = Number(item.totalAmount);
+      alerts.push({
+        severity: "Watch",
+        tone: "risk",
+        source: "DEX Screener",
+        kind: item.chainId || "DEX Boost",
+        title: `${item.chainId || "DEX"} 新 Token Boost 热度上升`,
+        body: `${shortAddress(item.tokenAddress)} 出现在最新 Boost 流中。Boost 代表注意力，不代表质量，默认进入风险观察并等待链上证据。`,
+        score: Number.isFinite(amount) ? `${amount.toLocaleString("en-US")} boost` : "Boost",
+        links: [
+          { label: "风险观察池", href: "watchlist.html?status=risk" },
+          { label: "数据源说明", href: "../sources/#live-data" }
+        ]
+      });
+    });
+
+    sources.push("DEX Screener");
+  };
+
+  const tasks = [addMarketAlerts, addDefiAlerts, addDexAlerts];
+  await Promise.allSettled(tasks.map((task) => task()));
+
+  if (!alerts.length) {
+    alerts.push(
+      {
+        severity: "Fallback",
+        tone: "",
+        source: "CIB",
+        kind: "降级样例",
+        title: "公开数据暂不可用，保留预警工作流",
+        body: "生产版需要后端缓存、重试和数据快照，避免前端直接暴露 API 限流风险。",
+        score: "Standby",
+        links: [
+          { label: "数据接入计划", href: "../sources/#integration-plan" }
+        ]
+      },
+      {
+        severity: "Next",
+        tone: "critical",
+        source: "Backend",
+        kind: "商业化",
+        title: "接入钱包标签、解锁日历和付费 API",
+        body: "当预警队列能保存、订阅、推送和解释原因时，它就能成为 Pro 会员和机构用户的核心入口。",
+        score: "Pro",
+        links: [
+          { label: "API 入口", href: "../api/" },
+          { label: "定价", href: "../pricing/" }
+        ]
+      }
+    );
+  }
+
+  const orderedAlerts = alerts.slice(0, 6);
+  renderLiveAlertItems(list, orderedAlerts);
+
+  if (status) {
+    status.textContent = sources.length
+      ? `已生成 ${orderedAlerts.length} 条 Live Alpha 预警，来源：${sources.join("、")}。生产版会通过后端缓存和评分引擎写入用户观察池。`
+      : "公开数据源暂时不可用，当前展示降级预警样例。";
+  }
+
+  if (countNode) countNode.textContent = String(orderedAlerts.length);
+  if (sourceNode) sourceNode.textContent = sources.length ? sources.join(" / ") : "等待后端";
+  if (ruleNode) ruleNode.textContent = "价格 / TVL / DEX 热度";
+}
+
 function initDirectoryQuery() {
   const target = document.querySelector("[data-directory-query]");
   if (!target) return;
@@ -1096,6 +1287,7 @@ function initSite() {
   initAlphaWatchFilters();
   initAlphaUpdateFilters();
   loadLiveDataCenter();
+  loadLiveAlphaAlerts();
 }
 
 if (document.readyState === "loading") {
