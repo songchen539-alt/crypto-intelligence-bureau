@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.coingecko.com https://api.llama.fi https://api.dexscreener.com; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="市场 Alpha 实时雷达，汇总公开市场价格、DeFi TVL 与 DEX 热点数据，用于发现需要进入评分报告和观察池的线索。">
+    <title>Live Alpha 雷达 / Crypto Intelligence Bureau</title>
+    <link rel="stylesheet" href="../assets/css/styles.css?v=20260609-live-alpha">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="主导航">
+        <a class="brand" href="../" aria-label="加密货币情报局首页">
+          <span class="brand-mark" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3 4 7v6c0 5 3.4 7.7 8 8 4.6-.3 8-3 8-8V7l-8-4Z"></path>
+              <path d="M9 12h6"></path>
+              <path d="M12 9v6"></path>
+            </svg>
+          </span>
+          <span class="brand-text">
+            <span>加密货币情报局</span>
+            <span>Crypto Intelligence Bureau</span>
+          </span>
+        </a>
+        <div class="nav-links" data-nav-links>
+          <a href="../">首页</a>
+          <a href="./">Alpha 情报局</a>
+          <a href="live.html" aria-current="page">实时雷达</a>
+          <a href="report.html">评分报告</a>
+          <a href="watchlist.html">观察池</a>
+          <a href="updates.html">更新流</a>
+          <a href="../sources/">数据接入</a>
+        </div>
+        <div class="nav-actions">
+          <a class="button small" href="updates.html">更新流</a>
+          <a class="button primary small" href="#live-alpha">实时数据</a>
+        </div>
+        <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false" data-menu-button>
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <section class="page-hero report-hero" aria-labelledby="live-alpha-title">
+        <div>
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Live Alpha Radar</p>
+          <h1 id="live-alpha-title">Live Alpha 雷达</h1>
+          <p class="hero-lede">把公开实时数据放进 Alpha 工作流：先看市场背景、DeFi 资金沉淀和 DEX 热点，再决定哪些项目进入评分报告、观察池或风险更新流。</p>
+        </div>
+        <aside class="report-hero-panel">
+          <div class="report-hero-stat">
+            <span>公开数据源</span>
+            <strong>3</strong>
+          </div>
+          <div class="report-hero-stat">
+            <span>可直接浏览</span>
+            <strong>12</strong>
+          </div>
+          <div class="report-hero-stat">
+            <span>后端需求</span>
+            <strong>下一步</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section compact" id="live-alpha" aria-labelledby="live-alpha-data-title" data-live-data-center>
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Public Live Data</p>
+            <h2 id="live-alpha-data-title">实时 Alpha 输入</h2>
+          </div>
+          <p data-live-data-status>正在连接公开数据源。生产版会通过后端缓存、限流和评分引擎把这些数据写入 Alpha 更新流。</p>
+        </div>
+
+        <div class="live-data-grid">
+          <article class="live-panel">
+            <div class="live-panel-head">
+              <div>
+                <span>CoinGecko</span>
+                <h3>市场背景</h3>
+              </div>
+              <strong data-live-source-status="coingecko">连接中</strong>
+            </div>
+            <div class="live-row-list" data-live-market-list>
+              <div class="live-row"><span>BTC</span><strong>等待数据</strong><em>--</em></div>
+              <div class="live-row"><span>ETH</span><strong>等待数据</strong><em>--</em></div>
+              <div class="live-row"><span>SOL</span><strong>等待数据</strong><em>--</em></div>
+              <div class="live-row"><span>BNB</span><strong>等待数据</strong><em>--</em></div>
+            </div>
+          </article>
+
+          <article class="live-panel">
+            <div class="live-panel-head">
+              <div>
+                <span>DeFiLlama</span>
+                <h3>资金沉淀</h3>
+              </div>
+              <strong data-live-source-status="defillama">连接中</strong>
+            </div>
+            <div class="live-row-list" data-live-defi-list>
+              <div class="live-row"><span>协议</span><strong>等待数据</strong><em>TVL</em></div>
+              <div class="live-row"><span>协议</span><strong>等待数据</strong><em>TVL</em></div>
+              <div class="live-row"><span>协议</span><strong>等待数据</strong><em>TVL</em></div>
+              <div class="live-row"><span>协议</span><strong>等待数据</strong><em>TVL</em></div>
+            </div>
+          </article>
+
+          <article class="live-panel">
+            <div class="live-panel-head">
+              <div>
+                <span>DEX Screener</span>
+                <h3>早期热度</h3>
+              </div>
+              <strong data-live-source-status="dexscreener">连接中</strong>
+            </div>
+            <div class="live-row-list" data-live-dex-list>
+              <div class="live-row"><span>Token</span><strong>等待数据</strong><em>Boost</em></div>
+              <div class="live-row"><span>Token</span><strong>等待数据</strong><em>Boost</em></div>
+              <div class="live-row"><span>Token</span><strong>等待数据</strong><em>Boost</em></div>
+              <div class="live-row"><span>Token</span><strong>等待数据</strong><em>Boost</em></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section compact" aria-labelledby="alpha-routing-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Routing Rules</p>
+            <h2 id="alpha-routing-title">如何进入 Alpha 工作流</h2>
+          </div>
+          <p>实时数据本身不是结论。它要被分流到评分、观察、更新和预警，才会变成用户愿意付费的情报能力。</p>
+        </div>
+
+        <div class="evidence-grid">
+          <article class="analysis-card">
+            <h3>价格异动</h3>
+            <p>主流资产大幅波动时，先进入市场背景层，再检查巨鲸与交易所流入是否同步。</p>
+            <a class="text-link" href="../signals/?type=flow">查看资金流信号</a>
+          </article>
+          <article class="analysis-card">
+            <h3>TVL 沉淀</h3>
+            <p>DeFi TVL 和收入稳定的协议优先进入 Business Model Score 与 Token Capture Score 复核。</p>
+            <a class="text-link" href="report.html?project=defi-revenue">打开 DeFi 报告</a>
+          </article>
+          <article class="analysis-card">
+            <h3>DEX 热点</h3>
+            <p>DEX Boost 只能说明注意力上升。高热度新币默认进入风险观察，等待链上持仓和流动性确认。</p>
+            <a class="text-link" href="watchlist.html?status=risk">查看风险观察池</a>
+          </article>
+          <article class="analysis-card">
+            <h3>评分变化</h3>
+            <p>公开数据触发评分变化后，进入更新流解释为什么上调、下调或维持观察。</p>
+            <a class="text-link" href="updates.html?change=upgrade">查看更新流</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section compact" aria-labelledby="backend-next-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Backend Next</p>
+            <h2 id="backend-next-title">推向市场前的后端层</h2>
+          </div>
+          <p>现在公开站已经能显示实时数据。要开始收费，下一步需要后端代理、数据库、定时任务和用户账户。</p>
+        </div>
+
+        <div class="integration-grid">
+          <article class="integration-card backend">
+            <span>后端代理</span>
+            <h3>隐藏密钥与缓存</h3>
+            <p>把 Etherscan、Solscan、Covalent、Moralis、Dune 等 API 放到后端，前端只访问自己的接口。</p>
+          </article>
+          <article class="integration-card backend">
+            <span>评分引擎</span>
+            <h3>写入分数历史</h3>
+            <p>把价格、TVL、DEX、钱包、解锁和治理事件转成 Alpha Score 的变化记录。</p>
+          </article>
+          <article class="integration-card premium">
+            <span>变现入口</span>
+            <h3>付费观察池</h3>
+            <p>用户可以保存项目、设置阈值、订阅预警和导出报告，这些适合放进 Pro 会员。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="../assets/js/app.js?v=20260609-live-alpha" defer></script>
+  </body>
+</html>
