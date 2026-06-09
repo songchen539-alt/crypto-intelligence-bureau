@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.coingecko.com https://api.llama.fi https://api.dexscreener.com; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.coingecko.com https://api.llama.fi https://stablecoins.llama.fi https://api.dexscreener.com https://api.binance.com https://data-api.binance.vision https://api.alternative.me; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="color-scheme" content="dark">
     <meta name="description" content="加密货币情报局数据源与实时接入中心，展示已接入公开数据、需要后端的数据和商业级数据路线。">
     <title>数据源与实时接入中心 / Crypto Intelligence Bureau</title>
-    <link rel="stylesheet" href="../assets/css/styles.css?v=20260605-data-live2">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=20260609-data-expansion">
   </head>
   <body>
     <header class="site-header">
@@ -120,6 +120,87 @@
             </div>
           </article>
         </div>
+
+        <div class="live-data-grid expanded-live-grid">
+          <article class="live-panel">
+            <div class="live-panel-head">
+              <div>
+                <span>Binance</span>
+                <h3>成交量与流动性</h3>
+              </div>
+              <strong data-live-source-status="binance">连接中</strong>
+            </div>
+            <div class="live-row-list" data-live-liquidity-list>
+              <div class="live-row"><span>BTCUSDT</span><strong>等待数据</strong><em>Volume</em></div>
+              <div class="live-row"><span>ETHUSDT</span><strong>等待数据</strong><em>Volume</em></div>
+              <div class="live-row"><span>SOLUSDT</span><strong>等待数据</strong><em>Volume</em></div>
+              <div class="live-row"><span>BNBUSDT</span><strong>等待数据</strong><em>Volume</em></div>
+            </div>
+          </article>
+
+          <article class="live-panel">
+            <div class="live-panel-head">
+              <div>
+                <span>DeFiLlama Stablecoins</span>
+                <h3>稳定币流动性</h3>
+              </div>
+              <strong data-live-source-status="stablecoins">连接中</strong>
+            </div>
+            <div class="live-row-list" data-live-stable-list>
+              <div class="live-row"><span>USDT</span><strong>等待数据</strong><em>Supply</em></div>
+              <div class="live-row"><span>USDC</span><strong>等待数据</strong><em>Supply</em></div>
+              <div class="live-row"><span>USDS</span><strong>等待数据</strong><em>Supply</em></div>
+              <div class="live-row"><span>DAI</span><strong>等待数据</strong><em>Supply</em></div>
+            </div>
+          </article>
+
+          <article class="live-panel">
+            <div class="live-panel-head">
+              <div>
+                <span>DeFiLlama Chains</span>
+                <h3>链上 TVL 分布</h3>
+              </div>
+              <strong data-live-source-status="chains">连接中</strong>
+            </div>
+            <div class="live-row-list" data-live-chain-list>
+              <div class="live-row"><span>Chain</span><strong>等待数据</strong><em>TVL</em></div>
+              <div class="live-row"><span>Chain</span><strong>等待数据</strong><em>TVL</em></div>
+              <div class="live-row"><span>Chain</span><strong>等待数据</strong><em>TVL</em></div>
+              <div class="live-row"><span>Chain</span><strong>等待数据</strong><em>TVL</em></div>
+            </div>
+          </article>
+
+          <article class="live-panel">
+            <div class="live-panel-head">
+              <div>
+                <span>DeFiLlama Security</span>
+                <h3>安全事件样本</h3>
+              </div>
+              <strong data-live-source-status="hacks">连接中</strong>
+            </div>
+            <div class="live-row-list" data-live-hack-list>
+              <div class="live-row"><span>Risk</span><strong>等待数据</strong><em>Loss</em></div>
+              <div class="live-row"><span>Risk</span><strong>等待数据</strong><em>Loss</em></div>
+              <div class="live-row"><span>Risk</span><strong>等待数据</strong><em>Loss</em></div>
+              <div class="live-row"><span>Risk</span><strong>等待数据</strong><em>Loss</em></div>
+            </div>
+          </article>
+
+          <article class="live-panel">
+            <div class="live-panel-head">
+              <div>
+                <span>Alternative.me</span>
+                <h3>市场情绪</h3>
+              </div>
+              <strong data-live-source-status="sentiment">连接中</strong>
+            </div>
+            <div class="live-row-list" data-live-sentiment-list>
+              <div class="live-row"><span>F&G</span><strong>等待数据</strong><em>0-100</em></div>
+              <div class="live-row"><span>Mode</span><strong>等待数据</strong><em>BTC</em></div>
+              <div class="live-row"><span>Update</span><strong>等待数据</strong><em>Time</em></div>
+            </div>
+          </article>
+        </div>
       </section>
 
       <section class="section compact" id="integration-plan" aria-labelledby="integration-plan-title">
@@ -134,8 +215,8 @@
         <div class="integration-grid">
           <article class="integration-card live">
             <span>已接入</span>
-            <h3>公开市场与 DeFi 数据</h3>
-            <p>CoinGecko、DeFiLlama、DEX Screener 可直接支持价格、TVL、DEX 热度和早期资产发现。</p>
+            <h3>公开市场、DeFi 与情绪数据</h3>
+            <p>CoinGecko、DeFiLlama、DEX Screener、Binance 与 Alternative.me 可直接支持价格、TVL、稳定币、链流动性、DEX 热度、成交量和市场情绪。</p>
           </article>
           <article class="integration-card backend">
             <span>需要后端</span>
@@ -150,7 +231,7 @@
           <article class="integration-card premium">
             <span>商业 API</span>
             <h3>机构级情报源</h3>
-            <p>Nansen、Arkham、Dune、TokenUnlocks、TRM/Chainalysis 等可形成付费版差异化，但要控制授权成本。</p>
+            <p>Nansen、Arkham、Dune、TokenUnlocks、TRM/Chainalysis、DeFiLlama 大型收益池数据等可形成付费版差异化，但要通过后端缓存控制授权和性能成本。</p>
           </article>
           <article class="integration-card premium">
             <span>收费能力</span>
@@ -312,6 +393,6 @@
       </section>
     </main>
 
-    <script src="../assets/js/app.js?v=20260605-data-live2" defer></script>
+    <script src="../assets/js/app.js?v=20260609-data-expansion" defer></script>
   </body>
 </html>

@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.coingecko.com https://api.llama.fi https://api.dexscreener.com; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.coingecko.com https://api.llama.fi https://stablecoins.llama.fi https://api.dexscreener.com https://api.binance.com https://data-api.binance.vision https://api.alternative.me; img-src 'self'; script-src 'self'; style-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="color-scheme" content="dark">
-    <meta name="description" content="Live Alpha 预警台，把 CoinGecko、DeFiLlama 和 DEX Screener 的公开实时数据转成可行动的市场 Alpha 预警队列。">
+    <meta name="description" content="Live Alpha 预警台，把市场价格、DeFi TVL、稳定币、链 TVL、DEX 热度、成交量、安全事件和市场情绪转成可行动的 Alpha 预警队列。">
     <title>Live Alpha 预警台 / Crypto Intelligence Bureau</title>
-    <link rel="stylesheet" href="../assets/css/styles.css?v=20260609-live-alerts">
+    <link rel="stylesheet" href="../assets/css/styles.css?v=20260609-data-expansion">
   </head>
   <body>
     <header class="site-header">
@@ -55,16 +55,16 @@
         <div>
           <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Live Alpha Alerts</p>
           <h1 id="live-alert-title">Live Alpha 预警台</h1>
-          <p class="hero-lede">把公开实时数据转成可行动信号：市场异动、DeFi 资金沉淀、DEX 热点和风险观察，帮助用户快速判断哪些项目值得进入报告、观察池或更新流。</p>
+          <p class="hero-lede">把公开实时数据转成可行动信号：市场异动、成交量、稳定币、链上 TVL、DeFi 资金沉淀、DEX 热点、安全事件和风险观察，帮助用户快速判断哪些项目值得进入报告、观察池或更新流。</p>
         </div>
         <aside class="report-hero-panel">
           <div class="report-hero-stat">
             <span>实时数据源</span>
-            <strong>3</strong>
+            <strong>8</strong>
           </div>
           <div class="report-hero-stat">
             <span>规则分流</span>
-            <strong>6</strong>
+            <strong>10</strong>
           </div>
           <div class="report-hero-stat">
             <span>生产后端</span>
@@ -109,7 +109,7 @@
             </article>
             <article class="metric-card">
               <span>触发规则</span>
-              <strong data-live-alert-rule>价格 / TVL / DEX</strong>
+              <strong data-live-alert-rule>价格 / TVL / DEX / 稳定币 / 情绪</strong>
             </article>
           </aside>
         </div>
@@ -127,12 +127,12 @@
         <div class="evidence-grid">
           <article class="analysis-card">
             <h3>市场异动</h3>
-            <p>主流资产出现显著 24 小时波动时，优先进入资金流信号和市场背景层，避免孤立判断单个 Token。</p>
+            <p>主流资产出现显著 24 小时波动或成交量集中时，优先进入资金流信号和市场背景层，避免孤立判断单个 Token。</p>
             <a class="text-link" href="../signals/?type=flow">查看资金流信号</a>
           </article>
           <article class="analysis-card">
             <h3>DeFi 资金沉淀</h3>
-            <p>TVL 靠前且非交易所类协议进入 Business Model Score 和 Token Capture Score 复核，适合做长期跟踪报告。</p>
+            <p>TVL、稳定币供给和链级资金沉淀进入 Business Model Score 和 Token Capture Score 复核，适合做长期跟踪报告。</p>
             <a class="text-link" href="report.html?project=defi-revenue">打开 DeFi 评分报告</a>
           </article>
           <article class="analysis-card">
@@ -142,13 +142,13 @@
           </article>
           <article class="analysis-card">
             <h3>生产级接入</h3>
-            <p>后端会把钱包标签、解锁日历、交易所流入和付费 API 写入同一个预警队列，前端只展示已归因后的情报。</p>
+            <p>后端会把钱包标签、解锁日历、交易所流入、大型收益池和付费 API 写入同一个预警队列，前端只展示已归因后的情报。</p>
             <a class="text-link" href="../sources/#integration-plan">查看数据接入计划</a>
           </article>
         </div>
       </section>
     </main>
 
-    <script src="../assets/js/app.js?v=20260609-live-alerts" defer></script>
+    <script src="../assets/js/app.js?v=20260609-data-expansion" defer></script>
   </body>
 </html>

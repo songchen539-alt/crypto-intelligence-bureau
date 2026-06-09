@@ -127,7 +127,18 @@ async function loadLiveDataCenter() {
   const marketList = document.querySelector("[data-live-market-list]");
   const defiList = document.querySelector("[data-live-defi-list]");
   const dexList = document.querySelector("[data-live-dex-list]");
+  const liquidityList = document.querySelector("[data-live-liquidity-list]");
+  const stableList = document.querySelector("[data-live-stable-list]");
+  const chainList = document.querySelector("[data-live-chain-list]");
+  const hackList = document.querySelector("[data-live-hack-list]");
+  const sentimentList = document.querySelector("[data-live-sentiment-list]");
   const connections = [];
+
+  const fetchJson = async (url) => {
+    const response = await fetch(url, { headers: { accept: "application/json" } });
+    if (!response.ok) throw new Error("request failed");
+    return response.json();
+  };
 
   const loadMarket = async () => {
     const coins = [
@@ -198,10 +209,126 @@ async function loadLiveDataCenter() {
     connections.push("DEX Screener");
   };
 
+  const loadLiquidity = async () => {
+    if (!liquidityList) return;
+    const symbols = encodeURIComponent(JSON.stringify(["BTCUSDT", "ETHUSDT", "SOLUSDT", "BNBUSDT"]));
+    let data;
+    try {
+      data = await fetchJson(`https://data-api.binance.vision/api/v3/ticker/24hr?symbols=${symbols}`);
+    } catch {
+      data = await fetchJson(`https://api.binance.com/api/v3/ticker/24hr?symbols=${symbols}`);
+    }
+    const rows = (Array.isArray(data) ? data : [data])
+      .filter((item) => item && item.symbol)
+      .sort((a, b) => Number(b.quoteVolume) - Number(a.quoteVolume))
+      .slice(0, 4)
+      .map((item) => {
+        const change = Number(item.priceChangePercent);
+        return {
+          label: item.symbol,
+          title: formatCompactUsd(Number(item.quoteVolume)),
+          value: Number.isFinite(change) ? `${change >= 0 ? "+" : ""}${change.toFixed(2)}%` : "--",
+          valueClass: change >= 0 ? "positive" : "negative"
+        };
+      });
+    renderLiveRows(liquidityList, rows);
+    setLiveSourceStatus("binance", "live", "已接入");
+    connections.push("Binance");
+  };
+
+  const loadStablecoins = async () => {
+    if (!stableList) return;
+    const data = await fetchJson("https://stablecoins.llama.fi/stablecoins?includePrices=true");
+    const assets = (Array.isArray(data.peggedAssets) ? data.peggedAssets : [])
+      .map((asset) => ({
+        name: asset.name || "Stablecoin",
+        symbol: asset.symbol || "USD",
+        supply: Number(asset.circulating && asset.circulating.peggedUSD),
+        price: Number(asset.price)
+      }))
+      .filter((asset) => Number.isFinite(asset.supply) && asset.supply > 0)
+      .sort((a, b) => b.supply - a.supply)
+      .slice(0, 4);
+    renderLiveRows(stableList, assets.map((asset) => ({
+      label: asset.symbol,
+      title: asset.name,
+      value: Number.isFinite(asset.price) ? `${formatCompactUsd(asset.supply)} / $${asset.price.toFixed(4)}` : formatCompactUsd(asset.supply),
+      valueClass: Number.isFinite(asset.price) && Math.abs(asset.price - 1) > 0.003 ? "negative" : ""
+    })));
+    setLiveSourceStatus("stablecoins", "live", "已接入");
+    connections.push("Stablecoins");
+  };
+
+  const loadChains = async () => {
+    if (!chainList) return;
+    const data = await fetchJson("https://api.llama.fi/v2/chains");
+    const chains = (Array.isArray(data) ? data : [])
+      .filter((chain) => Number(chain.tvl) > 0)
+      .sort((a, b) => Number(b.tvl) - Number(a.tvl))
+      .slice(0, 4);
+    renderLiveRows(chainList, chains.map((chain) => ({
+      label: chain.tokenSymbol || "Chain",
+      title: chain.name || "Unknown chain",
+      value: formatCompactUsd(Number(chain.tvl))
+    })));
+    setLiveSourceStatus("chains", "live", "已接入");
+    connections.push("Chain TVL");
+  };
+
+  const loadHacks = async () => {
+    if (!hackList) return;
+    const data = await fetchJson("https://api.llama.fi/hacks");
+    const events = (Array.isArray(data) ? data : [])
+      .filter((event) => Number(event.amount) > 0)
+      .sort((a, b) => Number(b.date) - Number(a.date))
+      .slice(0, 4);
+    renderLiveRows(hackList, events.map((event) => ({
+      label: event.classification || "Incident",
+      title: event.name || "Security event",
+      value: formatCompactUsd(Number(event.amount))
+    })));
+    setLiveSourceStatus("hacks", "live", "已接入");
+    connections.push("Security Events");
+  };
+
+  const loadSentiment = async () => {
+    if (!sentimentList) return;
+    const data = await fetchJson("https://api.alternative.me/fng/?limit=1");
+    const item = Array.isArray(data.data) ? data.data[0] : null;
+    const value = item ? Number(item.value) : NaN;
+    const seconds = item ? Number(item.time_until_update) : NaN;
+    const hours = Number.isFinite(seconds) ? Math.max(0, Math.round(seconds / 3600)) : null;
+    renderLiveRows(sentimentList, [
+      {
+        label: "F&G",
+        title: item ? item.value_classification : "Unknown",
+        value: Number.isFinite(value) ? `${value}/100` : "--",
+        valueClass: Number.isFinite(value) && value <= 25 ? "negative" : (value >= 75 ? "positive" : "")
+      },
+      {
+        label: "Scope",
+        title: "BTC market sentiment",
+        value: "Daily"
+      },
+      {
+        label: "Update",
+        title: "Next refresh",
+        value: hours === null ? "--" : `${hours}h`
+      }
+    ]);
+    setLiveSourceStatus("sentiment", "live", "已接入");
+    connections.push("Alternative.me");
+  };
+
   const tasks = [
     ["coingecko", loadMarket],
     ["defillama", loadDefi],
-    ["dexscreener", loadDex]
+    ["dexscreener", loadDex],
+    ["binance", loadLiquidity],
+    ["stablecoins", loadStablecoins],
+    ["chains", loadChains],
+    ["hacks", loadHacks],
+    ["sentiment", loadSentiment]
   ];
 
   const results = await Promise.allSettled(tasks.map(([, task]) => task()));
@@ -362,7 +489,156 @@ async function loadLiveAlphaAlerts() {
     sources.push("DEX Screener");
   };
 
-  const tasks = [addMarketAlerts, addDefiAlerts, addDexAlerts];
+  const addLiquidityAlerts = async () => {
+    const symbols = encodeURIComponent(JSON.stringify(["BTCUSDT", "ETHUSDT", "SOLUSDT", "BNBUSDT"]));
+    let data;
+    try {
+      data = await fetchJson(`https://data-api.binance.vision/api/v3/ticker/24hr?symbols=${symbols}`);
+    } catch {
+      data = await fetchJson(`https://api.binance.com/api/v3/ticker/24hr?symbols=${symbols}`);
+    }
+    const leaders = (Array.isArray(data) ? data : [data])
+      .filter((item) => item && item.symbol && Number(item.quoteVolume) > 0)
+      .sort((a, b) => Number(b.quoteVolume) - Number(a.quoteVolume))
+      .slice(0, 2);
+
+    leaders.forEach((item) => {
+      const change = Number(item.priceChangePercent);
+      alerts.push({
+        severity: "Liquidity",
+        tone: Math.abs(change) >= 4 ? "critical" : "",
+        source: "Binance",
+        kind: "交易深度",
+        title: `${item.symbol} 24 小时成交额靠前`,
+        body: `24 小时成交额约 ${formatCompactUsd(Number(item.quoteVolume))}，成交笔数 ${Number(item.count || 0).toLocaleString("en-US")}。高流动性资产更适合作为市场背景和风险偏好锚点。`,
+        score: Number.isFinite(change) ? `${change >= 0 ? "+" : ""}${change.toFixed(2)}%` : "Volume",
+        links: [
+          { label: "实时雷达", href: "live.html" },
+          { label: "市场信号", href: "../signals/?type=flow" }
+        ]
+      });
+    });
+
+    sources.push("Binance");
+  };
+
+  const addStablecoinAlerts = async () => {
+    const data = await fetchJson("https://stablecoins.llama.fi/stablecoins?includePrices=true");
+    const assets = (Array.isArray(data.peggedAssets) ? data.peggedAssets : [])
+      .map((asset) => ({
+        name: asset.name || "Stablecoin",
+        symbol: asset.symbol || "USD",
+        supply: Number(asset.circulating && asset.circulating.peggedUSD),
+        price: Number(asset.price)
+      }))
+      .filter((asset) => Number.isFinite(asset.supply) && asset.supply > 0)
+      .sort((a, b) => b.supply - a.supply)
+      .slice(0, 2);
+
+    assets.forEach((asset) => {
+      const deviation = Number.isFinite(asset.price) ? Math.abs(asset.price - 1) : 0;
+      alerts.push({
+        severity: deviation > 0.003 ? "Risk" : "Liquidity",
+        tone: deviation > 0.003 ? "risk" : "",
+        source: "DeFiLlama Stablecoins",
+        kind: "稳定币流动性",
+        title: `${asset.symbol} 稳定币供给保持头部`,
+        body: `${asset.name} 流通供给约 ${formatCompactUsd(asset.supply)}。稳定币供给和脱锚风险会影响全市场风险偏好、DeFi 收益和链上流动性。`,
+        score: Number.isFinite(asset.price) ? `$${asset.price.toFixed(4)}` : formatCompactUsd(asset.supply),
+        links: [
+          { label: "数据接入", href: "../sources/#live-data" },
+          { label: "DeFi 报告", href: "report.html?project=defi-revenue" }
+        ]
+      });
+    });
+
+    sources.push("Stablecoins");
+  };
+
+  const addChainAlerts = async () => {
+    const data = await fetchJson("https://api.llama.fi/v2/chains");
+    const chains = (Array.isArray(data) ? data : [])
+      .filter((chain) => Number(chain.tvl) > 0)
+      .sort((a, b) => Number(b.tvl) - Number(a.tvl))
+      .slice(0, 2);
+
+    chains.forEach((chain) => {
+      alerts.push({
+        severity: "Chain",
+        tone: "",
+        source: "DeFiLlama Chains",
+        kind: "链上 TVL",
+        title: `${chain.name || "Chain"} 链上 TVL 位于前列`,
+        body: `当前 TVL 约 ${formatCompactUsd(Number(chain.tvl))}。链级 TVL 能帮助判断资金沉淀在哪里，以及 Alpha 观察池应该优先覆盖哪些生态。`,
+        score: formatCompactUsd(Number(chain.tvl)),
+        links: [
+          { label: "资产雷达", href: "../tokens/" },
+          { label: "数据源", href: "../sources/#live-data" }
+        ]
+      });
+    });
+
+    sources.push("Chain TVL");
+  };
+
+  const addSecurityAlerts = async () => {
+    const data = await fetchJson("https://api.llama.fi/hacks");
+    const events = (Array.isArray(data) ? data : [])
+      .filter((event) => Number(event.amount) > 0)
+      .sort((a, b) => Number(b.date) - Number(a.date))
+      .slice(0, 1);
+
+    events.forEach((event) => {
+      alerts.push({
+        severity: "Risk",
+        tone: "risk",
+        source: "DeFiLlama Security",
+        kind: event.classification || "Security",
+        title: `${event.name || "Security incident"} 安全事件样本`,
+        body: `公开安全事件库记录损失约 ${formatCompactUsd(Number(event.amount))}。这类数据适合进入风险模型，用来训练合约、桥、协议逻辑等风险标签。`,
+        score: formatCompactUsd(Number(event.amount)),
+        links: [
+          { label: "风险中心", href: "../risk/" },
+          { label: "预警中心", href: "../alerts/?filter=critical" }
+        ]
+      });
+    });
+
+    sources.push("Security Events");
+  };
+
+  const addSentimentAlerts = async () => {
+    const data = await fetchJson("https://api.alternative.me/fng/?limit=1");
+    const item = Array.isArray(data.data) ? data.data[0] : null;
+    if (!item) return;
+    const value = Number(item.value);
+    alerts.push({
+      severity: value <= 25 ? "Fear" : (value >= 75 ? "Greed" : "Sentiment"),
+      tone: value <= 25 ? "critical" : (value >= 75 ? "risk" : ""),
+      source: "Alternative.me",
+      kind: "市场情绪",
+      title: `Fear & Greed 指数：${item.value_classification || "Unknown"}`,
+      body: "情绪指数不能单独作为交易信号，但能帮助解释市场背景：极端恐惧时关注流动性压力，极端贪婪时提高追高风险权重。",
+      score: Number.isFinite(value) ? `${value}/100` : "F&G",
+      links: [
+        { label: "实时雷达", href: "live.html" },
+        { label: "数据源", href: "../sources/#live-data" }
+      ]
+    });
+
+    sources.push("Alternative.me");
+  };
+
+  const tasks = [
+    addMarketAlerts,
+    addDefiAlerts,
+    addDexAlerts,
+    addLiquidityAlerts,
+    addStablecoinAlerts,
+    addChainAlerts,
+    addSecurityAlerts,
+    addSentimentAlerts
+  ];
   await Promise.allSettled(tasks.map((task) => task()));
 
   if (!alerts.length) {
@@ -395,7 +671,7 @@ async function loadLiveAlphaAlerts() {
     );
   }
 
-  const orderedAlerts = alerts.slice(0, 6);
+  const orderedAlerts = alerts.slice(0, 10);
   renderLiveAlertItems(list, orderedAlerts);
 
   if (status) {
@@ -406,7 +682,7 @@ async function loadLiveAlphaAlerts() {
 
   if (countNode) countNode.textContent = String(orderedAlerts.length);
   if (sourceNode) sourceNode.textContent = sources.length ? sources.join(" / ") : "等待后端";
-  if (ruleNode) ruleNode.textContent = "价格 / TVL / DEX 热度";
+  if (ruleNode) ruleNode.textContent = "价格 / TVL / DEX / 稳定币 / 情绪";
 }
 
 function initDirectoryQuery() {
