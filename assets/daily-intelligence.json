@@ -1,8 +1,8 @@
 {
   "version": 1,
   "date": "2026-06-09",
-  "generatedAt": "2026-06-09T06:28:00.181Z",
-  "generatedAtDisplay": "2026-06-09 14:28 BJT",
+  "generatedAt": "2026-06-09T06:34:36.686Z",
+  "generatedAtDisplay": "2026-06-09 14:34 BJT",
   "timezone": "Asia/Shanghai",
   "schedule": {
     "cronUtc": "30 0 * * *",
@@ -32,7 +32,7 @@
       "href": "alpha/alerts.html",
       "metrics": [
         "F&G 10/100",
-        "SOL +2.46%"
+        "SOL +2.32%"
       ]
     },
     {
@@ -40,11 +40,11 @@
       "icon": "💧",
       "category": "流动性",
       "title": "BTCUSDT 成交额领先",
-      "body": "Binance 24 小时成交额约 $1.56B，成交笔数 4,559,082。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
+      "body": "Binance 24 小时成交额约 $1.56B，成交笔数 4,554,403。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
       "href": "signals/?type=flow",
       "metrics": [
         "$1.56B",
-        "4,559,082 trades"
+        "4,554,403 trades"
       ]
     },
     {
@@ -68,7 +68,7 @@
       "href": "alpha/report.html?project=defi-revenue",
       "metrics": [
         "$15.03B",
-        "Ethereum $37.54B"
+        "Ethereum $37.73B"
       ]
     },
     {
@@ -76,10 +76,10 @@
       "icon": "⚠️",
       "category": "风险与热点",
       "title": "Humanity 安全事件进入风险样本",
-      "body": "公开安全事件库记录 Humanity 损失约 $30M，类型为 Infrastructure。同时 DEX 热点 solana 新币仍应默认进入风险观察池。",
+      "body": "公开安全事件库记录 Humanity 损失约 $30.00M，类型为 Infrastructure。同时 DEX 热点 solana 新币仍应默认进入风险观察池。",
       "href": "alpha/watchlist.html?status=risk",
       "metrics": [
-        "$30M",
+        "$30.00M",
         "solana boost"
       ]
     }
