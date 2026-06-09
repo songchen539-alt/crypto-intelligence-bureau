@@ -1,0 +1,41 @@
+name: Daily Intelligence Refresh
+
+on:
+  schedule:
+    # 00:30 UTC = 08:30 Asia/Shanghai.
+    - cron: "30 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-intelligence-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate daily intelligence
+        run: node docs/update-daily-intelligence.mjs
+
+      - name: Commit daily intelligence
+        run: |
+          if git diff --quiet -- assets/daily-intelligence.json; then
+            echo "No daily intelligence changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/daily-intelligence.json
+          git commit -m "Update daily intelligence"
+          git push

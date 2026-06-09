@@ -685,6 +685,95 @@ async function loadLiveAlphaAlerts() {
   if (ruleNode) ruleNode.textContent = "价格 / TVL / DEX / 稳定币 / 情绪";
 }
 
+function getSiteRootUrl() {
+  const script = document.querySelector('script[src*="assets/js/app.js"]');
+  if (!script) return new URL("./", window.location.href);
+
+  const source = (script.getAttribute("src") || "").split("?")[0];
+  const rootPath = source.replace(/assets\/js\/app\.js$/, "");
+  return new URL(rootPath, window.location.href);
+}
+
+function resolveSiteHref(href) {
+  if (!href || href.startsWith("#") || /^https?:\/\//.test(href)) return href || "#";
+  return new URL(href, getSiteRootUrl()).href;
+}
+
+function renderDailyMetrics(metrics) {
+  const values = Array.isArray(metrics) ? metrics.filter(Boolean).slice(0, 4) : [];
+  if (!values.length) return "";
+  return `<ul class="table-list columns">${values.map((metric) => `<li>${escapeHtml(metric)}</li>`).join("")}</ul>`;
+}
+
+function renderDailyPreview(target, items) {
+  if (!target) return;
+  target.innerHTML = items.slice(0, 5).map((item) => `
+    <article class="today-card">
+      <span class="today-icon">${escapeHtml(item.icon || "•")}</span>
+      <div>
+        <h3>${escapeHtml(item.category || item.title || "今日情报")}</h3>
+        <p>${escapeHtml(item.body || item.title || "")}</p>
+        <a class="text-link" href="${escapeHtml(resolveSiteHref(item.href || "intelligence/"))}">阅读全文</a>
+      </div>
+    </article>
+  `).join("");
+}
+
+function renderDailyDetail(target, items) {
+  if (!target) return;
+  target.innerHTML = items.slice(0, 5).map((item) => `
+    <article class="briefing-entry" id="${escapeHtml(item.id || "")}">
+      <span class="today-icon">${escapeHtml(item.icon || "•")}</span>
+      <div>
+        <h3>${escapeHtml(item.title || item.category || "今日情报")}</h3>
+        <p>${escapeHtml(item.body || "")}</p>
+        ${renderDailyMetrics(item.metrics)}
+        <a class="text-link" href="${escapeHtml(resolveSiteHref(item.href || "../"))}">进入相关工作台</a>
+      </div>
+    </article>
+  `).join("");
+}
+
+async function loadDailyIntelligence() {
+  const preview = document.querySelector("[data-daily-intelligence-preview]");
+  const detail = document.querySelector("[data-daily-intelligence-detail]");
+  const updatedNodes = document.querySelectorAll("[data-daily-updated]");
+  const summaryNodes = document.querySelectorAll("[data-daily-summary]");
+  if (!preview && !detail && !updatedNodes.length && !summaryNodes.length) return;
+
+  try {
+    const root = getSiteRootUrl();
+    const todayKey = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Asia/Shanghai",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit"
+    }).format(new Date());
+    const response = await fetch(new URL(`assets/daily-intelligence.json?v=${todayKey}`, root), {
+      headers: { accept: "application/json" }
+    });
+    if (!response.ok) throw new Error("daily intelligence unavailable");
+    const data = await response.json();
+    const items = Array.isArray(data.items) ? data.items : [];
+    if (!items.length) return;
+
+    renderDailyPreview(preview, items);
+    renderDailyDetail(detail, items);
+
+    updatedNodes.forEach((node) => {
+      node.textContent = `${data.schedule?.display || "每天自动更新"}；当前版本：${data.generatedAtDisplay || data.date || "今日"}`;
+    });
+
+    summaryNodes.forEach((node) => {
+      node.textContent = data.summary || "今日简报已自动生成。";
+    });
+  } catch {
+    updatedNodes.forEach((node) => {
+      node.textContent = "每日情报数据暂时不可用，当前显示静态兜底内容。";
+    });
+  }
+}
+
 function initDirectoryQuery() {
   const target = document.querySelector("[data-directory-query]");
   if (!target) return;
@@ -1564,6 +1653,7 @@ function initSite() {
   initAlphaUpdateFilters();
   loadLiveDataCenter();
   loadLiveAlphaAlerts();
+  loadDailyIntelligence();
 }
 
 if (document.readyState === "loading") {
