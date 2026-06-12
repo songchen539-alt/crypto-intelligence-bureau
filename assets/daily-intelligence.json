@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "date": "2026-06-11",
-  "generatedAt": "2026-06-11T14:27:08.190Z",
-  "generatedAtDisplay": "2026-06-11 22:27 BJT",
+  "date": "2026-06-12",
+  "generatedAt": "2026-06-12T12:42:42.120Z",
+  "generatedAtDisplay": "2026-06-12 20:42 BJT",
   "timezone": "Asia/Shanghai",
   "schedule": {
     "cronUtc": "30 0 * * *",
@@ -32,7 +32,7 @@
       "href": "alpha/alerts.html",
       "metrics": [
         "F&G 12/100",
-        "BTC +1.38%"
+        "SOL +2.47%"
       ]
     },
     {
@@ -40,11 +40,11 @@
       "icon": "💧",
       "category": "流动性",
       "title": "BTCUSDT 成交额领先",
-      "body": "Binance 24 小时成交额约 $1.07B，成交笔数 4,134,329。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
+      "body": "Binance 24 小时成交额约 $1.07B，成交笔数 3,144,148。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
       "href": "signals/?type=flow",
       "metrics": [
         "$1.07B",
-        "4,134,329 trades"
+        "3,144,148 trades"
       ]
     },
     {
@@ -52,11 +52,11 @@
       "icon": "🪙",
       "category": "稳定币",
       "title": "USDT 稳定币供给位于前列",
-      "body": "Tether 流通供给约 $186.71B，当前价格约 $0.9990。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
+      "body": "Tether 流通供给约 $186.76B，当前价格约 $0.9988。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
       "href": "sources/#live-data",
       "metrics": [
-        "$186.71B",
-        "$0.9990"
+        "$186.76B",
+        "$0.9988"
       ]
     },
     {
@@ -64,22 +64,22 @@
       "icon": "📈",
       "category": "DeFi 与链上资金",
       "title": "Lido 保持 TVL 前列",
-      "body": "Lido 当前 TVL 约 $14.68B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
+      "body": "Lido 当前 TVL 约 $14.94B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
       "href": "alpha/report.html?project=defi-revenue",
       "metrics": [
-        "$14.68B",
-        "Ethereum $37.2B"
+        "$14.94B",
+        "Ethereum $37.59B"
       ]
     },
     {
       "id": "risk",
       "icon": "⚠️",
       "category": "风险与热点",
-      "title": "Asterix 安全事件进入风险样本",
-      "body": "公开安全事件库记录 Asterix 损失约 $40K，类型为 Protocol Logic。同时 DEX 热点 solana 新币仍应默认进入风险观察池。",
+      "title": "Raydium AMM 安全事件进入风险样本",
+      "body": "公开安全事件库记录 Raydium AMM 损失约 $1.34M，类型为 Protocol Logic。同时 DEX 热点 solana 新币仍应默认进入风险观察池。",
       "href": "alpha/watchlist.html?status=risk",
       "metrics": [
-        "$40K",
+        "$1.34M",
         "solana boost"
       ]
     }
