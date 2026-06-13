@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "date": "2026-06-12",
-  "generatedAt": "2026-06-12T12:42:42.120Z",
-  "generatedAtDisplay": "2026-06-12 20:42 BJT",
+  "date": "2026-06-13",
+  "generatedAt": "2026-06-13T10:17:19.206Z",
+  "generatedAtDisplay": "2026-06-13 18:17 BJT",
   "timezone": "Asia/Shanghai",
   "schedule": {
     "cronUtc": "30 0 * * *",
@@ -27,12 +27,12 @@
       "id": "sentiment",
       "icon": "🧭",
       "category": "市场情绪",
-      "title": "市场情绪：Extreme Fear 12/100",
+      "title": "市场情绪：Extreme Fear 13/100",
       "body": "Fear & Greed 当前为 Extreme Fear。它不是交易指令，但能帮助解释今天的风险偏好：极端恐惧看流动性压力，极端贪婪提高追高风险权重。",
       "href": "alpha/alerts.html",
       "metrics": [
-        "F&G 12/100",
-        "SOL +2.47%"
+        "F&G 13/100",
+        "SOL +0.39%"
       ]
     },
     {
@@ -40,11 +40,11 @@
       "icon": "💧",
       "category": "流动性",
       "title": "BTCUSDT 成交额领先",
-      "body": "Binance 24 小时成交额约 $1.07B，成交笔数 3,144,148。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
+      "body": "Binance 24 小时成交额约 $820.25M，成交笔数 2,656,242。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
       "href": "signals/?type=flow",
       "metrics": [
-        "$1.07B",
-        "3,144,148 trades"
+        "$820.25M",
+        "2,656,242 trades"
       ]
     },
     {
@@ -52,11 +52,11 @@
       "icon": "🪙",
       "category": "稳定币",
       "title": "USDT 稳定币供给位于前列",
-      "body": "Tether 流通供给约 $186.76B，当前价格约 $0.9988。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
+      "body": "Tether 流通供给约 $186.46B，当前价格约 $0.9995。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
       "href": "sources/#live-data",
       "metrics": [
-        "$186.76B",
-        "$0.9988"
+        "$186.46B",
+        "$0.9995"
       ]
     },
     {
@@ -64,11 +64,11 @@
       "icon": "📈",
       "category": "DeFi 与链上资金",
       "title": "Lido 保持 TVL 前列",
-      "body": "Lido 当前 TVL 约 $14.94B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
+      "body": "Lido 当前 TVL 约 $14.93B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
       "href": "alpha/report.html?project=defi-revenue",
       "metrics": [
-        "$14.94B",
-        "Ethereum $37.59B"
+        "$14.93B",
+        "Ethereum $37.83B"
       ]
     },
     {
