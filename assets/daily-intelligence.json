@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "date": "2026-07-02",
-  "generatedAt": "2026-07-02T04:41:56.889Z",
-  "generatedAtDisplay": "2026-07-02 12:41 BJT",
+  "date": "2026-07-03",
+  "generatedAt": "2026-07-03T04:26:53.062Z",
+  "generatedAtDisplay": "2026-07-03 12:26 BJT",
   "timezone": "Asia/Shanghai",
   "schedule": {
     "cronUtc": "30 0 * * *",
@@ -27,12 +27,12 @@
       "id": "sentiment",
       "icon": "🧭",
       "category": "市场情绪",
-      "title": "市场情绪：Extreme Fear 19/100",
+      "title": "市场情绪：Extreme Fear 21/100",
       "body": "Fear & Greed 当前为 Extreme Fear。它不是交易指令，但能帮助解释今天的风险偏好：极端恐惧看流动性压力，极端贪婪提高追高风险权重。",
       "href": "alpha/alerts.html",
       "metrics": [
-        "F&G 19/100",
-        "SOL +3.50%"
+        "F&G 21/100",
+        "ETH +4.39%"
       ]
     },
     {
@@ -40,11 +40,11 @@
       "icon": "💧",
       "category": "流动性",
       "title": "BTCUSDT 成交额领先",
-      "body": "Binance 24 小时成交额约 $1.4B，成交笔数 3,942,222。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
+      "body": "Binance 24 小时成交额约 $1.28B，成交笔数 3,739,779。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
       "href": "signals/?type=flow",
       "metrics": [
-        "$1.4B",
-        "3,942,222 trades"
+        "$1.28B",
+        "3,739,779 trades"
       ]
     },
     {
@@ -52,11 +52,11 @@
       "icon": "🪙",
       "category": "稳定币",
       "title": "USDT 稳定币供给位于前列",
-      "body": "Tether 流通供给约 $184.41B，当前价格约 $0.9988。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
+      "body": "Tether 流通供给约 $184.03B，当前价格约 $0.9987。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
       "href": "sources/#live-data",
       "metrics": [
-        "$184.41B",
-        "$0.9988"
+        "$184.03B",
+        "$0.9987"
       ]
     },
     {
@@ -64,11 +64,11 @@
       "icon": "📈",
       "category": "DeFi 与链上资金",
       "title": "Lido 保持 TVL 前列",
-      "body": "Lido 当前 TVL 约 $14.82B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
+      "body": "Lido 当前 TVL 约 $15.56B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
       "href": "alpha/report.html?project=defi-revenue",
       "metrics": [
-        "$14.82B",
-        "Ethereum $37.43B"
+        "$15.56B",
+        "Ethereum $38.98B"
       ]
     },
     {
@@ -76,11 +76,11 @@
       "icon": "⚠️",
       "category": "风险与热点",
       "title": "Edel 安全事件进入风险样本",
-      "body": "公开安全事件库记录 Edel 损失约 $403K，类型为 Protocol Logic。同时 DEX 热点 robinhood 新币仍应默认进入风险观察池。",
+      "body": "公开安全事件库记录 Edel 损失约 $403K，类型为 Protocol Logic。同时 DEX 热点 solana 新币仍应默认进入风险观察池。",
       "href": "alpha/watchlist.html?status=risk",
       "metrics": [
         "$403K",
-        "robinhood boost"
+        "solana boost"
       ]
     }
   ]
