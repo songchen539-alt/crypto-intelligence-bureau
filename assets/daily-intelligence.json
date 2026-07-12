@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "date": "2026-07-11",
-  "generatedAt": "2026-07-11T03:52:57.098Z",
-  "generatedAtDisplay": "2026-07-11 11:52 BJT",
+  "date": "2026-07-12",
+  "generatedAt": "2026-07-12T04:07:24.919Z",
+  "generatedAtDisplay": "2026-07-12 12:07 BJT",
   "timezone": "Asia/Shanghai",
   "schedule": {
     "cronUtc": "30 0 * * *",
@@ -32,7 +32,7 @@
       "href": "alpha/alerts.html",
       "metrics": [
         "F&G 26/100",
-        "SOL -1.53%"
+        "SOL -1.00%"
       ]
     },
     {
@@ -40,11 +40,11 @@
       "icon": "💧",
       "category": "流动性",
       "title": "BTCUSDT 成交额领先",
-      "body": "Binance 24 小时成交额约 $987.94M，成交笔数 2,669,938。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
+      "body": "Binance 24 小时成交额约 $779.54M，成交笔数 1,589,457。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
       "href": "signals/?type=flow",
       "metrics": [
-        "$987.94M",
-        "2,669,938 trades"
+        "$779.54M",
+        "1,589,457 trades"
       ]
     },
     {
@@ -64,23 +64,23 @@
       "icon": "📈",
       "category": "DeFi 与链上资金",
       "title": "Lido 保持 TVL 前列",
-      "body": "Lido 当前 TVL 约 $16.44B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
+      "body": "Lido 当前 TVL 约 $16.58B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
       "href": "alpha/report.html?project=defi-revenue",
       "metrics": [
-        "$16.44B",
-        "Ethereum $40.39B"
+        "$16.58B",
+        "Ethereum $40.22B"
       ]
     },
     {
       "id": "risk",
       "icon": "⚠️",
       "category": "风险与热点",
-      "title": "BonkDAO 安全事件进入风险样本",
-      "body": "公开安全事件库记录 BonkDAO 损失约 $21.3M，类型为 Protocol Logic。同时 DEX 热点 solana 新币仍应默认进入风险观察池。",
+      "title": "Bonzo Lend 安全事件进入风险样本",
+      "body": "公开安全事件库记录 Bonzo Lend 损失约 $10.05M，类型为 Protocol Logic。同时 DEX 热点 robinhood 新币仍应默认进入风险观察池。",
       "href": "alpha/watchlist.html?status=risk",
       "metrics": [
-        "$21.3M",
-        "solana boost"
+        "$10.05M",
+        "robinhood boost"
       ]
     }
   ]
