@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "date": "2026-07-13",
-  "generatedAt": "2026-07-13T04:09:50.474Z",
-  "generatedAtDisplay": "2026-07-13 12:09 BJT",
+  "date": "2026-07-14",
+  "generatedAt": "2026-07-14T03:44:48.074Z",
+  "generatedAtDisplay": "2026-07-14 11:44 BJT",
   "timezone": "Asia/Shanghai",
   "schedule": {
     "cronUtc": "30 0 * * *",
@@ -27,12 +27,12 @@
       "id": "sentiment",
       "icon": "🧭",
       "category": "市场情绪",
-      "title": "市场情绪：Fear 28/100",
-      "body": "Fear & Greed 当前为 Fear。它不是交易指令，但能帮助解释今天的风险偏好：极端恐惧看流动性压力，极端贪婪提高追高风险权重。",
+      "title": "市场情绪：Extreme Fear 22/100",
+      "body": "Fear & Greed 当前为 Extreme Fear。它不是交易指令，但能帮助解释今天的风险偏好：极端恐惧看流动性压力，极端贪婪提高追高风险权重。",
       "href": "alpha/alerts.html",
       "metrics": [
-        "F&G 28/100",
-        "BTC -2.18%"
+        "F&G 22/100",
+        "SOL -1.03%"
       ]
     },
     {
@@ -40,11 +40,11 @@
       "icon": "💧",
       "category": "流动性",
       "title": "BTCUSDT 成交额领先",
-      "body": "Binance 24 小时成交额约 $884.57M，成交笔数 2,376,672。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
+      "body": "Binance 24 小时成交额约 $1.26B，成交笔数 2,916,223。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
       "href": "signals/?type=flow",
       "metrics": [
-        "$884.57M",
-        "2,376,672 trades"
+        "$1.26B",
+        "2,916,223 trades"
       ]
     },
     {
@@ -52,11 +52,11 @@
       "icon": "🪙",
       "category": "稳定币",
       "title": "USDT 稳定币供给位于前列",
-      "body": "Tether 流通供给约 $184.15B，当前价格约 $0.9994。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
+      "body": "Tether 流通供给约 $184.15B，当前价格约 $0.9989。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
       "href": "sources/#live-data",
       "metrics": [
         "$184.15B",
-        "$0.9994"
+        "$0.9989"
       ]
     },
     {
@@ -64,22 +64,22 @@
       "icon": "📈",
       "category": "DeFi 与链上资金",
       "title": "Lido 保持 TVL 前列",
-      "body": "Lido 当前 TVL 约 $16.55B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
+      "body": "Lido 当前 TVL 约 $16.42B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
       "href": "alpha/report.html?project=defi-revenue",
       "metrics": [
-        "$16.55B",
-        "Ethereum $40.44B"
+        "$16.42B",
+        "Ethereum $39.89B"
       ]
     },
     {
       "id": "risk",
       "icon": "⚠️",
       "category": "风险与热点",
-      "title": "Bonzo Lend 安全事件进入风险样本",
-      "body": "公开安全事件库记录 Bonzo Lend 损失约 $10.05M，类型为 Protocol Logic。同时 DEX 热点 solana 新币仍应默认进入风险观察池。",
+      "title": "Lumi Finance 安全事件进入风险样本",
+      "body": "公开安全事件库记录 Lumi Finance 损失约 $270K，类型为 Protocol Logic。同时 DEX 热点 solana 新币仍应默认进入风险观察池。",
       "href": "alpha/watchlist.html?status=risk",
       "metrics": [
-        "$10.05M",
+        "$270K",
         "solana boost"
       ]
     }
