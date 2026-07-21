@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "date": "2026-07-20",
-  "generatedAt": "2026-07-20T04:23:25.227Z",
-  "generatedAtDisplay": "2026-07-20 12:23 BJT",
+  "date": "2026-07-21",
+  "generatedAt": "2026-07-21T03:56:52.796Z",
+  "generatedAtDisplay": "2026-07-21 11:56 BJT",
   "timezone": "Asia/Shanghai",
   "schedule": {
     "cronUtc": "30 0 * * *",
@@ -27,12 +27,12 @@
       "id": "sentiment",
       "icon": "🧭",
       "category": "市场情绪",
-      "title": "市场情绪：Fear 29/100",
-      "body": "Fear & Greed 当前为 Fear。它不是交易指令，但能帮助解释今天的风险偏好：极端恐惧看流动性压力，极端贪婪提高追高风险权重。",
+      "title": "市场情绪：Extreme Fear 25/100",
+      "body": "Fear & Greed 当前为 Extreme Fear。它不是交易指令，但能帮助解释今天的风险偏好：极端恐惧看流动性压力，极端贪婪提高追高风险权重。",
       "href": "alpha/alerts.html",
       "metrics": [
-        "F&G 29/100",
-        "SOL +0.70%"
+        "F&G 25/100",
+        "ETH +2.61%"
       ]
     },
     {
@@ -40,11 +40,11 @@
       "icon": "💧",
       "category": "流动性",
       "title": "BTCUSDT 成交额领先",
-      "body": "Binance 24 小时成交额约 $559.09M，成交笔数 1,865,309。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
+      "body": "Binance 24 小时成交额约 $1.41B，成交笔数 3,468,504。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
       "href": "signals/?type=flow",
       "metrics": [
-        "$559.09M",
-        "1,865,309 trades"
+        "$1.41B",
+        "3,468,504 trades"
       ]
     },
     {
@@ -64,23 +64,23 @@
       "icon": "📈",
       "category": "DeFi 与链上资金",
       "title": "Lido 保持 TVL 前列",
-      "body": "Lido 当前 TVL 约 $17.2B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
+      "body": "Lido 当前 TVL 约 $17.54B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
       "href": "alpha/report.html?project=defi-revenue",
       "metrics": [
-        "$17.2B",
-        "Ethereum $41.03B"
+        "$17.54B",
+        "Ethereum $41.54B"
       ]
     },
     {
       "id": "risk",
       "icon": "⚠️",
       "category": "风险与热点",
-      "title": "DefiTuna Lending 安全事件进入风险样本",
-      "body": "公开安全事件库记录 DefiTuna Lending 损失约 $580K，类型为 Protocol Logic。同时 DEX 热点 solana 新币仍应默认进入风险观察池。",
+      "title": "Allbridge Core 安全事件进入风险样本",
+      "body": "公开安全事件库记录 Allbridge Core 损失约 $1.65M，类型为 Protocol Logic。同时 DEX 热点 robinhood 新币仍应默认进入风险观察池。",
       "href": "alpha/watchlist.html?status=risk",
       "metrics": [
-        "$580K",
-        "solana boost"
+        "$1.65M",
+        "robinhood boost"
       ]
     }
   ]
