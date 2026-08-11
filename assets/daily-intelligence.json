@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "date": "2026-08-10",
-  "generatedAt": "2026-08-10T02:41:44.291Z",
-  "generatedAtDisplay": "2026-08-10 10:41 BJT",
+  "date": "2026-08-11",
+  "generatedAt": "2026-08-11T02:35:33.569Z",
+  "generatedAtDisplay": "2026-08-11 10:35 BJT",
   "timezone": "Asia/Shanghai",
   "schedule": {
     "cronUtc": "30 0 * * *",
@@ -27,12 +27,12 @@
       "id": "sentiment",
       "icon": "🧭",
       "category": "市场情绪",
-      "title": "市场情绪：Fear 30/100",
+      "title": "市场情绪：Fear 29/100",
       "body": "Fear & Greed 当前为 Fear。它不是交易指令，但能帮助解释今天的风险偏好：极端恐惧看流动性压力，极端贪婪提高追高风险权重。",
       "href": "alpha/alerts.html",
       "metrics": [
-        "F&G 30/100",
-        "SOL +0.78%"
+        "F&G 29/100",
+        "ETH -2.03%"
       ]
     },
     {
@@ -40,11 +40,11 @@
       "icon": "💧",
       "category": "流动性",
       "title": "BTCUSDT 成交额领先",
-      "body": "Binance 24 小时成交额约 $493.28M，成交笔数 993,145。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
+      "body": "Binance 24 小时成交额约 $879.05M，成交笔数 1,932,380。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
       "href": "signals/?type=flow",
       "metrics": [
-        "$493.28M",
-        "993,145 trades"
+        "$879.05M",
+        "1,932,380 trades"
       ]
     },
     {
@@ -52,11 +52,11 @@
       "icon": "🪙",
       "category": "稳定币",
       "title": "USDT 稳定币供给位于前列",
-      "body": "Tether 流通供给约 $183.1B，当前价格约 $0.9994。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
+      "body": "Tether 流通供给约 $181.98B，当前价格约 $0.9991。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
       "href": "sources/#live-data",
       "metrics": [
-        "$183.1B",
-        "$0.9994"
+        "$181.98B",
+        "$0.9991"
       ]
     },
     {
@@ -64,22 +64,22 @@
       "icon": "📈",
       "category": "DeFi 与链上资金",
       "title": "Lido 保持 TVL 前列",
-      "body": "Lido 当前 TVL 约 $18.05B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
+      "body": "Lido 当前 TVL 约 $17.72B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
       "href": "alpha/report.html?project=defi-revenue",
       "metrics": [
-        "$18.05B",
-        "Ethereum $41.84B"
+        "$17.72B",
+        "Ethereum $41.45B"
       ]
     },
     {
       "id": "risk",
       "icon": "⚠️",
       "category": "风险与热点",
-      "title": "Atomic Green 安全事件进入风险样本",
-      "body": "公开安全事件库记录 Atomic Green 损失约 $29.98K，类型为 Protocol Logic。同时 DEX 热点 solana 新币仍应默认进入风险观察池。",
+      "title": "USM 安全事件进入风险样本",
+      "body": "公开安全事件库记录 USM 损失约 $136K，类型为 Token & Share Accounting。同时 DEX 热点 solana 新币仍应默认进入风险观察池。",
       "href": "alpha/watchlist.html?status=risk",
       "metrics": [
-        "$29.98K",
+        "$136K",
         "solana boost"
       ]
     }
