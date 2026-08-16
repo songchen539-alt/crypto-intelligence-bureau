@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "date": "2026-08-15",
-  "generatedAt": "2026-08-15T01:57:51.473Z",
-  "generatedAtDisplay": "2026-08-15 09:57 BJT",
+  "date": "2026-08-16",
+  "generatedAt": "2026-08-16T02:06:41.281Z",
+  "generatedAtDisplay": "2026-08-16 10:06 BJT",
   "timezone": "Asia/Shanghai",
   "schedule": {
     "cronUtc": "30 0 * * *",
@@ -32,7 +32,7 @@
       "href": "alpha/alerts.html",
       "metrics": [
         "F&G 34/100",
-        "SOL -0.89%"
+        "ETH -0.25%"
       ]
     },
     {
@@ -40,11 +40,11 @@
       "icon": "💧",
       "category": "流动性",
       "title": "BTCUSDT 成交额领先",
-      "body": "Binance 24 小时成交额约 $780.7M，成交笔数 2,084,999。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
+      "body": "Binance 24 小时成交额约 $313.19M，成交笔数 516,876。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
       "href": "signals/?type=flow",
       "metrics": [
-        "$780.7M",
-        "2,084,999 trades"
+        "$313.19M",
+        "516,876 trades"
       ]
     },
     {
@@ -52,10 +52,10 @@
       "icon": "🪙",
       "category": "稳定币",
       "title": "USDT 稳定币供给位于前列",
-      "body": "Tether 流通供给约 $183.06B，当前价格约 $0.9992。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
+      "body": "Tether 流通供给约 $183.05B，当前价格约 $0.9992。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
       "href": "sources/#live-data",
       "metrics": [
-        "$183.06B",
+        "$183.05B",
         "$0.9992"
       ]
     },
@@ -68,7 +68,7 @@
       "href": "alpha/report.html?project=defi-revenue",
       "metrics": [
         "$17.9B",
-        "Ethereum $40.8B"
+        "Ethereum $41.16B"
       ]
     },
     {
@@ -76,11 +76,11 @@
       "icon": "⚠️",
       "category": "风险与热点",
       "title": "Coreum Bridge 安全事件进入风险样本",
-      "body": "公开安全事件库记录 Coreum Bridge 损失约 $200K，类型为 Bridge & Cross-Chain。同时 DEX 热点 robinhood 新币仍应默认进入风险观察池。",
+      "body": "公开安全事件库记录 Coreum Bridge 损失约 $200K，类型为 Bridge & Cross-Chain。同时 DEX 热点 solana 新币仍应默认进入风险观察池。",
       "href": "alpha/watchlist.html?status=risk",
       "metrics": [
         "$200K",
-        "robinhood boost"
+        "solana boost"
       ]
     }
   ]
