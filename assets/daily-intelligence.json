@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "date": "2026-08-24",
-  "generatedAt": "2026-08-24T02:08:04.696Z",
-  "generatedAtDisplay": "2026-08-24 10:08 BJT",
+  "date": "2026-08-25",
+  "generatedAt": "2026-08-25T02:03:38.095Z",
+  "generatedAtDisplay": "2026-08-25 10:03 BJT",
   "timezone": "Asia/Shanghai",
   "schedule": {
     "cronUtc": "30 0 * * *",
@@ -27,12 +27,12 @@
       "id": "sentiment",
       "icon": "🧭",
       "category": "市场情绪",
-      "title": "市场情绪：Greed 73/100",
+      "title": "市场情绪：Greed 74/100",
       "body": "Fear & Greed 当前为 Greed。它不是交易指令，但能帮助解释今天的风险偏好：极端恐惧看流动性压力，极端贪婪提高追高风险权重。",
       "href": "alpha/alerts.html",
       "metrics": [
-        "F&G 73/100",
-        "SOL -2.00%"
+        "F&G 74/100",
+        "SOL +7.05%"
       ]
     },
     {
@@ -40,11 +40,11 @@
       "icon": "💧",
       "category": "流动性",
       "title": "BTCUSDT 成交额领先",
-      "body": "Binance 24 小时成交额约 $1.25B，成交笔数 3,920,957。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
+      "body": "Binance 24 小时成交额约 $2.43B，成交笔数 6,560,737。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
       "href": "signals/?type=flow",
       "metrics": [
-        "$1.25B",
-        "3,920,957 trades"
+        "$2.43B",
+        "6,560,737 trades"
       ]
     },
     {
@@ -52,10 +52,10 @@
       "icon": "🪙",
       "category": "稳定币",
       "title": "USDT 稳定币供给位于前列",
-      "body": "Tether 流通供给约 $183.21B，当前价格约 $0.9999。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
+      "body": "Tether 流通供给约 $183.11B，当前价格约 $0.9999。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
       "href": "sources/#live-data",
       "metrics": [
-        "$183.21B",
+        "$183.11B",
         "$0.9999"
       ]
     },
@@ -64,11 +64,11 @@
       "icon": "📈",
       "category": "DeFi 与链上资金",
       "title": "Lido 保持 TVL 前列",
-      "body": "Lido 当前 TVL 约 $23.52B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
+      "body": "Lido 当前 TVL 约 $23.77B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
       "href": "alpha/report.html?project=defi-revenue",
       "metrics": [
-        "$23.52B",
-        "Ethereum $48.77B"
+        "$23.77B",
+        "Ethereum $48.88B"
       ]
     },
     {
@@ -76,11 +76,11 @@
       "icon": "⚠️",
       "category": "风险与热点",
       "title": "TermFinance Vaults 安全事件进入风险样本",
-      "body": "公开安全事件库记录 TermFinance Vaults 损失约 $8.5M，类型为 Governance。同时 DEX 热点 solana 新币仍应默认进入风险观察池。",
+      "body": "公开安全事件库记录 TermFinance Vaults 损失约 $8.5M，类型为 Governance。同时 DEX 热点 bsc 新币仍应默认进入风险观察池。",
       "href": "alpha/watchlist.html?status=risk",
       "metrics": [
         "$8.5M",
-        "solana boost"
+        "bsc boost"
       ]
     }
   ]
