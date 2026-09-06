@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "date": "2026-09-05",
-  "generatedAt": "2026-09-05T04:50:54.800Z",
-  "generatedAtDisplay": "2026-09-05 12:50 BJT",
+  "date": "2026-09-06",
+  "generatedAt": "2026-09-06T04:58:34.109Z",
+  "generatedAtDisplay": "2026-09-06 12:58 BJT",
   "timezone": "Asia/Shanghai",
   "schedule": {
     "cronUtc": "30 0 * * *",
@@ -32,7 +32,7 @@
       "href": "alpha/alerts.html",
       "metrics": [
         "F&G 73/100",
-        "ETH -2.38%"
+        "BNB +5.62%"
       ]
     },
     {
@@ -40,11 +40,11 @@
       "icon": "💧",
       "category": "流动性",
       "title": "BTCUSDT 成交额领先",
-      "body": "Binance 24 小时成交额约 $1.41B，成交笔数 3,114,990。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
+      "body": "Binance 24 小时成交额约 $741.25M，成交笔数 1,322,951。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
       "href": "signals/?type=flow",
       "metrics": [
-        "$1.41B",
-        "3,114,990 trades"
+        "$741.25M",
+        "1,322,951 trades"
       ]
     },
     {
@@ -52,11 +52,11 @@
       "icon": "🪙",
       "category": "稳定币",
       "title": "USDT 稳定币供给位于前列",
-      "body": "Tether 流通供给约 $183.39B，当前价格约 $1.0001。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
+      "body": "Tether 流通供给约 $183.39B，当前价格约 $1.0000。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
       "href": "sources/#live-data",
       "metrics": [
         "$183.39B",
-        "$1.0001"
+        "$1.0000"
       ]
     },
     {
@@ -64,23 +64,23 @@
       "icon": "📈",
       "category": "DeFi 与链上资金",
       "title": "Lido 保持 TVL 前列",
-      "body": "Lido 当前 TVL 约 $23.78B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
+      "body": "Lido 当前 TVL 约 $24.26B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
       "href": "alpha/report.html?project=defi-revenue",
       "metrics": [
-        "$23.78B",
-        "Ethereum $49.21B"
+        "$24.26B",
+        "Ethereum $49.62B"
       ]
     },
     {
       "id": "risk",
       "icon": "⚠️",
       "category": "风险与热点",
-      "title": "Notional V2 安全事件进入风险样本",
-      "body": "公开安全事件库记录 Notional V2 损失约 $1.73M，类型为 Token & Share Accounting。同时 DEX 热点 solana 新币仍应默认进入风险观察池。",
+      "title": "Dream Health Chain 安全事件进入风险样本",
+      "body": "公开安全事件库记录 Dream Health Chain 损失约 $71.8K，类型为 Protocol Logic。同时 DEX 热点 robinhood 新币仍应默认进入风险观察池。",
       "href": "alpha/watchlist.html?status=risk",
       "metrics": [
-        "$1.73M",
-        "solana boost"
+        "$71.8K",
+        "robinhood boost"
       ]
     }
   ]
