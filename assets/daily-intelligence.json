@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "date": "2026-09-16",
-  "generatedAt": "2026-09-16T05:06:24.442Z",
-  "generatedAtDisplay": "2026-09-16 13:06 BJT",
+  "date": "2026-09-17",
+  "generatedAt": "2026-09-17T05:10:19.921Z",
+  "generatedAtDisplay": "2026-09-17 13:10 BJT",
   "timezone": "Asia/Shanghai",
   "schedule": {
     "cronUtc": "30 0 * * *",
@@ -27,12 +27,12 @@
       "id": "sentiment",
       "icon": "🧭",
       "category": "市场情绪",
-      "title": "市场情绪：Neutral 51/100",
+      "title": "市场情绪：Neutral 50/100",
       "body": "Fear & Greed 当前为 Neutral。它不是交易指令，但能帮助解释今天的风险偏好：极端恐惧看流动性压力，极端贪婪提高追高风险权重。",
       "href": "alpha/alerts.html",
       "metrics": [
-        "F&G 51/100",
-        "SOL -4.28%"
+        "F&G 50/100",
+        "SOL +2.89%"
       ]
     },
     {
@@ -40,11 +40,11 @@
       "icon": "💧",
       "category": "流动性",
       "title": "BTCUSDT 成交额领先",
-      "body": "Binance 24 小时成交额约 $1.62B，成交笔数 3,469,087。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
+      "body": "Binance 24 小时成交额约 $1.15B，成交笔数 3,012,043。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
       "href": "signals/?type=flow",
       "metrics": [
-        "$1.62B",
-        "3,469,087 trades"
+        "$1.15B",
+        "3,012,043 trades"
       ]
     },
     {
@@ -52,11 +52,11 @@
       "icon": "🪙",
       "category": "稳定币",
       "title": "USDT 稳定币供给位于前列",
-      "body": "Tether 流通供给约 $183.27B，当前价格约 $0.9994。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
+      "body": "Tether 流通供给约 $183.25B，当前价格约 $0.9992。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
       "href": "sources/#live-data",
       "metrics": [
-        "$183.27B",
-        "$0.9994"
+        "$183.25B",
+        "$0.9992"
       ]
     },
     {
@@ -64,23 +64,23 @@
       "icon": "📈",
       "category": "DeFi 与链上资金",
       "title": "Lido 保持 TVL 前列",
-      "body": "Lido 当前 TVL 约 $23.35B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
+      "body": "Lido 当前 TVL 约 $23.58B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
       "href": "alpha/report.html?project=defi-revenue",
       "metrics": [
-        "$23.35B",
-        "Ethereum $48.82B"
+        "$23.58B",
+        "Ethereum $49.41B"
       ]
     },
     {
       "id": "risk",
       "icon": "⚠️",
       "category": "风险与热点",
-      "title": "Chainflip AMM 安全事件进入风险样本",
-      "body": "公开安全事件库记录 Chainflip AMM 损失约 $736.44K，类型为 Bridge & Cross-Chain。同时 DEX 热点 arc 新币仍应默认进入风险观察池。",
+      "title": "Startale 安全事件进入风险样本",
+      "body": "公开安全事件库记录 Startale 损失约 $2.88K，类型为 Access Control。同时 DEX 热点 solana 新币仍应默认进入风险观察池。",
       "href": "alpha/watchlist.html?status=risk",
       "metrics": [
-        "$736.44K",
-        "arc boost"
+        "$2.88K",
+        "solana boost"
       ]
     }
   ]
