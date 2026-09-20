@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "date": "2026-09-19",
-  "generatedAt": "2026-09-19T04:54:16.408Z",
-  "generatedAtDisplay": "2026-09-19 12:54 BJT",
+  "date": "2026-09-20",
+  "generatedAt": "2026-09-20T05:15:37.572Z",
+  "generatedAtDisplay": "2026-09-20 13:15 BJT",
   "timezone": "Asia/Shanghai",
   "schedule": {
     "cronUtc": "30 0 * * *",
@@ -32,7 +32,7 @@
       "href": "alpha/alerts.html",
       "metrics": [
         "F&G 71/100",
-        "SOL +6.58%"
+        "SOL -3.04%"
       ]
     },
     {
@@ -40,11 +40,11 @@
       "icon": "💧",
       "category": "流动性",
       "title": "BTCUSDT 成交额领先",
-      "body": "Binance 24 小时成交额约 $1.83B，成交笔数 3,197,379。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
+      "body": "Binance 24 小时成交额约 $974.99M，成交笔数 1,667,935。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
       "href": "signals/?type=flow",
       "metrics": [
-        "$1.83B",
-        "3,197,379 trades"
+        "$974.99M",
+        "1,667,935 trades"
       ]
     },
     {
@@ -52,11 +52,11 @@
       "icon": "🪙",
       "category": "稳定币",
       "title": "USDT 稳定币供给位于前列",
-      "body": "Tether 流通供给约 $183.3B，当前价格约 $0.9997。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
+      "body": "Tether 流通供给约 $183.27B，当前价格约 $0.9996。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
       "href": "sources/#live-data",
       "metrics": [
-        "$183.3B",
-        "$0.9997"
+        "$183.27B",
+        "$0.9996"
       ]
     },
     {
@@ -64,11 +64,11 @@
       "icon": "📈",
       "category": "DeFi 与链上资金",
       "title": "Lido 保持 TVL 前列",
-      "body": "Lido 当前 TVL 约 $25.57B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
+      "body": "Lido 当前 TVL 约 $25.48B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
       "href": "alpha/report.html?project=defi-revenue",
       "metrics": [
-        "$25.57B",
-        "Ethereum $52.55B"
+        "$25.48B",
+        "Ethereum $52.45B"
       ]
     },
     {
