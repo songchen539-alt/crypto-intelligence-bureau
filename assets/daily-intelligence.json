@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "date": "2026-09-20",
-  "generatedAt": "2026-09-20T05:15:37.572Z",
-  "generatedAtDisplay": "2026-09-20 13:15 BJT",
+  "date": "2026-09-21",
+  "generatedAt": "2026-09-21T05:18:53.672Z",
+  "generatedAtDisplay": "2026-09-21 13:18 BJT",
   "timezone": "Asia/Shanghai",
   "schedule": {
     "cronUtc": "30 0 * * *",
@@ -27,12 +27,12 @@
       "id": "sentiment",
       "icon": "🧭",
       "category": "市场情绪",
-      "title": "市场情绪：Greed 71/100",
+      "title": "市场情绪：Greed 70/100",
       "body": "Fear & Greed 当前为 Greed。它不是交易指令，但能帮助解释今天的风险偏好：极端恐惧看流动性压力，极端贪婪提高追高风险权重。",
       "href": "alpha/alerts.html",
       "metrics": [
-        "F&G 71/100",
-        "SOL -3.04%"
+        "F&G 70/100",
+        "ETH +3.27%"
       ]
     },
     {
@@ -40,11 +40,11 @@
       "icon": "💧",
       "category": "流动性",
       "title": "BTCUSDT 成交额领先",
-      "body": "Binance 24 小时成交额约 $974.99M，成交笔数 1,667,935。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
+      "body": "Binance 24 小时成交额约 $867.39M，成交笔数 2,292,944。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
       "href": "signals/?type=flow",
       "metrics": [
-        "$974.99M",
-        "1,667,935 trades"
+        "$867.39M",
+        "2,292,944 trades"
       ]
     },
     {
@@ -52,11 +52,11 @@
       "icon": "🪙",
       "category": "稳定币",
       "title": "USDT 稳定币供给位于前列",
-      "body": "Tether 流通供给约 $183.27B，当前价格约 $0.9996。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
+      "body": "Tether 流通供给约 $183.3B，当前价格约 $0.9997。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
       "href": "sources/#live-data",
       "metrics": [
-        "$183.27B",
-        "$0.9996"
+        "$183.3B",
+        "$0.9997"
       ]
     },
     {
@@ -64,22 +64,22 @@
       "icon": "📈",
       "category": "DeFi 与链上资金",
       "title": "Lido 保持 TVL 前列",
-      "body": "Lido 当前 TVL 约 $25.48B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
+      "body": "Lido 当前 TVL 约 $25.99B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
       "href": "alpha/report.html?project=defi-revenue",
       "metrics": [
-        "$25.48B",
-        "Ethereum $52.45B"
+        "$25.99B",
+        "Ethereum $53.17B"
       ]
     },
     {
       "id": "risk",
       "icon": "⚠️",
       "category": "风险与热点",
-      "title": "Nostra Money Market 安全事件进入风险样本",
-      "body": "公开安全事件库记录 Nostra Money Market 损失约 $3.5M，类型为 Oracle Manipulation。同时 DEX 热点 solana 新币仍应默认进入风险观察池。",
+      "title": "Fetch.ai 安全事件进入风险样本",
+      "body": "公开安全事件库记录 Fetch.ai 损失约 $1.53M，类型为 Key Compromise。同时 DEX 热点 solana 新币仍应默认进入风险观察池。",
       "href": "alpha/watchlist.html?status=risk",
       "metrics": [
-        "$3.5M",
+        "$1.53M",
         "solana boost"
       ]
     }
