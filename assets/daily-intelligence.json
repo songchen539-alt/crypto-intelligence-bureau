@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "date": "2026-09-23",
-  "generatedAt": "2026-09-23T05:02:05.481Z",
-  "generatedAtDisplay": "2026-09-23 13:02 BJT",
+  "date": "2026-09-24",
+  "generatedAt": "2026-09-24T05:13:08.878Z",
+  "generatedAtDisplay": "2026-09-24 13:13 BJT",
   "timezone": "Asia/Shanghai",
   "schedule": {
     "cronUtc": "30 0 * * *",
@@ -32,7 +32,7 @@
       "href": "alpha/alerts.html",
       "metrics": [
         "F&G 71/100",
-        "SOL +2.82%"
+        "BTC -2.99%"
       ]
     },
     {
@@ -40,11 +40,11 @@
       "icon": "💧",
       "category": "流动性",
       "title": "BTCUSDT 成交额领先",
-      "body": "Binance 24 小时成交额约 $1.76B，成交笔数 3,211,922。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
+      "body": "Binance 24 小时成交额约 $1.8B，成交笔数 3,242,439。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
       "href": "signals/?type=flow",
       "metrics": [
-        "$1.76B",
-        "3,211,922 trades"
+        "$1.8B",
+        "3,242,439 trades"
       ]
     },
     {
@@ -52,10 +52,10 @@
       "icon": "🪙",
       "category": "稳定币",
       "title": "USDT 稳定币供给位于前列",
-      "body": "Tether 流通供给约 $183.37B，当前价格约 $0.9998。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
+      "body": "Tether 流通供给约 $183.5B，当前价格约 $0.9998。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
       "href": "sources/#live-data",
       "metrics": [
-        "$183.37B",
+        "$183.5B",
         "$0.9998"
       ]
     },
@@ -64,11 +64,11 @@
       "icon": "📈",
       "category": "DeFi 与链上资金",
       "title": "Lido 保持 TVL 前列",
-      "body": "Lido 当前 TVL 约 $27.03B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
+      "body": "Lido 当前 TVL 约 $26.3B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
       "href": "alpha/report.html?project=defi-revenue",
       "metrics": [
-        "$27.03B",
-        "Ethereum $54.64B"
+        "$26.3B",
+        "Ethereum $53.65B"
       ]
     },
     {
@@ -76,11 +76,11 @@
       "icon": "⚠️",
       "category": "风险与热点",
       "title": "Drop 安全事件进入风险样本",
-      "body": "公开安全事件库记录 Drop 损失约 $4.4M，类型为 Governance。同时 DEX 热点 robinhood 新币仍应默认进入风险观察池。",
+      "body": "公开安全事件库记录 Drop 损失约 $4.4M，类型为 Governance。同时 DEX 热点 arc 新币仍应默认进入风险观察池。",
       "href": "alpha/watchlist.html?status=risk",
       "metrics": [
         "$4.4M",
-        "robinhood boost"
+        "arc boost"
       ]
     }
   ]
