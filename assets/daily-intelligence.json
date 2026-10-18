@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "date": "2026-10-17",
-  "generatedAt": "2026-10-17T04:52:41.551Z",
-  "generatedAtDisplay": "2026-10-17 12:52 BJT",
+  "date": "2026-10-18",
+  "generatedAt": "2026-10-18T04:59:26.271Z",
+  "generatedAtDisplay": "2026-10-18 12:59 BJT",
   "timezone": "Asia/Shanghai",
   "schedule": {
     "cronUtc": "30 0 * * *",
@@ -27,12 +27,12 @@
       "id": "sentiment",
       "icon": "🧭",
       "category": "市场情绪",
-      "title": "市场情绪：Greed 55/100",
-      "body": "Fear & Greed 当前为 Greed。它不是交易指令，但能帮助解释今天的风险偏好：极端恐惧看流动性压力，极端贪婪提高追高风险权重。",
+      "title": "市场情绪：Neutral 53/100",
+      "body": "Fear & Greed 当前为 Neutral。它不是交易指令，但能帮助解释今天的风险偏好：极端恐惧看流动性压力，极端贪婪提高追高风险权重。",
       "href": "alpha/alerts.html",
       "metrics": [
-        "F&G 55/100",
-        "BNB -0.97%"
+        "F&G 53/100",
+        "SOL -0.81%"
       ]
     },
     {
@@ -40,11 +40,11 @@
       "icon": "💧",
       "category": "流动性",
       "title": "BTCUSDT 成交额领先",
-      "body": "Binance 24 小时成交额约 $1.09B，成交笔数 2,932,161。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
+      "body": "Binance 24 小时成交额约 $611.58M，成交笔数 1,203,830。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
       "href": "signals/?type=flow",
       "metrics": [
-        "$1.09B",
-        "2,932,161 trades"
+        "$611.58M",
+        "1,203,830 trades"
       ]
     },
     {
@@ -52,10 +52,10 @@
       "icon": "🪙",
       "category": "稳定币",
       "title": "USDT 稳定币供给位于前列",
-      "body": "Tether 流通供给约 $183.38B，当前价格约 $0.9991。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
+      "body": "Tether 流通供给约 $183.41B，当前价格约 $0.9991。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
       "href": "sources/#live-data",
       "metrics": [
-        "$183.38B",
+        "$183.41B",
         "$0.9991"
       ]
     },
@@ -64,11 +64,11 @@
       "icon": "📈",
       "category": "DeFi 与链上资金",
       "title": "Lido 保持 TVL 前列",
-      "body": "Lido 当前 TVL 约 $23.51B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
+      "body": "Lido 当前 TVL 约 $23.49B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
       "href": "alpha/report.html?project=defi-revenue",
       "metrics": [
-        "$23.51B",
-        "Ethereum $49.83B"
+        "$23.49B",
+        "Ethereum $49.68B"
       ]
     },
     {
