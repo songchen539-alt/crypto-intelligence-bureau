@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "date": "2026-10-18",
-  "generatedAt": "2026-10-18T04:59:26.271Z",
-  "generatedAtDisplay": "2026-10-18 12:59 BJT",
+  "date": "2026-10-19",
+  "generatedAt": "2026-10-19T05:07:26.670Z",
+  "generatedAtDisplay": "2026-10-19 13:07 BJT",
   "timezone": "Asia/Shanghai",
   "schedule": {
     "cronUtc": "30 0 * * *",
@@ -27,12 +27,12 @@
       "id": "sentiment",
       "icon": "🧭",
       "category": "市场情绪",
-      "title": "市场情绪：Neutral 53/100",
-      "body": "Fear & Greed 当前为 Neutral。它不是交易指令，但能帮助解释今天的风险偏好：极端恐惧看流动性压力，极端贪婪提高追高风险权重。",
+      "title": "市场情绪：Greed 59/100",
+      "body": "Fear & Greed 当前为 Greed。它不是交易指令，但能帮助解释今天的风险偏好：极端恐惧看流动性压力，极端贪婪提高追高风险权重。",
       "href": "alpha/alerts.html",
       "metrics": [
-        "F&G 53/100",
-        "SOL -0.81%"
+        "F&G 59/100",
+        "SOL +1.49%"
       ]
     },
     {
@@ -40,11 +40,11 @@
       "icon": "💧",
       "category": "流动性",
       "title": "BTCUSDT 成交额领先",
-      "body": "Binance 24 小时成交额约 $611.58M，成交笔数 1,203,830。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
+      "body": "Binance 24 小时成交额约 $943.48M，成交笔数 2,206,134。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
       "href": "signals/?type=flow",
       "metrics": [
-        "$611.58M",
-        "1,203,830 trades"
+        "$943.48M",
+        "2,206,134 trades"
       ]
     },
     {
@@ -52,11 +52,11 @@
       "icon": "🪙",
       "category": "稳定币",
       "title": "USDT 稳定币供给位于前列",
-      "body": "Tether 流通供给约 $183.41B，当前价格约 $0.9991。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
+      "body": "Tether 流通供给约 $183.44B，当前价格约 $0.9993。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
       "href": "sources/#live-data",
       "metrics": [
-        "$183.41B",
-        "$0.9991"
+        "$183.44B",
+        "$0.9993"
       ]
     },
     {
@@ -68,7 +68,7 @@
       "href": "alpha/report.html?project=defi-revenue",
       "metrics": [
         "$23.49B",
-        "Ethereum $49.68B"
+        "Ethereum $49.84B"
       ]
     },
     {
