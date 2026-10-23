@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "date": "2026-10-22",
-  "generatedAt": "2026-10-22T05:14:20.710Z",
-  "generatedAtDisplay": "2026-10-22 13:14 BJT",
+  "date": "2026-10-23",
+  "generatedAt": "2026-10-23T05:13:16.348Z",
+  "generatedAtDisplay": "2026-10-23 13:13 BJT",
   "timezone": "Asia/Shanghai",
   "schedule": {
     "cronUtc": "30 0 * * *",
@@ -27,12 +27,12 @@
       "id": "sentiment",
       "icon": "🧭",
       "category": "市场情绪",
-      "title": "市场情绪：Greed 68/100",
-      "body": "Fear & Greed 当前为 Greed。它不是交易指令，但能帮助解释今天的风险偏好：极端恐惧看流动性压力，极端贪婪提高追高风险权重。",
+      "title": "市场情绪：Neutral 50/100",
+      "body": "Fear & Greed 当前为 Neutral。它不是交易指令，但能帮助解释今天的风险偏好：极端恐惧看流动性压力，极端贪婪提高追高风险权重。",
       "href": "alpha/alerts.html",
       "metrics": [
-        "F&G 68/100",
-        "SOL -0.58%"
+        "F&G 50/100",
+        "ETH -1.74%"
       ]
     },
     {
@@ -40,11 +40,11 @@
       "icon": "💧",
       "category": "流动性",
       "title": "BTCUSDT 成交额领先",
-      "body": "Binance 24 小时成交额约 $1.67B，成交笔数 3,543,135。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
+      "body": "Binance 24 小时成交额约 $1.44B，成交笔数 3,200,369。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
       "href": "signals/?type=flow",
       "metrics": [
-        "$1.67B",
-        "3,543,135 trades"
+        "$1.44B",
+        "3,200,369 trades"
       ]
     },
     {
@@ -52,11 +52,11 @@
       "icon": "🪙",
       "category": "稳定币",
       "title": "USDT 稳定币供给位于前列",
-      "body": "Tether 流通供给约 $182.68B，当前价格约 $0.9993。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
+      "body": "Tether 流通供给约 $182.48B，当前价格约 $0.9988。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
       "href": "sources/#live-data",
       "metrics": [
-        "$182.68B",
-        "$0.9993"
+        "$182.48B",
+        "$0.9988"
       ]
     },
     {
@@ -64,23 +64,23 @@
       "icon": "📈",
       "category": "DeFi 与链上资金",
       "title": "Lido 保持 TVL 前列",
-      "body": "Lido 当前 TVL 约 $23.67B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
+      "body": "Lido 当前 TVL 约 $23.3B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
       "href": "alpha/report.html?project=defi-revenue",
       "metrics": [
-        "$23.67B",
-        "Ethereum $50.13B"
+        "$23.3B",
+        "Ethereum $49.7B"
       ]
     },
     {
       "id": "risk",
       "icon": "⚠️",
       "category": "风险与热点",
-      "title": "AlpsCon AI Trade Hub 安全事件进入风险样本",
-      "body": "公开安全事件库记录 AlpsCon AI Trade Hub 损失约 $152.81K，类型为 Token & Share Accounting。同时 DEX 热点 robinhood 新币仍应默认进入风险观察池。",
+      "title": "WAX Multi-Chain Bridge 安全事件进入风险样本",
+      "body": "公开安全事件库记录 WAX Multi-Chain Bridge 损失约 $90.5K，类型为 Input Validation。同时 DEX 热点 solana 新币仍应默认进入风险观察池。",
       "href": "alpha/watchlist.html?status=risk",
       "metrics": [
-        "$152.81K",
-        "robinhood boost"
+        "$90.5K",
+        "solana boost"
       ]
     }
   ]
