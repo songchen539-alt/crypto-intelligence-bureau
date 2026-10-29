@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "date": "2026-10-28",
-  "generatedAt": "2026-10-28T06:07:04.523Z",
-  "generatedAtDisplay": "2026-10-28 14:07 BJT",
+  "date": "2026-10-29",
+  "generatedAt": "2026-10-29T06:17:14.098Z",
+  "generatedAtDisplay": "2026-10-29 14:17 BJT",
   "timezone": "Asia/Shanghai",
   "schedule": {
     "cronUtc": "30 0 * * *",
@@ -32,7 +32,7 @@
       "href": "alpha/alerts.html",
       "metrics": [
         "F&G 51/100",
-        "SOL +1.83%"
+        "SOL -1.83%"
       ]
     },
     {
@@ -40,11 +40,11 @@
       "icon": "💧",
       "category": "流动性",
       "title": "BTCUSDT 成交额领先",
-      "body": "Binance 24 小时成交额约 $999.15M，成交笔数 2,378,425。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
+      "body": "Binance 24 小时成交额约 $1.14B，成交笔数 2,938,976。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
       "href": "signals/?type=flow",
       "metrics": [
-        "$999.15M",
-        "2,378,425 trades"
+        "$1.14B",
+        "2,938,976 trades"
       ]
     },
     {
@@ -52,11 +52,11 @@
       "icon": "🪙",
       "category": "稳定币",
       "title": "USDT 稳定币供给位于前列",
-      "body": "Tether 流通供给约 $181.57B，当前价格约 $0.9988。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
+      "body": "Tether 流通供给约 $180.8B，当前价格约 $0.9989。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
       "href": "sources/#live-data",
       "metrics": [
-        "$181.57B",
-        "$0.9988"
+        "$180.8B",
+        "$0.9989"
       ]
     },
     {
@@ -64,23 +64,23 @@
       "icon": "📈",
       "category": "DeFi 与链上资金",
       "title": "Lido 保持 TVL 前列",
-      "body": "Lido 当前 TVL 约 $22.85B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
+      "body": "Lido 当前 TVL 约 $22.39B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
       "href": "alpha/report.html?project=defi-revenue",
       "metrics": [
-        "$22.85B",
-        "Ethereum $46.44B"
+        "$22.39B",
+        "Ethereum $45.88B"
       ]
     },
     {
       "id": "risk",
       "icon": "⚠️",
       "category": "风险与热点",
-      "title": "Yapeswap 安全事件进入风险样本",
-      "body": "公开安全事件库记录 Yapeswap 损失约 $21.9K，类型为 Governance。同时 DEX 热点 solana 新币仍应默认进入风险观察池。",
+      "title": "zkLink Nova 安全事件进入风险样本",
+      "body": "公开安全事件库记录 zkLink Nova 损失约 $783.1K，类型为 Bridge & Cross-Chain。同时 DEX 热点 robinhood 新币仍应默认进入风险观察池。",
       "href": "alpha/watchlist.html?status=risk",
       "metrics": [
-        "$21.9K",
-        "solana boost"
+        "$783.1K",
+        "robinhood boost"
       ]
     }
   ]
