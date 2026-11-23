@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "date": "2026-11-22",
-  "generatedAt": "2026-11-22T07:18:09.616Z",
-  "generatedAtDisplay": "2026-11-22 15:18 BJT",
+  "date": "2026-11-23",
+  "generatedAt": "2026-11-23T08:01:36.294Z",
+  "generatedAtDisplay": "2026-11-23 16:01 BJT",
   "timezone": "Asia/Shanghai",
   "schedule": {
     "cronUtc": "30 0 * * *",
@@ -32,7 +32,7 @@
       "href": "alpha/alerts.html",
       "metrics": [
         "F&G 11/100",
-        "BNB +2.34%"
+        "SOL +4.20%"
       ]
     },
     {
@@ -40,11 +40,11 @@
       "icon": "💧",
       "category": "流动性",
       "title": "BTCUSDT 成交额领先",
-      "body": "Binance 24 小时成交额约 $1.67B，成交笔数 4,050,321。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
+      "body": "Binance 24 小时成交额约 $1.27B，成交笔数 5,422,652。高流动性资产适合作为今天市场方向和风险偏好的锚点。",
       "href": "signals/?type=flow",
       "metrics": [
-        "$1.67B",
-        "4,050,321 trades"
+        "$1.27B",
+        "5,422,652 trades"
       ]
     },
     {
@@ -52,11 +52,11 @@
       "icon": "🪙",
       "category": "稳定币",
       "title": "USDT 稳定币供给位于前列",
-      "body": "Tether 流通供给约 $174.46B，当前价格约 $0.9980。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
+      "body": "Tether 流通供给约 $174.58B，当前价格约 $0.9985。稳定币供给和脱锚风险会影响 DeFi 收益、链上流动性和整体风险偏好。",
       "href": "sources/#live-data",
       "metrics": [
-        "$174.46B",
-        "$0.9980"
+        "$174.58B",
+        "$0.9985"
       ]
     },
     {
@@ -64,23 +64,23 @@
       "icon": "📈",
       "category": "DeFi 与链上资金",
       "title": "LayerZero V2 保持 TVL 前列",
-      "body": "LayerZero V2 当前 TVL 约 $17.68B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
+      "body": "LayerZero V2 当前 TVL 约 $16.98B。链级资金方面，Ethereum 仍是重点观察生态。TVL 不能直接代表代币价值，但能决定哪些项目值得进入 Alpha 评分。",
       "href": "alpha/report.html?project=defi-revenue",
       "metrics": [
-        "$17.68B",
-        "Ethereum $35.49B"
+        "$16.98B",
+        "Ethereum $36.58B"
       ]
     },
     {
       "id": "risk",
       "icon": "⚠️",
       "category": "风险与热点",
-      "title": "CyberConnect 安全事件进入风险样本",
-      "body": "公开安全事件库记录 CyberConnect 损失约 $968K，类型为 Bridge & Cross-Chain。同时 DEX 热点 robinhood 新币仍应默认进入风险观察池。",
+      "title": "Endurance Bridge 安全事件进入风险样本",
+      "body": "公开安全事件库记录 Endurance Bridge 损失约 $1.04M，类型为 Bridge & Cross-Chain。同时 DEX 热点 solana 新币仍应默认进入风险观察池。",
       "href": "alpha/watchlist.html?status=risk",
       "metrics": [
-        "$968K",
-        "robinhood boost"
+        "$1.04M",
+        "solana boost"
       ]
     }
   ]
